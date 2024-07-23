@@ -178,10 +178,9 @@ nav > div > a > p{
     display: none;
     position: absolute;
     font-size: 2rem;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    margin-top: 0.6rem;
     color: #3B3D41;
-    padding: 1rem;
+    padding: 1rem 0 1rem 0;
 }
 
 @media (max-width: 1199px) {
@@ -206,7 +205,16 @@ nav > div > a > p{
     }
 }
 
-@media (max-width: 1099px) {
+
+@media only screen and (max-width: 1099px) {
+
+    header > .hero-heading {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        width: 100%;
+    }
+
     .close-btn > .closebtn{
         display: block !important;
     }
@@ -229,6 +237,23 @@ nav > div > a > p{
     nav > div{
         padding-left: 32px !important;
     }
+
+
+    .hero-english-container > h1  {
+        font-size: 100px;
+        font-weight: 550;
+        line-height: 100px;
+
+    }
+    .hero-text-container > .hero-hindi-container > div > h1 > span {
+        font-size: 30px;
+    }
+
+    .hero-text-container{
+        width: 300px !important;
+    }
+
+
 }
 
 
@@ -261,7 +286,7 @@ header > .hero-heading {
     position: relative;
     z-index: 1;
 }
-header > .hero-heading > p {
+header > .hero-heading > div > p {
     font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif,"Inter Regular", "Inter Regular Placeholder", sans-serif;
     letter-spacing: 1.86px;
     color: #A0A5AC;
@@ -274,6 +299,12 @@ header > .hero-heading > p {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+header > .hero-heading > p {
+    width: 100%;
+}
+
+
 
 main > header > .hero-section{
     display: flex;
@@ -338,7 +369,6 @@ main .hero-english-container > h1 > span {
 .hero-photo-container{
     display: flex;
     flex-direction: row;
-
     overflow: visible;
     height: 400px;
     width: 410px;
@@ -458,6 +488,10 @@ main .hero-english-container > h1 > span {
     width: 412px;
 }
 
+.text-software-engineer {
+    font-weight: 501;
+}
+
 
 .education-section{
     margin-top: 64px;
@@ -540,4 +574,17 @@ main .hero-english-container > h1 > span {
 footer{
     width: 100%;
     height: 15em;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1099px) {
+
 }

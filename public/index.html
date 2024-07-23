@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="Assets/child.webp"/>
+    <link rel="icon" type="image/png" href="Assets/boys.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Primary Meta Tags -->
@@ -35,6 +35,7 @@
 </head>
 <body>
 
+<!-- NAVBAR SECTION -->
 <div class="navbar" id="navbar-container">
 <nav>
     <div class="close-btn">
@@ -42,14 +43,14 @@
     </div>
    <div class="top-section">
        <a href="#" target="_blank" rel="noopener noreferrer" ><div><p>PORTFOLIO</p></div></a>
-       <a href="#" target="_blank" rel="noopener noreferrer" ><h5>About</h5></a>
-       <a href="#" target="_blank" rel="noopener noreferrer" ><h5>Education</h5></a>
+       <a href="#"  ><h5>About</h5></a>
+       <a href="#"  ><h5>Education</h5></a>
        <a href="Assets/resume.pdf" target="_blank" rel="noopener noreferrer" ><h5>CV</h5></a>
    </div>
     <div class="experience-section">
         <h6>EXPERIENCE</h6>
-        <a href="#" target="_blank" rel="noopener noreferrer" ><p>Fresher</p></a>
-        <a href="#" target="_blank" rel="noopener noreferrer" ><p>Hackathon</p></a>
+        <a href="#" ><p>Fresher</p></a>
+        <a href="#" ><p>Hackathon</p></a>
     </div>
     <div class="project-section">
         <h6>PROJECT</h6>
@@ -68,28 +69,31 @@
     </div>
 </nav>
 </div>
-
-<button class="openbtn" onclick="openNav()">&#9776;</button>
-
+<!--<button class="openbtn" onclick="openNav()">&#9776;</button>-->
 
 
-
-
+<!-- MAIN BODY SECTION -->
 <main id="main">
     <header>
-
         <section class="hero-heading">
-            <p>Let that fog settle…</p>
+
+            <div><button class="openbtn" onclick="openNav()">&#9776;</button></div>
+            <div><p>Let that fog settle…</p></div>
+
         </section>
 
-        <section class="hero-section">
+        <section class="hero-section" id="hero-section">
             <div>
                 <div class="hero-text-container">
                     <div class="hero-english-container">
-                    <h1><span>AJAY NEGI</span></h1>
+                        <h1><span>AJAY NEGI</span></h1>
                     </div>
                     <div class="hero-hindi-container">
-                    <div><h1><span>अजय नेगी</span></h1></div>
+                        <div>
+                            <h1>
+                                <span>अजय नेगी</span>
+                        </h1>
+                    </div>
                     <div><h3>/New Delhi/</h3></div>
                     </div>
                     <div class="hero-text-fog"></div>
@@ -116,7 +120,7 @@
                     <h6>INFO</h6>
                 </div>
                 <div>
-                    <p>I’m a Software Engineer living in New Delhi, India, originally from Uttarakhand, India.</p>
+                    <p>I’m a <span class="text-software-engineer">Software Engineer</span> living in New Delhi, India, originally from Uttarakhand, India.</p>
                     <p>Since childhood, I have had a keen passion for computers. I was always fascinated by how computers worked and how data flowed from one place to another. It felt like magic to me! Whenever I had free time outside of my schoolwork, I delved into studying how networking functions in computers. However, I faced a challenge as there was no computer facility available to me at that time for practical experience.</p>
                     <p>Despite this, my curiosity and dedication to learning about computer networking never waned. After gaining decent knowledge about networking and the web, I built my first website on Wix. Following that, I created some websites using HTML and CSS, which boosted my confidence. Since then, I have never looked back and continuously learn new technologies and programming languages to stay up-to-date with current market needs.
                         This passion ultimately led me to pursue a career in software engineering, where I continue to explore and grow my knowledge every day.</p>
@@ -155,7 +159,6 @@
         <footer></footer>
     </header>
 </main>
-
 
 <script>
     function openNav() {
