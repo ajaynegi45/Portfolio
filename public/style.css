@@ -273,11 +273,18 @@ nav > div > a > p{
 
 
 
-
-
-
-
-
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
 
 
 main{
@@ -287,6 +294,8 @@ main{
     overflow: hidden;
     filter: none ;
 }
+
+
 header{
     width: 880px;
     min-height: 100vh;
@@ -308,6 +317,11 @@ header > .hero-heading > div > #fog-text {
     line-height: 1.2em;
     text-decoration: none;
     text-transform: uppercase;
+
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 /*header > .hero-heading > p {*/
@@ -351,6 +365,10 @@ main .hero-english-container > h1 > span {
     -webkit-text-fill-color: transparent;
     padding: max(0em, calc(calc(1.3em - 150px) / 2));
     margin: min(0em, calc(calc(1.3em - 150px) / -2));
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .hero-hindi-container{
@@ -362,6 +380,16 @@ main .hero-english-container > h1 > span {
 
 .hero-hindi-container > div > h1 {
     font-size: 60px;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+.hero-hindi-container > div > h3 {
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .hero-section .hero-text-fog {
@@ -404,6 +432,10 @@ main .hero-english-container > h1 > span {
     image-rendering: auto;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .hero-photo-container > div > .image-two {
@@ -413,7 +445,9 @@ main .hero-english-container > h1 > span {
     image-rendering: auto;
     filter: drop-shadow(0 0 2rem #A0A5AC);
 
-
+    animation-name: reveal;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 .hero-image-updown-container {
     display: flex;
@@ -430,6 +464,10 @@ main .hero-english-container > h1 > span {
     top: -40px;
     filter: drop-shadow(0 0 1rem #A0A5AC);
 
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+
 }
 
 .hero-image-updown-container >  div > .image-four {
@@ -440,6 +478,10 @@ main .hero-english-container > h1 > span {
     position: absolute;
     bottom: -2px;
     filter: grayscale(100%);
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 
@@ -475,6 +517,10 @@ main .hero-english-container > h1 > span {
 .info-image-container > img {
     height: 275px;
     filter: drop-shadow(0 0 0.80rem #A0A5AC);
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .info-text-container{
@@ -483,6 +529,12 @@ main .hero-english-container > h1 > span {
     flex-wrap: wrap;
 
     padding-right: 5px ;
+}
+
+.info-text-container > div > h6 {
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 .info-text-container > div > p{
     font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
@@ -496,6 +548,11 @@ main .hero-english-container > h1 > span {
     margin-top: 24px;
     line-height: 20px;
     width: 412px;
+
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .text-software-engineer {
@@ -503,15 +560,28 @@ main .hero-english-container > h1 > span {
 }
 
 
+
+
+
+
+
 .education-section{
     margin-top: 64px;
     padding-bottom: 80px;
     border-top: 1px solid #E1E4E8;
     border-bottom: 1px solid #E1E4E8;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .education-section > div > h6{
     margin-top: 15px !important;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 
 }
 .education-section > .education-container {
@@ -532,6 +602,10 @@ main .hero-english-container > h1 > span {
     color:  #3b3d41;
     text-decoration: none;
     text-transform: none;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .education-section > .education-container > div > div > .college-name {
@@ -545,6 +619,10 @@ main .hero-english-container > h1 > span {
     color: rgb(160, 165, 172);
     text-decoration: none;
     text-transform: none;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 
 .education-section > .education-container > div > div > p {
@@ -558,14 +636,26 @@ main .hero-english-container > h1 > span {
     text-decoration: none;
     text-transform: none;
     line-height: 20px;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 .education-section > .education-container > div >img {
     width: 404px;
     border-radius: 5px;
     filter: grayscale(100%);
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 .education-section > .education-container > .education-image-container > p {
     margin-top: 10px;
+
+    animation-name: reveal;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
 }
 .education-section > .education-container > .education-image-container {
     overflow: hidden;
@@ -585,11 +675,6 @@ footer{
     width: 100%;
     height: 15em;
 }
-
-
-
-
-
 
 
 
