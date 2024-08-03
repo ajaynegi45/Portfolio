@@ -146,6 +146,7 @@ nav > .experience-section{
 }
 nav > .project-section{
     min-height: 180px;
+    padding-bottom: 1.5rem;
     padding-left: 32px;
     border-bottom:  1px solid #E1E4E8;
 }
