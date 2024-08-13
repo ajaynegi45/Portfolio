@@ -3,6 +3,12 @@
     src: url("Fonts/SF-Pro-Display-Regular.otf") format("opentype");,
 }
 
+:root {
+    --black: #3B3D41;
+    --grey: #A0A5AC;
+    --light-grey: #E1E4E8;
+}
+
 /*  reset everything*/
 *, *::before,*::after {
     box-sizing: border-box;
@@ -111,6 +117,11 @@ nav {
     transition: 0.5s;
 }
 
+nav > div {
+    /* Use relative unit or smaller fixed value */
+    padding-left: 2vw !important; /* Adjust according to your needs */
+}
+
 nav > .top-section{
     min-height: 247px;
     padding-left: 32px;
@@ -121,13 +132,15 @@ nav > .top-section{
 nav > .top-section > a > div {
     width: 87px;
     height: 48px;
-    margin-top: 40px;
+    margin-top: 35px;
     background-color: #F3F2F2;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
 }
+
+
 nav > .top-section > a > div > p {
     font-family: Inter, sans-serif;
     font-size: 11px;
@@ -156,7 +169,7 @@ nav > .contact-section{
 }
 
 nav > div > a > p{
-    font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
+    font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 350;
@@ -167,30 +180,27 @@ nav > div > a > p{
     margin-top: 15px;
 }
 
-
-
-.close-btn > .closebtn{
-    margin-top: 2px;
+.close-btn {
+    margin-top: 0.7rem;
     margin-left: 11rem;
-    font-size: 2rem;
+    margin-right: 0.7rem;
+    float: right;
+}
+.close-btn > .closebtn {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    border: 1px solid #E1E4E8;
+    border-radius: .375rem;
     display: none;
+    padding: 0.1rem 0.6rem 0.2rem 0.6rem;
 }
 .openbtn{
-    /*display: none;*/
-    /*position: absolute;*/
-    /*font-size: 2rem;*/
-    /*margin-top: 0.6rem;*/
-    /*color: #3B3D41;*/
-    /*padding: 1rem 0 1rem 0;*/
-
-
     display: none;
     position: absolute;
     font-size: 2rem;
     margin-top: 0.5rem;
     margin-left: 1rem;
     color: #3B3D41;
-    padding: 1rem;
 }
 
 @media (max-width: 1199px) {
@@ -201,6 +211,10 @@ nav > div > a > p{
     .navbar{
         min-width: 185px !important;
     }
+
+    /*nav, .navbar { !* Combined nav and .navbar styles for better performance *!*/
+    /*    min-width: 185px !important; !* Kept *!*/
+    /*}*/
 
     nav > div{
         padding-left: 20px !important;
@@ -267,12 +281,6 @@ nav > div > a > p{
 }
 
 
-
-
-
-
-
-
 @keyframes reveal {
     0% {
         opacity: 0;
@@ -287,7 +295,7 @@ nav > div > a > p{
 }
 
 
-main{
+#main{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -297,8 +305,12 @@ main{
 
 
 header{
-    width: 880px;
+    width: 100%;
+    max-width: 880px;
+    min-width: 320px;
+
     min-height: 100vh;
+    margin: 0 auto;
 }
 
 header > .hero-heading {
@@ -322,6 +334,15 @@ header > .hero-heading > div > #fog-text {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    header > .hero-heading > div > #fog-text {
+        margin-left: 3rem;
+        /*margin-left: 5rem;*/
+    }
 }
 
 /*header > .hero-heading > p {*/
@@ -365,10 +386,10 @@ main .hero-english-container > h1 > span {
     -webkit-text-fill-color: transparent;
     padding: max(0em, calc(calc(1.3em - 150px) / 2));
     margin: min(0em, calc(calc(1.3em - 150px) / -2));
-
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .hero-hindi-container{
@@ -384,12 +405,14 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .hero-hindi-container > div > h3 {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .hero-section .hero-text-fog {
@@ -403,6 +426,8 @@ main .hero-english-container > h1 > span {
     height: 500px;
     filter: blur(30px);
 }
+
+
 
 .hero-photo-container{
     display: flex;
@@ -420,6 +445,22 @@ main .hero-english-container > h1 > span {
     /*inset: 0px;*/
 }
 
+
+
+@keyframes reveal-grey-image {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+        filter: grayscale(100%) blur(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: grayscale(100%) blur(0);
+    }
+}
+
+
 .hero-photo-container > div > .image-one {
     width: 140px;
     overflow-clip-margin: content-box;
@@ -430,12 +471,14 @@ main .hero-english-container > h1 > span {
     object-position: center center;
     object-fit: cover;
     image-rendering: auto;
+
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 
-    animation-name: reveal;
+    animation-name: reveal-grey-image;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .hero-photo-container > div > .image-two {
@@ -448,6 +491,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 1s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 .hero-image-updown-container {
     display: flex;
@@ -467,7 +511,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
-
+    animation-timing-function: ease-out;
 }
 
 .hero-image-updown-container >  div > .image-four {
@@ -482,6 +526,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 
@@ -494,6 +539,94 @@ main .hero-english-container > h1 > span {
     user-select: none;
     filter: blur(30px);
 }
+
+@media only screen and (max-width: 400px) {
+    /*.image-one{*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*    margin: 0 0 0 0 !important;*/
+    /*}*/
+
+
+
+    .image-two{display: none;}
+    .image-three {display: none;}
+    .image-four{display: none;}
+
+    .hero-photo-container{
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    }
+
+    /*.hero-photo-container > div{*/
+    /*    width: 100%;*/
+    /*}*/
+
+}
+
+@media only screen and (max-width: 700px) {
+    /*.hero-text-container{*/
+    /*    overflow: visible;*/
+    /*    height: 900px;*/
+    /*    width: 410px;*/
+    /*    position: relative;*/
+    /*    z-index: 1;*/
+    /*}*/
+
+
+    .hero-section .hero-text-fog {
+        margin-top: 5rem;
+        height: 150px;
+    }
+
+    .hero-text-container > .hero-english-container > h1{
+        line-height: 100px ;
+        font-size: 55px !important;
+    }
+
+    .hero-text-container > .hero-hindi-container >  div > h1{
+        line-height: 0 ;
+    }
+
+    .hero-photo-container{
+        margin-left: 0;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    #hero-section{
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .hero-text-container{
+            overflow: visible;
+            height: auto; /* Allow the height to adjust based on content */
+            max-width: 95%;
+            min-width: 90vw;
+            width: 100%; /* Ensure the container takes up the full width of its parent */
+            /*border: 1px solid red;*/
+            margin-top: 3rem;
+            padding: 1rem; /* Add padding for better spacing inside the container */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    .hero-english-container h1 {
+        font-size: 10vw; /* Smaller font size for smaller screens */
+    }
+
+
+    .hero-photo-container{
+        margin-left: 10vw;
+    }
+
+
+}
+
 
 
 
@@ -509,7 +642,9 @@ main .hero-english-container > h1 > span {
     margin-top: 6.5em;
 }
 .info-image-container{
-    width: 404px;
+    width: 100%;
+    max-width: 404px;
+    min-width: 100px;
     display: flex;
     justify-content: center;
 }
@@ -521,6 +656,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .info-text-container{
@@ -535,6 +671,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 .info-text-container > div > p{
     font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif;
@@ -547,24 +684,62 @@ main .hero-english-container > h1 > span {
     text-transform: none;
     margin-top: 24px;
     line-height: 20px;
+
     width: 412px;
 
 
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .text-software-engineer {
     font-weight: 501;
 }
 
+@media only screen and (max-width: 900px) {
+    .info-section{
+        gap: 20px;
+
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .info-image-container > img{
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .info-section{
+        flex-direction: column;
+        gap: 20px;
+
+        margin-left: 1em;
+        margin-right: 1em;
+        align-items: normal;
+
+        margin-top: 2em;
+    }
+
+    .info-image-container > img{
+        display: none;
+    }
+
+    .info-text-container > div > p{
+        width: 100%;
+    }
+
+}
 
 
 
 
 
 
+/* Education Section */
 .education-section{
     margin-top: 64px;
     padding-bottom: 80px;
@@ -574,6 +749,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .education-section > div > h6{
@@ -582,6 +758,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 
 }
 .education-section > .education-container {
@@ -606,6 +783,13 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+.education-section > .education-container > div {
+    /*flex: 1;*/
+    min-width: 300px;
+    padding-right: 10px;
 }
 
 .education-section > .education-container > div > div > .college-name {
@@ -623,6 +807,7 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 
 .education-section > .education-container > div > div > p {
@@ -640,15 +825,28 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+
+.education-section > .education-container > .education-image-container {
+    overflow: hidden;
+    flex: 1; /* Allow image container to grow */
+    max-width: 404px; /* Limit to original image size */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center contents */
 }
 .education-section > .education-container > div >img {
-    width: 404px;
+    width: 100%;
+    max-width: 404px;
+    height: auto;
     border-radius: 5px;
-    filter: grayscale(100%);
 
-    animation-name: reveal;
+    animation-name: reveal-grey-image;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
 .education-section > .education-container > .education-image-container > p {
     margin-top: 10px;
@@ -656,10 +854,9 @@ main .hero-english-container > h1 > span {
     animation-name: reveal;
     animation-duration: 0.8s;
     animation-fill-mode: both;
+    animation-timing-function: ease-out;
 }
-.education-section > .education-container > .education-image-container {
-    overflow: hidden;
-}
+
 .education-section > .education-container > .education-image-container > div {
     /*background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgb(255, 0, 0) 100%);*/
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
@@ -671,6 +868,56 @@ main .hero-english-container > h1 > span {
     width: 404px;
 }
 
+
+@media only screen and (max-width: 900px) {
+    .education-section{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .education-section > .education-container {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .education-image-container{
+        border-radius: 5px;
+        width: auto; /* Allow the image container to take its natural width */
+        text-align: left; /* Align text to the right */
+    }
+    .education-section > .education-container > div >img {
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .education-section > .education-container > div {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .education-section > .education-container > .education-image-container {
+        align-items: normal;
+    }
+
+
+    .education-image-container > p {
+        text-align: left; /* Align text to the left */
+        margin: 0;
+
+        font-weight: lighter;
+    }
+
+}
+
+
+
+
+
 footer{
     width: 100%;
     height: 15em;
@@ -680,6 +927,3 @@ footer{
 
 
 
-@media (max-width: 1099px) {
-
-}
