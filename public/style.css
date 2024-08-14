@@ -99,6 +99,11 @@ nav{
     z-index: 1;
     transition: 0.5s;
     background-color: rgb(255, 255, 255);
+
+    /*-height: 100%;*!*/
+    /*max-height: 100vh; !* Limits the height to the viewport *!*/
+    /*overflow-y: auto; !* Enables vertical scrolling *!*/
+
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -122,35 +127,11 @@ nav > div {
     padding-left: 2vw !important; /* Adjust according to your needs */
 }
 
-nav > .top-section{
-    min-height: 247px;
-    padding-left: 32px;
-    border-bottom:  1px solid #E1E4E8;
-}
 
 
-nav > .top-section > a > div {
-    width: 87px;
-    height: 48px;
-    margin-top: 35px;
-    background-color: #F3F2F2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
 
 
-nav > .top-section > a > div > p {
-    font-family: Inter, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1px;
 
-    font-style: normal;
-    text-transform: none;
-    color: #3B3D41;
-}
 
 nav > .experience-section{
     min-height: 133px;
@@ -158,14 +139,17 @@ nav > .experience-section{
     /*border-bottom:  1px solid #E1E4E8;*/
 }
 nav > .project-section{
-    min-height: 180px;
+    min-height: 215px;
     padding-bottom: 1.5rem;
     padding-left: 32px;
     border-bottom:  1px solid #E1E4E8;
 }
 nav > .contact-section{
     padding-left: 32px;
-    min-height: 210px;
+    /*min-height: 210px;*/
+    min-height: 300px;
+
+    padding-bottom: 5rem;
 }
 
 nav > div > a > p{
@@ -180,9 +164,44 @@ nav > div > a > p{
     margin-top: 15px;
 }
 
+nav > .top-section{
+    min-height: 247px;
+    padding-left: 32px;
+    border-bottom:  1px solid #E1E4E8;
+}
+
+nav > .top-section > div {
+    display: flex;
+    gap: 5rem;
+    margin-top: 2rem;
+
+}
+nav > .top-section > div > a > div {
+    width: 87px;
+    height: 48px;
+    background-color: #F3F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+
+nav > .top-section > div >a > div  > p {
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    font-style: normal;
+    text-transform: none;
+    color: #3B3D41;
+}
+
+
 .close-btn {
-    margin-top: 0.7rem;
-    margin-left: 11rem;
+    /*margin-top: 1.5rem;*/
+    /*margin-left: 11rem;*/
     margin-right: 0.7rem;
     float: right;
 }
@@ -196,10 +215,10 @@ nav > div > a > p{
 }
 .openbtn{
     display: none;
-    position: absolute;
+    /*position: absolute;*/
     font-size: 2rem;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
+    /*margin-top: 0.5rem;*/
+    /*margin-left: 1rem;*/
     color: #3B3D41;
 }
 
@@ -314,15 +333,26 @@ header{
 }
 
 header > .hero-heading {
-    position: relative;
     z-index: 1;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+header > .hero-heading {
+    width: 100%;
 }
 header > .hero-heading > div > #fog-text {
     font-family: "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "System Default", sans-serif,"Inter Regular", "Inter Regular Placeholder", sans-serif;
     letter-spacing: 1.86px;
     color: #A0A5AC;
-    margin-top: 40px;
-    margin-bottom: 75px;
+
+    /*margin-top: 40px;*/
+    /*margin-bottom: 75px;*/
+
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -340,9 +370,10 @@ header > .hero-heading > div > #fog-text {
 @media only screen and (max-width: 1000px) {
 
     header > .hero-heading > div > #fog-text {
-        margin-left: 3rem;
-        /*margin-left: 5rem;*/
+        /*margin-left: 3.5rem;*/
     }
+
+
 }
 
 /*header > .hero-heading > p {*/
@@ -577,16 +608,16 @@ main .hero-english-container > h1 > span {
 
     .hero-section .hero-text-fog {
         margin-top: 5rem;
-        height: 150px;
+        height: 200px;
     }
 
     .hero-text-container > .hero-english-container > h1{
-        line-height: 100px ;
+        line-height: 10rem ;
         font-size: 55px !important;
     }
 
     .hero-text-container > .hero-hindi-container >  div > h1{
-        line-height: 0 ;
+        line-height: 0;
     }
 
     .hero-photo-container{

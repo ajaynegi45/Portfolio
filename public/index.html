@@ -41,13 +41,20 @@
 <!-- NAVBAR SECTION -->
 <div class="navbar" id="navbar-container">
     <nav>
-        <div class="close-btn">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        </div>
+<!--        <div class="close-btn">-->
+<!--            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+<!--        </div>-->
         <div class="top-section">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-                <div><p>PORTFOLIO</p></div>
-            </a>
+            <div>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <div><p>PORTFOLIO</p></div>
+
+                </a>
+                <div class="close-btn">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                </div>
+            </div>
+
             <a href="#"><h5>About</h5></a>
             <a href="#"><h5>Education</h5></a>
             <a href="Assets/Ajay%20Negi%20Resume.pdf" target="_blank" rel="noopener noreferrer"><h5>CV</h5></a>
@@ -57,6 +64,7 @@
         <!--        <a href="https://www.holopin.io/@ajaynegi45#" ><p>Hacktoberfest</p></a>-->
         <!--        <a href="https://github.com/ajaynegi45/upchaar-aayog" ><p>Hackathon</p></a>-->
         <!--    </div>-->
+
         <div class="project-section">
             <h6>PROJECT</h6>
             <a href="https://ukculture.netlify.app/" target="_blank" rel="noopener noreferrer"><p>Uttarakhand
@@ -66,8 +74,8 @@
             <a href="https://libraryman.up.railway.app" target="_blank" rel="noopener noreferrer"><p>LibraryMan-API</p>
             </a>
             <a href="https://ajaylibrary.netlify.app/" target="_blank" rel="noopener noreferrer"><p>Library</p></a>
-
         </div>
+
         <div class="contact-section">
             <h6>CONTACT</h6>
             <a href="mailto:ajaynegi3345@gmail.com" target="_blank" rel="noopener noreferrer"><p>Mail</p></a>
@@ -81,36 +89,36 @@
         </div>
     </nav>
 </div>
-<button class="openbtn" onclick="openNav()">&#9776;</button>
+<!--<button class="openbtn" onclick="openNav()">&#9776;</button>-->
 
 
 <!-- MAIN BODY SECTION -->
 <main id="main">
     <header>
         <section class="hero-heading">
-<!--         <div><button class="openbtn" onclick="openNav()">&#9776;</button></div>-->
-            <div><p id="fog-text">Let that fog settle…</p></div>
-
+            <div>
+                <button class="openbtn" onclick="openNav()">&#9776;</button>
+            </div>
+            <div>
+                <p id="fog-text">Let that fog settle…</p>
+            </div>
         </section>
+
 
         <section class="hero-section" id="hero-section">
             <div>
                 <div class="hero-text-container">
-
                     <div class="hero-english-container">
                         <h1><span>AJAY NEGI</span></h1>
                     </div>
-
                     <div class="hero-hindi-container">
                         <div>
                             <h1>
                                 <span class="hindi-word">अजय नेगी</span>
                             </h1>
                         </div>
-
                         <div><h3>/New Delhi/</h3></div>
                     </div>
-
                     <div class="hero-text-fog"></div>
                 </div>
             </div>
@@ -170,21 +178,15 @@
                         <p>Bachelor of Computer Applications – Undergraduate Degree</p>
                     </div>
                 </div>
-
                 <div class="education-image-container">
                     <img decoding="async" loading="lazy" src="Assets/college.webp" alt="Childhood Image"
-                         class="image-three"/>
+                         class=""/>
                     <p>AKIDO Batchmate</p>
                     <div></div>
                 </div>
-
             </div>
         </section>
-
-
         <!--        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100%; height: 100%"><use href="#svg161889932"></use></svg>-->
-
-
         <footer></footer>
     </header>
 </main>
