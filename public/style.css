@@ -145,6 +145,13 @@ nav > .project-section{
     padding-left: 32px;
     border-bottom:  1px solid #E1E4E8;
 }
+
+nav  a > p:hover {
+    color: black;
+    filter: drop-shadow(0 0 0.40rem #A0A5AC);
+    text-decoration: underline;
+}
+
 nav > .contact-section{
     padding-left: 32px;
     /*min-height: 210px;*/
