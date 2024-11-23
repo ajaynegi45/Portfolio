@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "ajaynegi"
-  }
+    "default": "ajaynegi",
+    "portfolio-staging": "ajaynegi1"
+  },
+  "targets": {},
+  "etags": {}
 }
