@@ -67,7 +67,7 @@ Feel free to reach out for collaborations or inquiries:
 Thank you for visiting my portfolio! ❤️
 
 
-# For new device just 1st install nodejs then install the firebase using this command "npm install -g firebase-tools" and then login into firebase account using your gmail Id the push changes to firebase.
+[//]: # (For new device just 1st install nodejs then install the firebase using this command "npm install -g firebase-tools" and then login into firebase account using your gmail Id the push changes to firebase.&#41;)
 
 
 [//]: # (firebase deploy --only hosting:ajaynegi)
