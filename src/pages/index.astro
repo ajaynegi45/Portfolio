@@ -1,11 +1,302 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ProfileImage from "../assets/img/profilephoto.png";
+import WorkExperience from '../components/WorkExperience.astro';
+import Project from "../components/Project.astro";
+// import Resume from '../assets/AjayNegiResume.pdf';
+import Resume from '../assets/Resume.pdf';
+import Experience from "../components/Experience.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Ajay Negi | Software Engineer Portfolio"
+        description="Ajay Negi - Software Engineer | Building scalable solutions with clean, maintainable code.">
+
+    <!-- Main Section -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <header class="hero-left">
+                <h1 id="hero-heading">Hi, I'm Ajay Negi</h1>
+                <p class="subtitle">Software Engineer | Crafting Scalable Solutions</p>
+
+                <div class="contact-links">
+                    <p class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-mail">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+
+                        <!--<a href="mailto:ajaynegi.dev@gmail.com" aria-label="Send an email to Ajay Negi">ajaynegi.dev@gmail.com</a>-->
+                        <a href="/contact" aria-label="Contact Page">Contact me</a>
+
+
+
+                    </p>
+
+                    <p class="resume-download">
+                        <svg fill="#ffffff" height="800px" width="800px" version="1.1" id="Layer_1"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                        <g id="Text-files">
+                            <path d="M53.9791489,9.1429005H50.010849c-0.0826988,0-0.1562004,0.0283995-0.2331009,0.0469999V5.0228
+		C49.7777481,2.253,47.4731483,0,44.6398468,0h-34.422596C7.3839517,0,5.0793519,2.253,5.0793519,5.0228v46.8432999
+		c0,2.7697983,2.3045998,5.0228004,5.1378999,5.0228004h6.0367002v2.2678986C16.253952,61.8274002,18.4702511,64,21.1954517,64
+		h32.783699c2.7252007,0,4.9414978-2.1725998,4.9414978-4.8432007V13.9861002
+		C58.9206467,11.3155003,56.7043495,9.1429005,53.9791489,9.1429005z M7.1110516,51.8661003V5.0228
+		c0-1.6487999,1.3938999-2.9909999,3.1062002-2.9909999h34.422596c1.7123032,0,3.1062012,1.3422,3.1062012,2.9909999v46.8432999
+		c0,1.6487999-1.393898,2.9911003-3.1062012,2.9911003h-34.422596C8.5049515,54.8572006,7.1110516,53.5149002,7.1110516,51.8661003z
+		 M56.8888474,59.1567993c0,1.550602-1.3055,2.8115005-2.9096985,2.8115005h-32.783699
+		c-1.6042004,0-2.9097996-1.2608986-2.9097996-2.8115005v-2.2678986h26.3541946
+		c2.8333015,0,5.1379013-2.2530022,5.1379013-5.0228004V11.1275997c0.0769005,0.0186005,0.1504021,0.0469999,0.2331009,0.0469999
+		h3.9682999c1.6041985,0,2.9096985,1.2609005,2.9096985,2.8115005V59.1567993z"/>
+                            <path d="M38.6031494,13.2063999H16.253952c-0.5615005,0-1.0159006,0.4542999-1.0159006,1.0158005
+		c0,0.5615997,0.4544001,1.0158997,1.0159006,1.0158997h22.3491974c0.5615005,0,1.0158997-0.4542999,1.0158997-1.0158997
+		C39.6190491,13.6606998,39.16465,13.2063999,38.6031494,13.2063999z"/>
+                            <path d="M38.6031494,21.3334007H16.253952c-0.5615005,0-1.0159006,0.4542999-1.0159006,1.0157986
+		c0,0.5615005,0.4544001,1.0159016,1.0159006,1.0159016h22.3491974c0.5615005,0,1.0158997-0.454401,1.0158997-1.0159016
+		C39.6190491,21.7877007,39.16465,21.3334007,38.6031494,21.3334007z"/>
+                            <path d="M38.6031494,29.4603004H16.253952c-0.5615005,0-1.0159006,0.4543991-1.0159006,1.0158997
+		s0.4544001,1.0158997,1.0159006,1.0158997h22.3491974c0.5615005,0,1.0158997-0.4543991,1.0158997-1.0158997
+		S39.16465,29.4603004,38.6031494,29.4603004z"/>
+                            <path d="M28.4444485,37.5872993H16.253952c-0.5615005,0-1.0159006,0.4543991-1.0159006,1.0158997
+		s0.4544001,1.0158997,1.0159006,1.0158997h12.1904964c0.5615025,0,1.0158005-0.4543991,1.0158005-1.0158997
+		S29.0059509,37.5872993,28.4444485,37.5872993z"/>
+                        </g>
+                    </svg>
+                        <a href={Resume} download="Ajay_Negi_Resume.pdf"
+                           class="download-button" aria-label="Download Ajay Negi's Resume">Resume
+                        </a>
+                    </p>
+                </div>
+            </header>
+
+            <figure class="hero-right">
+                <img src={ProfileImage.src} alt="Ajay's profile picture" class="profile-image"/>
+                <!--<figcaption class="sr-only">Ajay Negi's Profile Picture</figcaption>-->
+            </figure>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h4>About Me</h4>
+            <p>I build reliable software systems and solve complex problems with a focus on clean, maintainable code. I
+                am passionate about architecting and engineering scalable solutions.</p>
+            <!--<p>Always be Architecting and Engineering.</p>-->
+        </section>
+
+
+        <!-- Work Experience Section -->
+        <!--<WorkExperience/>-->
+
+        <Experience/>
+
+        <section class="projects">
+            <div class="projects-header">
+                <h4>Projects</h4>
+                <a href="https://github.com/ajaynegi45?tab=repositories" class="link">
+                    <span>More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
+            </div>
+            <div class="projects-section">
+                <ProjectCard/>
+            </div>
+        </section>
+
+
+        <section class="substack-newsletter-section">
+            <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;" frameborder="0" scrolling="no"></iframe>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ajay Negi",
+            "url": "https://ajaynegi.web.app",
+            "jobTitle": "Software Engineer",
+            "sameAs": [
+                "https://www.linkedin.com/in/ajaynegi45/",
+                "https://github.com/ajaynegi45",
+                "https://x.com/ajaynegi45"
+            ],
+            "image": "https://ajaynegi.web.app/profilephoto.png"
+        }
+    </script>
+
 </Layout>
+
+<style>
+
+    main {
+        margin-bottom: 5rem;
+    }
+
+    .substack-newsletter-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        background: #fff;
+        border: 1px solid #EEE;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .substack-newsletter-section > iframe {
+        width: 480px;
+        height: 320px;
+        overflow: hidden;
+    }
+
+
+    @media (max-width: 499px) {
+        .substack-newsletter-section > iframe {
+            width: 90vw;
+            height: 100vw;
+
+        }
+    }
+
+
+
+
+    .projects-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0 3rem 0;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-left {
+        flex: 1;
+    }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .hero-left p.subtitle {
+        color: rgb(212 212 216);
+        font-size: 1.2rem;
+        margin-top: -0.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-left p.email {
+        font-size: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+
+    .hero-left p.resume-download {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+    }
+
+    .hero-left p.email > svg {
+        color: var(--subheading);
+        width: 1.25rem;
+        height: auto;
+    }
+
+    .hero-left p.resume-download > svg {
+        fill: var(--subheading);
+        width: 1.12rem;
+        height: auto;
+    }
+
+    .hero-right {
+        width: 100%;
+        //display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-right img.profile-image {
+        display: none;
+
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        filter: grayscale(100%);
+    }
+
+    /* About Section */
+    .about-section {
+        margin-bottom: 2rem;
+    }
+
+    .about-section > p {
+        font-weight: 350;
+    }
+
+
+
+
+    .projects-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .projects-header > h4 {
+        margin-bottom: 0.5rem;
+    }
+    .projects-header > a {
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        gap: 0.3rem;
+    }
+    .projects-header > a > svg {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+</style>

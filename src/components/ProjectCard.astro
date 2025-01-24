@@ -1,0 +1,169 @@
+---
+import Banner from '../assets/Uttarakhand-Culture-Banner.png'
+---
+
+<section class="project-card">
+    <div class="project-card-left-side-container">
+        <h5 class="project-title">Uttarakhand Culture</h5>
+        <p>Digitally documents and celebrates the region's culture, history, and natural beauty, making it accessible to
+            the younger generation and preserving it for future generations.</p>
+
+        <div class="project-links">
+            <div class="project-link">
+                <a href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI">
+                    <span>Github</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
+            </div>
+
+            <div class="project-link">
+                <a href="https://uttarakhand-culture.vercel.app/">
+                    <span>Live Link</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="project-card-right-side-container">
+        <img src={Banner.src} alt="Project Image">
+    </div>
+</section>
+
+
+<section class="project-card">
+    <div class="project-card-left-side-container">
+        <h5 class="project-title">Vayu - Web Server</h5>
+        <p>Vayu is a high-performance Java web server built on Netty, designed for speed, scalability, and security.</p>
+
+        <div class="project-links">
+            <div class="project-link">
+                <a href="https://github.com/ajaynegi45/Vayu">
+                    <span>Github</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="project-card-right-side-container">
+        <img src={"https://opengraph.githubassets.com/98bf639f033a7ffde09d7bccce257be0ebc484b46b71827ae208c618bdff254e/ajaynegi45/Vayu"} alt="Project Image">
+    </div>
+</section>
+
+
+<style>
+
+    .project-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+
+        border: 1px solid rgb(38 38 38/1);
+        transition: border 0.3s ease-in-out;
+    }
+
+    .project-card:hover {
+        border: 1px solid var(--text5);
+        cursor: pointer;
+
+        background-color: #ffffff0d;
+    }
+
+    .project-card > .project-card-left-side-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.3rem;
+    }
+
+    .project-card-left-side-container > p {
+        font-size: 14px;
+        font-weight: 330;
+        letter-spacing: 0.35px;
+        line-height: 1.35;
+        color: var(--text4);
+    }
+
+    .project-card-right-side-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .project-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 0.3rem;
+    }
+    .project-links > .project-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.2rem;
+
+        font-size: 13px;
+
+        border-radius: 5px;
+
+        background-color: #26262699;
+
+        border: 1px solid rgb(38 38 38 / 2);
+        color: var(--text5);
+    }
+
+    .project-link > a {
+        padding: 0.25rem 0.5rem;
+        color: rgb(212 212 212 / 1); // #D4D4D4FF
+    }
+
+    .project-link:hover > a > span,
+    .project-link:hover > a > svg {
+        color: var(--link-hover);
+        cursor: pointer;
+    }
+
+
+    .project-links > .project-link > a > svg {
+        font-size: 13px;
+    }
+
+
+    .project-card-right-side-container > img {
+        width: 180px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 499px) {
+        .project-card {
+            flex-direction: column-reverse;
+        }
+
+        .project-card-right-side-container > img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-card-left-side-container > p {
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            line-height: 1.35;
+        }
+    }
+
+
+</style>

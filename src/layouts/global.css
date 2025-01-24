@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+/*@import url(https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500);*/
+
+
+/* Reset: Normalize margins, paddings, and borders */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0 solid transparent;
+}
+
+/* Root Variables for Dark & Light Mode */
+:root {
+    --bg: #18181b;
+    --heading: #f5f5f7;
+    --subheading: rgb(212 212 216);
+
+
+
+
+    --text: #B0B0B8; /* */
+    --text1: #A1A1A6; /* 6.88 */
+    --text2: #9B9B9B; /*  */
+    --text3: rgb(150, 150, 150);  /* */
+    --text4: #86868b;  /* */
+    --text5: rgb(115 115 115);  /* */
+
+    --link: #2997ff;
+    --link-hover: #0056b3;
+
+
+    --light-bg: #ffffff;
+    --light-heading: #ffffff;
+    --light-text: #222222;
+
+    --error-light: #f44336 ; /* #B00020 */
+    --error-dark: #CF6679;
+
+    --primary: #6c757d;
+
+    --accent: #ff7f50; /* Muted orange */
+    --hover-accent: #ff9e72;
+}
+
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* globals.css */
+html, body {
+    overflow: hidden; /* Hide overflow initially */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+
+/* Global text styling for better legibility */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;  /* Web-safe and performant */
+    letter-spacing: 0.35px;
+    line-height: 1.5;
+    font-size: 16px;
+    background-color: var(--bg) ;
+    color: var(--text);
+    max-width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 0 1rem 0 1rem;
+    overflow: hidden;
+
+    /* Adding the enhanced blur reveal animation */
+    animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1)  forwards;
+}
+
+@keyframes blur-reveal {
+    0% {
+        filter: blur(6px);
+
+    }
+    20% {
+        filter: blur(8px);
+
+    }
+    40% {
+        filter: blur(6px);
+
+    }
+    60% {
+        filter: blur(4px);
+
+    }
+    80% {
+        filter: blur(2px);
+
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3.618rem;
+}
+
+h2 {
+    font-size: 2.236rem;
+}
+
+h3 {
+    font-size: 1.618rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    color: var(--subheading);
+    font-size: 1rem;
+}
+
+/* Body Text */
+p {
+    font-size: 15.5px
+}
+
+li{
+    font-size: 15.5px;
+    font-weight: 350;
+}
+
+/* Utility Classes */
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover);
+    cursor: pointer;
+}
+
+a:hover > svg {
+    color: var(--text);
+    transform: scale(1.3); /* Increase size by 10% */
+    transition: transform 350ms ease-in-out; /* Smooth transition */
+}
+
+
+/* Animations */
+button, a {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+
+
+/* Button Styles */
+button {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

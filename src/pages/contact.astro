@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout
+        title="Contact Us | Ajay Negi Portfolio"
+        description="Get in touch with us for more information or inquiries. We are here to help you.">
+    <section class="contact-container">
+        <div class="contact-information">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Please fill out the form below to reach out to us with your inquiries.</p>
+        </div>
+        <div class="contact-form">
+            <!-- Contact Form -->
+            <form action="/submit-form" method="POST" aria-labelledby="contact-form">
+                <fieldset>
+                    <!--<legend id="contact-form">Contact Form</legend>-->
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your Full Name"
+                                required
+                                aria-required="true"
+                        />
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your Email"
+                                required
+                                aria-required="true"
+                        />
+                    </div>
+                    <!-- Reason -->
+                    <div class="form-group">
+                        <label for="reason">Reason</label>
+                        <input
+                                type="text"
+                                id="reason"
+                                name="reason"
+                                placeholder="Reason for contact"
+                                required
+                                aria-required="true"
+                        />
+                    </div>
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Type your message here..."
+                                required
+                                aria-required="true"
+                        ></textarea>
+                    </div>
+
+                    <div class="submit-btn-container">
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <script>
+
+    const textarea = document.getElementById('message');
+    textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = `${this.scrollHeight}px`;
+    });
+    </script>
+
+</Layout>
+
+<style>
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact-information h1 {
+        color: var(--subheading);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .contact-information p {
+        color: var(--text);
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 1rem;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 700px;
+        //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    #contact-form {
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--subheading);
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        color: var(--text1);
+        margin-bottom: 0.5rem;
+    }
+
+    input, textarea {
+        background-color: var(--heading);
+        font-size: 16px;
+        min-width: 250px;
+        width: 100%;
+        max-width: 630px;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border: 1px solid var(--text2);
+        transition: border-color 0.3s ease;
+    }
+
+    textarea {
+        height: auto;
+        resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+        border-color: var(--link);
+        outline: none;
+    }
+
+
+    .submit-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        background-color: var(--link);
+        color: var(--light-bg);
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        color: var(--subheading);
+        background-color: var(--link-hover);
+        transition: border-color 0.3s ease;
+    }
+</style>
