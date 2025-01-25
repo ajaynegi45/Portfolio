@@ -4,6 +4,10 @@ dist/
 # generated types
 .astro/
 
+.firebase
+
+.vscode
+
 # dependencies
 node_modules/
 
