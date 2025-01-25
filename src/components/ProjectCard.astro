@@ -1,25 +1,50 @@
 ---
-import Banner from '../assets/Uttarakhand-Culture-Banner.png'
+import Banner from '../assets/img/Uttarakhand-Culture-Banner.png'
+import {Image} from 'astro:assets';
 ---
 
-<section class="project-card">
+<section class="project-card" aria-labelledby="uttarakhand-project">
+    <!-- Heading for the section (helps with screen reader navigation) -->
+    <h2 id="uttarakhand-project" class="sr-only">Uttarakhand Culture Project</h2>
+
     <div class="project-card-left-side-container">
         <h5 class="project-title">Uttarakhand Culture</h5>
-        <p>Digitally documents and celebrates the region's culture, history, and natural beauty, making it accessible to
-            the younger generation and preserving it for future generations.</p>
+        <p>
+            Digitally documents and celebrates the region's culture, history, and natural beauty, making it accessible
+            to the younger generation and preserving it for future generations.
+        </p>
 
         <div class="project-links">
+            <!-- Project Links -->
             <div class="project-link">
-                <a href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI">
+                <a href="https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="View the Uttarakhand Culture project on GitHub">
                     <span>Github</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-external-link">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
                 </a>
             </div>
 
             <div class="project-link">
-                <a href="https://uttarakhand-culture.vercel.app/">
+                <a href="https://uttarakhand-culture.vercel.app/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Visit the live Uttarakhand Culture project">
                     <span>Live Link</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-external-link">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -27,35 +52,61 @@ import Banner from '../assets/Uttarakhand-Culture-Banner.png'
     </div>
 
     <div class="project-card-right-side-container">
-        <img src={Banner.src} alt="Project Image">
+        <Image src={Banner} alt="Banner image showcasing Uttarakhand culture"/>
     </div>
 </section>
 
+<section class="project-card" aria-labelledby="vayu-project">
+    <!-- Heading for the section (helps with screen reader navigation) -->
+    <h2 id="vayu-project" class="sr-only">Vayu Web Server Project</h2>
 
-<section class="project-card">
     <div class="project-card-left-side-container">
         <h5 class="project-title">Vayu - Web Server</h5>
-        <p>Vayu is a high-performance Java web server built on Netty, designed for speed, scalability, and security.</p>
+        <p>
+            Vayu is a high-performance Java web server built on Netty, designed for speed, scalability, and security.
+        </p>
 
         <div class="project-links">
             <div class="project-link">
-                <a href="https://github.com/ajaynegi45/Vayu">
+                <a href="https://github.com/ajaynegi45/Vayu"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="View the Vayu web server project on GitHub">
                     <span>Github</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-external-link">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
                 </a>
             </div>
         </div>
 
-
     </div>
 
     <div class="project-card-right-side-container">
-        <img src={"https://opengraph.githubassets.com/98bf639f033a7ffde09d7bccce257be0ebc484b46b71827ae208c618bdff254e/ajaynegi45/Vayu"} alt="Project Image">
+        <img src="https://opengraph.githubassets.com/98bf639f033a7ffde09d7bccce257be0ebc484b46b71827ae208c618bdff254e/ajaynegi45/Vayu"
+             alt="Preview image for the Vayu web server project"/>
     </div>
 </section>
 
 
 <style>
+
+    .project-card > .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        clip-path: inset(50%);
+        overflow: hidden;
+    }
+
 
     .project-card {
         display: flex;
@@ -108,6 +159,7 @@ import Banner from '../assets/Uttarakhand-Culture-Banner.png'
         width: 100%;
         margin-top: 0.3rem;
     }
+
     .project-links > .project-link {
         display: flex;
         flex-direction: row;
@@ -127,7 +179,7 @@ import Banner from '../assets/Uttarakhand-Culture-Banner.png'
 
     .project-link > a {
         padding: 0.25rem 0.5rem;
-        color: rgb(212 212 212 / 1); // #D4D4D4FF
+        color: rgb(212 212 212 / 1); /* #D4D4D4FF */
     }
 
     .project-link:hover > a > span,
@@ -167,3 +219,4 @@ import Banner from '../assets/Uttarakhand-Culture-Banner.png'
 
 
 </style>
+

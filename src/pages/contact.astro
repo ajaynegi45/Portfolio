@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 <Layout
         title="Contact Us | Ajay Negi Portfolio"
-        description="Get in touch with us for more information or inquiries. We are here to help you.">
+        description="Get in touch with Ajay Negi for inquiries, collaborations, or feedback. We are here to help you with your needs. Reach out to us through our simple contact form.">
     <section class="contact-container">
         <div class="contact-information">
             <h1>Contact Us</h1>
@@ -13,58 +13,90 @@ import Layout from "../layouts/Layout.astro";
             <!-- Contact Form -->
             <form action="/submit-form" method="POST" aria-labelledby="contact-form">
                 <fieldset>
-                    <!--<legend id="contact-form">Contact Form</legend>-->
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your Full Name"
-                                required
-                                aria-required="true"
-                        />
+                        <div class="input-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="lucide-icon lucide lucide-user" aria-hidden="true">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your Full Name"
+                                    required
+                                    aria-required="true"
+                                    aria-label="Enter your full name"
+                            />
+                        </div>
                     </div>
                     <!-- Email -->
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your Email"
-                                required
-                                aria-required="true"
-                        />
+                        <div class="input-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="lucide-icon lucide-mail" aria-hidden="true">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    required
+                                    aria-required="true"
+                                    aria-label="Enter your email address"
+                            />
+                        </div>
                     </div>
                     <!-- Reason -->
                     <div class="form-group">
                         <label for="reason">Reason</label>
-                        <input
-                                type="text"
-                                id="reason"
-                                name="reason"
-                                placeholder="Reason for contact"
-                                required
-                                aria-required="true"
-                        />
+                        <div class="input-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="lucide-icon lucide-unplug" aria-hidden="true">
+                                <path d="m19 5 3-3"/>
+                                <path d="m2 22 3-3"/>
+                                <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
+                                <path d="M7.5 13.5 10 11"/>
+                                <path d="M10.5 16.5 13 14"/>
+                                <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/>
+                            </svg>
+                            <input
+                                    type="text"
+                                    id="reason"
+                                    name="reason"
+                                    placeholder="Reason for contact"
+                                    required
+                                    aria-required="true"
+                                    aria-label="State the reason for contacting"
+                            />
+                        </div>
                     </div>
                     <!-- Message -->
                     <div class="form-group">
                         <label for="message">Your Message</label>
+                        <!--placeholder="Type your message here..."-->
                         <textarea
                                 id="message"
                                 name="message"
-                                placeholder="Type your message here..."
+                                placeholder="Currently work on it - Soon it will start..."
                                 required
                                 aria-required="true"
+                                aria-label="Write your message here"
                         ></textarea>
                     </div>
 
                     <div class="submit-btn-container">
-                    <!-- Submit Button -->
-                    <button type="submit" class="submit-btn">Send Message</button>
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </div>
                 </fieldset>
             </form>
@@ -72,18 +104,16 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <script>
-
-    const textarea = document.getElementById('message');
-    textarea.addEventListener('input', function () {
-        this.style.height = 'auto';
-        this.style.height = `${this.scrollHeight}px`;
-    });
+        const textarea = document.getElementById('message');
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = `${this.scrollHeight}px`;
+        });
     </script>
-
 </Layout>
 
-<style>
 
+<style>
     .contact-container {
         display: flex;
         flex-direction: column;
@@ -110,60 +140,83 @@ import Layout from "../layouts/Layout.astro";
         border-radius: 10px;
         width: 100%;
         max-width: 700px;
-        //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
-    }
-
-    #contact-form {
-        text-align: center;
-        font-size: 1.5rem;
-        color: var(--subheading);
-        margin-bottom: 1rem;
     }
 
     .form-group {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         margin-bottom: 1.5rem;
+        position: relative;
     }
 
     .form-group label {
-        color: var(--text1);
+        color: var(--text);
         margin-bottom: 0.5rem;
     }
 
-    input, textarea {
-        background-color: var(--heading);
-        font-size: 16px;
-        min-width: 250px;
-        width: 100%;
-        max-width: 630px;
-        padding: 0.75rem;
-        border-radius: 5px;
-        border: 1px solid var(--text2);
-        transition: border-color 0.3s ease;
+    .input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
     }
 
+    .lucide-icon {
+        width: 1.3rem;
+        height: 1.3rem;
+
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        stroke: var(--subheading);
+    }
+
+    input, textarea {
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        color: var(--subheading);
+        background-color: transparent;
+        width: 100%;
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Padding for icon */
+        border-radius: 8px;
+        border: 1.5px solid var(--card-border);
+        transition: border-color 0.3s ease;
+
+        font-size: 16px;
+    }
+
+
     textarea {
+        font-size: 15px;
+        padding: 0.75rem;
         height: auto;
         resize: vertical;
     }
 
-    input:focus, textarea:focus {
-        border-color: var(--link);
+    input:hover, textarea:hover {
+        border: 1px solid var(--link);
         outline: none;
+        background-color: #ffffff0d;
+        cursor: pointer;
     }
 
+    input:focus, textarea:focus {
+        border: 1px solid var(--link);
+        outline: none;
+        background-color: #ffffff0d;
+    }
 
     .submit-btn {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-
-        background-color: var(--link);
-        color: var(--light-bg);
+        background-color: var(--link-hover);
+        color: var(--text);
         padding: 0.75rem 1.5rem;
         border: none;
         border-radius: 5px;
@@ -172,8 +225,8 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .submit-btn:hover {
-        color: var(--subheading);
-        background-color: var(--link-hover);
-        transition: border-color 0.3s ease;
+
+        color: var(--light-text);
+        transition: background-color 0.3s ease;
     }
 </style>

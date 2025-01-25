@@ -1,16 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProfileImage from "../assets/img/profilephoto.png";
-import WorkExperience from '../components/WorkExperience.astro';
-import Project from "../components/Project.astro";
-// import Resume from '../assets/AjayNegiResume.pdf';
 import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout title="Ajay Negi | Software Engineer Portfolio"
-        description="Ajay Negi - Software Engineer | Building scalable solutions with clean, maintainable code.">
+        description="Hi, I'm Ajay Negi, a Software Engineer dedicated to solving complex problems and building scalable, high-performance software. Explore my journey, projects, and innovative solutions that make a real impact.">
 
     <!-- Main Section -->
     <main>
@@ -32,7 +29,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
                         <!--<a href="mailto:ajaynegi.dev@gmail.com" aria-label="Send an email to Ajay Negi">ajaynegi.dev@gmail.com</a>-->
                         <a href="/contact" aria-label="Contact Page">Contact me</a>
-
 
 
                     </p>
@@ -89,30 +85,51 @@ import ProjectCard from "../components/ProjectCard.astro";
         </section>
 
 
-        <!-- Work Experience Section -->
-        <!--<WorkExperience/>-->
+        <div class="section-divider" role="separator" aria-labelledby="divider-label">
+            <div></div>
+        </div>
 
+
+        <!-- Work Experience Section -->
         <Experience/>
 
-        <section class="projects">
-            <div class="projects-header">
-                <h4>Projects</h4>
-                <a href="https://github.com/ajaynegi45?tab=repositories" class="link">
-                    <span>More</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+
+        <div class="section-divider" role="separator" aria-labelledby="divider-label">
+            <div></div>
+        </div>
+
+
+        <!-- Project Section -->
+        <section class="projects" aria-labelledby="projects-section-heading">
+            <header class="projects-header">
+                <h4 id="projects-section-heading">Projects</h4>
+                <a href="https://github.com/ajaynegi45?tab=repositories" class="link"
+                   title="View all projects on Ajay Negi's GitHub repository page">
+                    <span>More Projects</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-external-link">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14 21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
                 </a>
-            </div>
+            </header>
+
             <div class="projects-section">
                 <ProjectCard/>
             </div>
         </section>
 
 
-        <section class="substack-newsletter-section">
-            <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;" frameborder="0" scrolling="no"></iframe>
-        </section>
+        <!--<section class="substack-newsletter-section">-->
+        <!--    <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;"-->
+        <!--            frameborder="0" scrolling="no"></iframe>-->
+        <!--</section>-->
 
-
+        <!--<section class="sperator-divider-container">-->
+        <!--    <Image src={SpiralDivider} alt="Sperator Divider" />-->
+        <!--</section>-->
 
 
     </main>
@@ -138,9 +155,44 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <style>
 
+    .section-divider {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .section-divider > div {
+        position: relative; /* Position the inner div for the pseudo-element to be placed correctly */
+        width: 100%; /* The width should be full of its parent container */
+        max-width: 400px;
+    }
+
+    .section-divider > div::before {
+        content: "";
+        position: absolute;
+        top: 50%; /* Position the line vertically centered */
+        left: 0;
+        right: 0;
+        height: 0.1rem; /* Height of the divider line */
+        background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg)); /* Gradient border */
+        z-index: -1; /* Ensure the pseudo-element stays behind the content */
+        transform: translateY(-50%); /* Correct the vertical centering of the divider line */
+    }
+
+    .section-divider[role="separator"] {
+        border: none;
+        outline: none;
+    }
+
+
     main {
         margin-bottom: 5rem;
     }
+
 
     .substack-newsletter-section {
         display: flex;
@@ -170,8 +222,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
         }
     }
-
-
 
 
     .projects-section {
@@ -249,7 +299,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
     .hero-right {
         width: 100%;
-        //display: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -257,7 +306,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 
     .hero-right img.profile-image {
         display: none;
-
         width: 150px;
         height: auto;
         border-radius: 50%;
@@ -274,17 +322,17 @@ import ProjectCard from "../components/ProjectCard.astro";
     }
 
 
-
-
     .projects-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+
     .projects-header > h4 {
         margin-bottom: 0.5rem;
     }
+
     .projects-header > a {
         font-size: 14px;
         display: flex;
@@ -294,6 +342,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         text-decoration: none;
         gap: 0.3rem;
     }
+
     .projects-header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;

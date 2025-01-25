@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
-
-/*@import url(https://fonts.googleapis.com/css?family=Fira+Sans:200,400,500);*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap');
 
 
 /* Reset: Normalize margins, paddings, and borders */
@@ -20,24 +18,25 @@
     --subheading: rgb(212 212 216);
 
 
-
-
     --text: #B0B0B8; /* */
     --text1: #A1A1A6; /* 6.88 */
     --text2: #9B9B9B; /*  */
-    --text3: rgb(150, 150, 150);  /* */
-    --text4: #86868b;  /* */
-    --text5: rgb(115 115 115);  /* */
+    --text3: rgb(150, 150, 150); /* */
+    --text4: #86868b; /* */
+    --text5: rgb(115 115 115); /* */
 
     --link: #2997ff;
     --link-hover: #0056b3;
 
+    --card-border: rgb(38 38 38/1);
+
+    --ring-color: #4b4b4b;
 
     --light-bg: #ffffff;
     --light-heading: #ffffff;
     --light-text: #222222;
 
-    --error-light: #f44336 ; /* #B00020 */
+    --error-light: #f44336; /* #B00020 */
     --error-dark: #CF6679;
 
     --primary: #6c757d;
@@ -70,11 +69,11 @@ html {
 
 
 body {
-    font-family: 'Inter', sans-serif;  /* Web-safe and performant */
+    font-family: 'Inter', sans-serif; /* Web-safe and performant */
     letter-spacing: 0.35px;
     line-height: 1.5;
     font-size: 16px;
-    background-color: var(--bg) ;
+    background-color: var(--bg);
     color: var(--text);
     max-width: 700px;
     height: 100%;
@@ -84,7 +83,7 @@ body {
     overflow: hidden;
 
     /* Adding the enhanced blur reveal animation */
-    animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1)  forwards;
+    animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes blur-reveal {
@@ -146,7 +145,7 @@ p {
     font-size: 15.5px
 }
 
-li{
+li {
     font-size: 15.5px;
     font-weight: 350;
 }
@@ -188,7 +187,6 @@ a:hover > svg {
 button, a {
     transition: color 0.3s, background-color 0.3s;
 }
-
 
 
 /* Button Styles */

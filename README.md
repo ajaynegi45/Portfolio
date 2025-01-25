@@ -46,3 +46,17 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+[//]: # (For new device just 1st install nodejs then install the firebase using this command "npm install -g firebase-tools" and then login into firebase account using your gmail Id the push changes to firebase.)
+
+
+[//]: # (firebase deploy --only hosting:ajaynegi)
+
+[//]: # (if it's not run or show any kind of error then...)
+
+[//]: # (1. firebase projects:list)
+
+[//]: # (now get the project id from the list and then paste it into the <project-id>    eg: firebase use abc)
+[//]: # (2. firebase use <project-id>)
+[//]: # (3. now try to deploy it)

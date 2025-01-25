@@ -1,26 +1,35 @@
 ---
 
 ---
-
-<section class="work-experience">
-    <div class="header">
-        <h4>Work Experience</h4>
-        <a href="https://www.linkedin.com/in/ajaynegi45/details/experience/" class="link">
-            <span>More</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+<section class="work-experience" aria-labelledby="work-experience-heading">
+    <header class="header">
+        <h4 id="work-experience-heading">Work Experience</h4>
+        <a href="https://www.linkedin.com/in/ajaynegi45/details/experience/" class="link" role="link"
+           title="View Ajay Negi's complete work experience on LinkedIn">
+            <span>More Exp..</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-external-link">
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            </svg>
         </a>
-    </div>
+    </header>
 
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-item-content">
-                <div class="header-info">
-                    <p>Nov 2022 - Jan 2025</p>
+                <div class="header-info" role="article">
+                    <p> Nov 2022 - Jan 2025</p>
                     <h5>Software Developer Intern</h5>
                 </div>
                 <p class="company">Infosys</p>
                 <p class="achievements">
-                    Accomplished a 90% improvement in reliability and increased user engagement for the ShieldMe platform by implementing robust logging, detailed error handling, and adding key features such as authentication, geolocation tracking, journaling, and SOS alerts with real-time notifications, all built using Spring Boot, MongoDB, and React.
+                    Accomplished a 90% improvement in reliability and increased user engagement for the ShieldMe
+                    platform by implementing robust logging, detailed error handling, and adding key features such as
+                    authentication, geolocation tracking, journaling, and SOS alerts with real-time notifications, all
+                    built using Spring Boot, MongoDB, and React.
                 </p>
             </div>
         </div>
@@ -54,6 +63,7 @@
         text-decoration: none;
         gap: 0.3rem;
     }
+
     .header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
@@ -63,19 +73,23 @@
         margin-top: 0.7rem;
 
     }
+
     .header-info > p {
         font-size: 14px;
-        color:  var(--text4);
+        color: var(--text4);
         margin-bottom: 0.7rem;
     }
-    .achievements{
+
+    .achievements {
+        font-weight: 350;
+        letter-spacing: 0.35px;
+        line-height: 1.35;
         color: var(--text4);
     }
 
+
     .company {
     }
-
-
 
 
     .timeline {
@@ -88,7 +102,7 @@
         position: relative;
 
         border-left: 1.5px solid transparent; /* Default solid border to use gradient on */
-        border-image: linear-gradient(to bottom ,  var(--primary) , var(--bg) ); /* Gradient from --primary to --bg */
+        border-image: linear-gradient(to bottom, var(--primary), var(--bg)); /* Gradient from --primary to --bg */
         border-image-slice: 1; /* Ensures the border spans the entire length */
         transition: border-image 0.3s ease; /* Smooth transition for the border */
 
