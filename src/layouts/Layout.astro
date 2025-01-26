@@ -5,12 +5,12 @@ import Footer from "../components/Footer.astro";
 const {title, description, image} = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate="none" >
 <head>
     <BaseHead title={title} description={description} image={image}/>
 </head>
 
-<body>
+<body transition:animate="initial" >
 <Navbar/>
 
 

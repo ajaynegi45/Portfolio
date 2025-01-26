@@ -7,6 +7,8 @@ interface Props {
 }
 const {title, description, image = '/AjayNegiPortfolioSEOBanner.avif'} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!-- Global Metadata -->
@@ -14,6 +16,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name='viewport' content='width=device-width,initial-scale=1'/>
 <link rel='icon' type="image/svg+xml" href={'/AjayNegiPortfolioFavIcon.svg'} sizes="60x67"/>
 <meta name='generator' content={Astro.generator}/>
+
+<!-- SiteMap XML-->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+
+<!-- Font preloads -->
+<!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="preload" as="font">-->
+
 
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL}/>
@@ -38,3 +50,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property='twitter:title' content={title}/>
 <meta property='twitter:description' content={description}/>
 <meta property='twitter:image' content={new URL(image, Astro.url)}/>
+
+<ClientRouter />

@@ -89,7 +89,9 @@ body {
     overflow: hidden;
 
     /* Adding the enhanced blur reveal animation */
-    animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /*animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
+    /*animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
+
 }
 
 @keyframes blur-reveal {
@@ -200,7 +202,6 @@ button, a {
 /* Button Styles */
 button {
     background-color: var(--primary);
-    color: var(--text-light);
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 4px;
@@ -208,3 +209,27 @@ button {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+
+
+
+/*'Gloria Hallelujah', cursive*/ 
+
+/*from-\[\#a6d7f7\] {*/
+/*    --tw-gradient-from: #a6d7f7 var(--tw-gradient-from-position);*/
+/*    --tw-gradient-to: rgba(166, 215, 247, 0) var(--tw-gradient-to-position);*/
+/*    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);*/
+/*}*/
+
+
+/*.bg-gradient-to-b {*/
+/*    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));*/
+/*}*/
+
+
+/*.bg-mist {*/
+/*    --tw-bg-opacity: 1;*/
+/*    background-color: #edeff4;*/
+/*    background-color: rgb(237 239 244 / var(--tw-bg-opacity, 1));*/
+/*}*/
+
+/*class="bg-[length:100%_280px] bg-fixed bg-gradient-to-b bg-mist bg-no-repeat flex flex-col from-[#a6d7f7] min-h-screen min-w-[300px]"*/

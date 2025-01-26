@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import ProfileImage from "../assets/img/profilephoto.avif";
+import ProfileImage from "../assets/img/profilephoto.avif";
 import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+const profileImage = "https://ajaynegi.web.app/"+ProfileImage.src;
 ---
 
-<Layout title="Ajay Negi | Software Engineer Portfolio"
+<Layout title="Ajay Negi | Software Engineer"
         description="Hi, I'm Ajay Negi, a Software Engineer dedicated to solving complex problems and building scalable, high-performance software. Explore my journey, projects, and innovative solutions that make a real impact.">
 
     <!-- Main Section -->
@@ -63,7 +64,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 		S29.0059509,37.5872993,28.4444485,37.5872993z"/>
                         </g>
                     </svg>
-                        <a href={Resume} download="Ajay_Negi_Resume.pdf"
+                        <a href={Resume}
                            class="download-button" aria-label="Download Ajay Negi's Resume">Resume
                         </a>
                     </p>
@@ -147,7 +148,7 @@ import ProjectCard from "../components/ProjectCard.astro";
                 "https://github.com/ajaynegi45",
                 "https://x.com/ajaynegi45"
             ],
-            "image": "https://ajaynegi.web.app/profilephoto.png"
+            "image": "{{profileImage}}"
         }
     </script>
 
