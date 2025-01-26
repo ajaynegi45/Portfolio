@@ -1,9 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import JavaArchitectureBanner from "../assets/svg/Java-Architecture-Seo-Banner.svg";
-import BlogsBanner from "../assets/img/Banner.png";
+import BlogsBanner from "../assets/img/Banner.avif";
 import Divider from "../assets/svg/Vector 3.svg";
-import {Image} from 'astro:assets';
 ---
 
 <Layout
@@ -34,7 +33,7 @@ import {Image} from 'astro:assets';
 
         <!-- Banner Section -->
         <div class="blogs-Banner">
-            <Image src={BlogsBanner} alt="Codies Coder Blog Banner showcasing software engineering topics"/>
+            <img src={BlogsBanner.src} alt="Codies Coder Blog Banner showcasing software engineering topics"/>
         </div>
 
         <!-- Search Box -->
@@ -83,13 +82,13 @@ import {Image} from 'astro:assets';
                 </div>
             </div>
             <div class="blog-post-right-side-container">
-                <Image src={JavaArchitectureBanner} alt="Diagram illustrating Java Architecture"/>
+                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"/>
             </div>
         </section>
     </section>
 
     <section class="sperator-divider-container">
-        <Image src={Divider} alt="Sperator Divider"/>
+        <img src={Divider.src} alt="Sperator Divider"/>
     </section>
 
     <!-- Newsletter Subscription Section -->

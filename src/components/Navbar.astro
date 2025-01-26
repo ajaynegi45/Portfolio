@@ -1,6 +1,5 @@
 ---
-import Navicon from "../assets/img/profilephoto.png";
-import {Image} from 'astro:assets';
+import Navicon from "../assets/img/profilephoto.avif";
 ---
 
 <header id='site-header'>
@@ -10,37 +9,40 @@ import {Image} from 'astro:assets';
         <div class="navbar-left">
             <!-- Navbar Icon -->
             <a href="/" title="Home" aria-label="Go to homepage">
-                <Image src={Navicon} alt="Ajay's profile picture" class="navbar-photo"/>
+                <img src={Navicon.src} alt="Ajay's profile picture" class="navbar-photo" decoding="async" loading="eager" role="img" fetchpriority="high"/>
             </a>
         </div>
 
         <div class="navbar-right">
 
             <ul class="navbar-links" role="menu">
-
                 <!-- Navigation Links -->
-                <li><a href="/blog" class="navbar-link" role="menuitem" aria-label="Go to blog">Blog</a></li>
-                <li><a href="/contact" class="navbar-link" role="menuitem"
+                <li role="menuitem" ><a href="/blog" class="navbar-link" role="link" aria-label="Go to blog">Blog</a></li>
+                <li role="menuitem" ><a href="/contact" class="navbar-link" role="link"
                        aria-label="Go to contact section">Contact</a></li>
-
-                <!--Theme Toggle Button -->
-                <!--<li class="theme-toggle" role="menuitem">-->
-                <!--    <button id="themeToggle" aria-label="Toggle theme" aria-haspopup="true" aria-expanded="false">-->
-                <!--        <span id="themeIcon" class="icon" aria-hidden="true">🌙</span>-->
-                <!--    </button>-->
-                <!--    <ul class="theme-options" role="menu" aria-hidden="true">-->
-                <!--        <li>-->
-                <!--            <button class="theme-option" data-theme="light" aria-label="Switch to Light mode">🌞 Light</button>-->
-                <!--        </li>-->
-                <!--        <li>-->
-                <!--            <button class="theme-option" data-theme="dark" aria-label="Switch to Dark mode">🌙 Dark</button>-->
-                <!--        </li>-->
-                <!--        <li>-->
-                <!--            <button class="theme-option" data-theme="system" aria-label="Switch to System default">🖥️ System</button>-->
-                <!--        </li>-->
-                <!--    </ul>-->
-                <!--</li>-->
             </ul>
+
+
+
+            <!--Theme Toggle Button -->
+            <!--<li class="theme-toggle" role="menuitem">-->
+            <!--    <button id="themeToggle" aria-label="Toggle theme" aria-haspopup="true" aria-expanded="false">-->
+            <!--        <span id="themeIcon" class="icon" aria-hidden="true">🌙</span>-->
+            <!--    </button>-->
+            <!--    <ul class="theme-options" role="menu" aria-hidden="true">-->
+            <!--        <li>-->
+            <!--            <button class="theme-option" data-theme="light" aria-label="Switch to Light mode">🌞 Light</button>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <button class="theme-option" data-theme="dark" aria-label="Switch to Dark mode">🌙 Dark</button>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <button class="theme-option" data-theme="system" aria-label="Switch to System default">🖥️ System</button>-->
+            <!--        </li>-->
+            <!--    </ul>-->
+            <!--</li>-->
+
+
         </div>
 
 

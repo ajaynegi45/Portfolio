@@ -1,6 +1,6 @@
 ---
-import Banner from '../assets/img/Uttarakhand-Culture-Banner.png'
-import {Image} from 'astro:assets';
+import Banner from '../assets/img/Uttarakhand-Culture-Banner.avif'
+import VayuBanner from '../assets/img/Vayu-project-banner.avif';
 ---
 
 <section class="project-card" aria-labelledby="uttarakhand-project">
@@ -52,7 +52,7 @@ import {Image} from 'astro:assets';
     </div>
 
     <div class="project-card-right-side-container">
-        <Image src={Banner} alt="Banner image showcasing Uttarakhand culture"/>
+        <img src={Banner.src} alt="Banner image showcasing Uttarakhand culture" width="180" height="102" decoding="async" loading="eager" role="img" fetchpriority="auto"/>
     </div>
 </section>
 
@@ -87,7 +87,7 @@ import {Image} from 'astro:assets';
     </div>
 
     <div class="project-card-right-side-container">
-        <img src="https://opengraph.githubassets.com/98bf639f033a7ffde09d7bccce257be0ebc484b46b71827ae208c618bdff254e/ajaynegi45/Vayu"
+        <img src={VayuBanner.src}  decoding="async" loading="eager" role="img" width="180" height="90" fetchpriority="auto"
              alt="Preview image for the Vayu web server project"/>
     </div>
 </section>

@@ -64,12 +64,18 @@ html, body {
 /* Global text styling for better legibility */
 html {
     -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
+    /* text-rendering: optimizeLegibility; */
+
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 
 body {
     font-family: 'Inter', sans-serif; /* Web-safe and performant */
+    font-optical-sizing: auto;
     letter-spacing: 0.35px;
     line-height: 1.5;
     font-size: 16px;
@@ -142,7 +148,9 @@ h5 {
 
 /* Body Text */
 p {
-    font-size: 15.5px
+    font-size: 15.5px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 li {
