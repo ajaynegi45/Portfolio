@@ -87,15 +87,19 @@ import {Code} from 'astro:components';
         </section>
 
 
+        <!-- First divider with a label -->
+        <div id="divider-label-1" class="sr-only">First Section Divider</div>
         <div class="section-divider" role="separator" aria-labelledby="divider-label-1">
             <div></div>
         </div>
 
 
         <!-- Work Experience Section -->
-        <Experience/>
+        <Experience />
 
 
+        <!-- Second divider with a label -->
+        <div id="divider-label-2" class="sr-only">Second Section Divider</div>
         <div class="section-divider" role="separator" aria-labelledby="divider-label-2">
             <div></div>
         </div>
@@ -352,6 +356,10 @@ import {Code} from 'astro:components';
     .projects-header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
+    }
+
+    .sr-only {
+        display: none;
     }
 
 </style>
