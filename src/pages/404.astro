@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+        title="Page Not Found - Ajay Negi | Software Engineer"
+        description="Oops! The page you’re looking for doesn’t exist. But don't worry, you can always return to the homepage.">
+    <div class="container">
+        <div class="error-code">404</div>
+        <p class="message">Oops! The page you're looking for could not be found.</p>
+        <p class="message">
+            <a href="/">Go back to the homepage</a>
+        </p>
+    </div>
+</Layout>
+
+<style>
+    .container {
+        text-align: center;
+        height: 74vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error-code {
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--heading);
+    }
+
+    .message {
+        margin-top: 10px;
+    }
+
+    .message > a {
+        margin-top: 10px;
+    }
+</style>

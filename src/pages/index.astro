@@ -4,7 +4,8 @@ import ProfileImage from "../assets/img/profilephoto.avif";
 import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-const profileImage = "https://ajaynegi.web.app/"+ProfileImage.src;
+const profileImage = "https://ajaynegi.web.app/" + ProfileImage.src;
+import {Code} from 'astro:components';
 ---
 
 <Layout title="Ajay Negi | Software Engineer"
@@ -131,6 +132,10 @@ const profileImage = "https://ajaynegi.web.app/"+ProfileImage.src;
         <!--<section class="sperator-divider-container">-->
         <!--    <Image src={SpiralDivider} alt="Sperator Divider" />-->
         <!--</section>-->
+
+
+        <!-- Syntax highlight some JavaScript code. -->
+        <!--  <Code code={`import java.awt.Rectangle;`} lang="java" theme="vitesse-dark"  />  -->
 
 
     </main>
