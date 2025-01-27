@@ -4,7 +4,6 @@ import JavaArchitectureBanner from "../assets/svg/Java-Architecture-Seo-Banner.s
 import BlogsBanner from "../assets/img/Banner.avif";
 import Divider from "../assets/svg/Vector 3.svg";
 ---
-
 <Layout
         title="Codies Coder - Software Engineering Insights By Ajay Negi"
         description="Each month, we dive deep into a single topic in software engineering, breaking it down in a way that’s easy to grasp and fun to explore. Whether you're just starting out or already a pro, you'll always walk away with something new to think about.">
@@ -93,33 +92,26 @@ import Divider from "../assets/svg/Vector 3.svg";
 
     <!-- Newsletter Subscription Section -->
     <section class="substack-newsletter-section">
-        <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;"
-                frameborder="0" scrolling="no" title="Codies Coder Newsletter Subscription"></iframe>
+        <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;" title="Codies Coder Newsletter Subscription"></iframe>
     </section>
-
 </Layout>
 
 
 <style>
-
     .sperator-divider-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
     .sperator-divider-container > img {
         margin-left: 11.55rem;
         width: auto;
         height: 10rem;
     }
-
-
     .search-box-container {
         position: relative;
     }
-
     .search-input {
         font-family: 'Inter', sans-serif;
         font-weight: 300;
@@ -134,27 +126,22 @@ import Divider from "../assets/svg/Vector 3.svg";
         outline: none;
         transition: all 0.2s ease-in-out;
     }
-
     .search-input::placeholder {
         color: rgb(157, 163, 174);
     }
-
     .search-input:focus::placeholder {
         color: var(--heading);
     }
-
     .search-input:focus {
         border-color: var(--text5);
         background-color: #ffffff0d;
     }
-
     .lucide-icon {
         position: absolute;
         left: 12px;
         top: 50%;
         transform: translateY(-50%);
     }
-
     /* Ensure the cross icon is white and styled correctly */
     .search-input::-webkit-search-cancel-button {
         color: var(--heading); /* Set cross icon color to white */
@@ -163,8 +150,6 @@ import Divider from "../assets/svg/Vector 3.svg";
         height: 20px;
         cursor: pointer;
     }
-
-
     .substack-newsletter-section {
         display: flex;
         flex-direction: column;
@@ -179,13 +164,11 @@ import Divider from "../assets/svg/Vector 3.svg";
         overflow: hidden;
         margin-top: 0.3rem;
     }
-
     .substack-newsletter-section > iframe {
         width: 480px;
         height: 320px;
         overflow: hidden;
     }
-
     @media (max-width: 499px) {
         .sperator-divider-container > img {
             margin-left: 9.5rem;
@@ -193,17 +176,12 @@ import Divider from "../assets/svg/Vector 3.svg";
             height: 8rem;
         }
     }
-
     @media (max-width: 499px) {
         .substack-newsletter-section > iframe {
             width: 90vw;
             height: 100vw;
         }
-
-
     }
-
-
     .blogs-Banner {
         width: 100%;
         height: auto;
@@ -212,7 +190,6 @@ import Divider from "../assets/svg/Vector 3.svg";
         border-radius: 5px;
         overflow: hidden;
     }
-
     .blogs-Banner > img {
         padding: 0;
         margin: 0;
@@ -220,7 +197,6 @@ import Divider from "../assets/svg/Vector 3.svg";
         height: auto;
         border-radius: 5px;
     }
-
     .blog-post-container {
         margin-top: 2rem;
         display: flex;
@@ -233,20 +209,17 @@ import Divider from "../assets/svg/Vector 3.svg";
         border: 1px solid rgb(38 38 38/1);
         transition: border 0.3s ease-in-out;
     }
-
     .blog-post-container:hover {
         border: 1px solid var(--text5);
         cursor: pointer;
         background-color: #ffffff0d;
     }
-
     .blog-post-container > .blog-post-left-side-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 0.3rem;
     }
-
     .blog-post-left-side-container > p {
         font-size: 14px;
         font-weight: 330;
@@ -254,13 +227,11 @@ import Divider from "../assets/svg/Vector 3.svg";
         line-height: 1.35;
         color: var(--text4);
     }
-
     .blog-post-right-side-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
     .blog-post-links {
         display: flex;
         flex-direction: row;
@@ -270,7 +241,6 @@ import Divider from "../assets/svg/Vector 3.svg";
         width: 100%;
         margin-top: 0.3rem;
     }
-
     .blog-post-links > .post-link {
         display: flex;
         flex-direction: row;
@@ -283,56 +253,45 @@ import Divider from "../assets/svg/Vector 3.svg";
         border: 1px solid rgb(38 38 38 / 2);
         color: var(--text5);
     }
-
     .post-link > a {
         padding: 0.25rem 0.5rem;
         color: rgb(212 212 212 / 1); /* #D4D4D4FF */
     }
-
     .post-link:hover > a > span,
     .post-link:hover > a > svg {
         color: var(--link-hover);
         cursor: pointer;
     }
-
     .blog-post-links > .post-link > a > svg {
         font-size: 13px;
     }
-
     .blog-post-right-side-container {
         /* border: 1px solid var(--text5); */
     }
-
     .blog-post-right-side-container > img {
         width: 200px;
         height: auto;
         border-radius: 5px;
     }
-
     @media (max-width: 599px) {
         .blog-post-container {
             flex-direction: column-reverse;
         }
-
         .blog-post-right-side-container > img {
             width: 100%;
             height: auto;
         }
-
         .blog-post-left-side-container > p {
             font-weight: 400;
             letter-spacing: 0.3px;
             line-height: 1.35;
         }
     }
-
-
     .breadcrumb-nav {
         padding: 0.5rem 0;
         width: 100%;
         border-bottom: 1px solid rgb(38 38 38/1);
     }
-
     .breadcrumb-list {
         display: flex;
         flex-direction: row;
@@ -344,32 +303,25 @@ import Divider from "../assets/svg/Vector 3.svg";
         list-style-type: none;
         color: #ffffffb3;
     }
-
     .breadcrumb-link > svg {
         width: 1.1rem;
         height: auto;
     }
-
     .breadcrumb-item {
         display: flex;
         align-items: center;
     }
-
     .breadcrumb-link {
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
     }
-
     .breadcrumb-link:hover {
         color: rgba(226, 232, 240, 1);
     }
-
     .breadcrumb-divider {
         color: #fff6;
     }
-
     .breadcrumb-item span {
         color: rgba(38, 38, 38, 0.7);
     }
-
 </style>

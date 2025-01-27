@@ -104,11 +104,13 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <script>
-        const textarea = document.getElementById('message');
-        textarea.addEventListener('input', function () {
-            this.style.height = 'auto';
-            this.style.height = `${this.scrollHeight}px`;
-        });
+        const textarea = document.getElementById('message') as HTMLElement | null;
+        if (textarea) {
+            textarea.addEventListener('input', function () {
+                this.style.height = 'auto';
+                this.style.height = `${this.scrollHeight}px`;
+            });
+        }
     </script>
 </Layout>
 
@@ -121,20 +123,17 @@ import Layout from "../layouts/Layout.astro";
         align-items: center;
         gap: 2rem;
     }
-
     .contact-information h1 {
         color: var(--subheading);
         font-size: 2.5rem;
         margin-bottom: 0.5rem;
         text-align: center;
     }
-
     .contact-information p {
         color: var(--text);
         max-width: 600px;
         text-align: center;
     }
-
     .contact-form {
         padding: 1rem;
         border-radius: 10px;
@@ -142,7 +141,6 @@ import Layout from "../layouts/Layout.astro";
         max-width: 700px;
         transition: transform 0.3s ease;
     }
-
     .form-group {
         display: flex;
         flex-direction: column;
@@ -150,12 +148,10 @@ import Layout from "../layouts/Layout.astro";
         margin-bottom: 1.5rem;
         position: relative;
     }
-
     .form-group label {
         color: var(--text);
         margin-bottom: 0.5rem;
     }
-
     .input-wrapper {
         position: relative;
         display: flex;
@@ -163,53 +159,44 @@ import Layout from "../layouts/Layout.astro";
         justify-content: flex-start;
         align-items: center;
     }
-
     .lucide-icon {
         width: 1.3rem;
         height: 1.3rem;
-
         position: absolute;
         left: 10px;
         top: 50%;
         transform: translateY(-50%);
         stroke: var(--subheading);
     }
-
     input, textarea {
         font-family: 'Inter', sans-serif;
         font-weight: 300;
         color: var(--subheading);
         background-color: transparent;
         width: 100%;
-        padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Padding for icon */
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
         border-radius: 8px;
         border: 1.5px solid var(--card-border);
         transition: border-color 0.3s ease;
-
         font-size: 16px;
     }
-
-
     textarea {
         font-size: 15px;
         padding: 0.75rem;
         height: auto;
         resize: vertical;
     }
-
     input:hover, textarea:hover {
         border: 1px solid var(--link);
         outline: none;
         background-color: #ffffff0d;
         cursor: pointer;
     }
-
     input:focus, textarea:focus {
         border: 1px solid var(--link);
         outline: none;
         background-color: #ffffff0d;
     }
-
     .submit-btn {
         display: flex;
         justify-content: center;
@@ -223,9 +210,7 @@ import Layout from "../layouts/Layout.astro";
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-
     .submit-btn:hover {
-
         color: var(--light-text);
         transition: background-color 0.3s ease;
     }

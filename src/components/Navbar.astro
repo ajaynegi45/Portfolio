@@ -1,11 +1,8 @@
 ---
 import Navicon from "../assets/img/profilephoto.avif";
 ---
-
 <header id='site-header'>
-
     <nav class="navbar" aria-label="Main navigation">
-
         <div class="navbar-left">
             <!-- Navbar Icon -->
             <a href="/" title="Home" aria-label="Go to homepage">
@@ -13,9 +10,7 @@ import Navicon from "../assets/img/profilephoto.avif";
                      loading="eager" fetchpriority="high"/>
             </a>
         </div>
-
         <div class="navbar-right">
-
             <ul class="navbar-links" role="menu">
                 <!-- Navigation Links -->
                 <li role="menuitem"><a href="/blog" class="navbar-link" aria-label="Go to blog">Blog</a>
@@ -23,97 +18,61 @@ import Navicon from "../assets/img/profilephoto.avif";
                 <li role="menuitem"><a href="/contact" class="navbar-link"
                                        aria-label="Go to contact section">Contact</a></li>
             </ul>
-
-
-            <!--Theme Toggle Button -->
-            <!--<li class="theme-toggle" role="menuitem">-->
-            <!--    <button id="themeToggle" aria-label="Toggle theme" aria-haspopup="true" aria-expanded="false">-->
-            <!--        <span id="themeIcon" class="icon" aria-hidden="true">🌙</span>-->
-            <!--    </button>-->
-            <!--    <ul class="theme-options" role="menu" aria-hidden="true">-->
-            <!--        <li>-->
-            <!--            <button class="theme-option" data-theme="light" aria-label="Switch to Light mode">🌞 Light</button>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <button class="theme-option" data-theme="dark" aria-label="Switch to Dark mode">🌙 Dark</button>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <button class="theme-option" data-theme="system" aria-label="Switch to System default">🖥️ System</button>-->
-            <!--        </li>-->
-            <!--    </ul>-->
-            <!--</li>-->
-
-
         </div>
-
-
     </nav>
     <div class="navbar-empty">
-
     </div>
-
-
-    <style>
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            background-color: var(--bg);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1rem 0.5rem 1rem;
-            min-width: 320px;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-
-        .navbar-empty {
-            width: 100%;
-            height: 5rem;
-        }
-
-
-        .navbar-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-photo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            cursor: pointer;
-        }
-
-        .navbar-right {
-            align-items: center;
-        }
-
-        .navbar-links {
-            color: rgb(212 212 216);
-            display: flex;
-            list-style: none;
-        }
-
-        .navbar-link {
-            color: var(--heading);
-            text-decoration: none;
-            font-size: 1rem;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-link:hover {
-            color: var(--link-hover);
-        }
-
-    </style>
 </header>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: var(--bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1rem 0.5rem 1rem;
+        min-width: 320px;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .navbar-empty {
+        width: 100%;
+        height: 5rem;
+    }
+    .navbar-left {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    .navbar-right {
+        align-items: center;
+    }
+    .navbar-links {
+        color: rgb(212 212 216);
+        display: flex;
+        list-style: none;
+    }
+    .navbar-link {
+        color: var(--heading);
+        text-decoration: none;
+        font-size: 1rem;
+        margin-left: 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    .navbar-link:hover {
+        color: var(--link-hover);
+    }
+</style>

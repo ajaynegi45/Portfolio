@@ -9,12 +9,9 @@ const {title, description, image} = Astro.props;
 <head>
     <BaseHead title={title} description={description} image={image}/>
 </head>
-
 <body transition:animate="initial">
-<Navbar/>
-
-
-<slot/>
-<Footer/>
+    <Navbar/>
+    <slot/>
+    <Footer/>
 </body>
 </html>

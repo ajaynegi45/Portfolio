@@ -1,17 +1,15 @@
 ---
 import './global.css';
+import {ClientRouter} from 'astro:transitions';
 interface Props {
     title: string;
     description: string;
     image?: string;
-    pubDate: string;
 }
-const {title, description, image = '/AjayNegiPortfolioSEOBanner.png', pubDate} = Astro.props;
+const {title, description, image = '/AjayNegiPortfolioSEOBanner.png'} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-import {ClientRouter} from 'astro:transitions';
-
-import {format} from 'date-fns';
+import ProfileImage from "../assets/img/profilephoto.avif";
+const profileImage = "https://ajaynegi.web.app/" + ProfileImage.src;
 ---
 
 <!-- Global Metadata -->
@@ -30,7 +28,6 @@ import {format} from 'date-fns';
 <title>{title}</title>
 <meta name='title' content={title}/>
 <meta name='description' content={description}/>
-<meta name="robots" content="index, follow"/>
 <meta name="author" content="Ajay Negi">
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow">
@@ -59,9 +56,21 @@ import {format} from 'date-fns';
 <meta name="twitter:site" content="@ajaynegi45">
 <meta name="twitter:creator" content="@ajaynegi45">
 
-<!-- Font preloads -->
-<!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
-<!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
-<!--<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="preload" as="font">-->
-
 <ClientRouter/>
+
+<!-- Structured Data for SEO -->
+<script is:inline type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ajay Negi",
+        "url": "https://ajaynegi.web.app",
+        "jobTitle": "Software Engineer",
+        "sameAs": [
+            "https://www.linkedin.com/in/ajaynegi45/",
+            "https://github.com/ajaynegi45",
+            "https://x.com/ajaynegi45"
+        ],
+        "image": "{profileImage}"
+    }
+</script>

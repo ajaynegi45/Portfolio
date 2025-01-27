@@ -2,10 +2,9 @@
 import Banner from '../assets/img/Uttarakhand-Culture-Banner.avif'
 import VayuBanner from '../assets/img/Vayu-project-banner.avif';
 ---
-
 <section class="project-card" aria-labelledby="uttarakhand-project">
     <!-- Heading for the section (helps with screen reader navigation) -->
-    <h2 id="uttarakhand-project" class="sr-only">Uttarakhand Culture Project</h2>
+    <h2 id="uttarakhand-project" class="hidden">Uttarakhand Culture Project</h2>
 
     <div class="project-card-left-side-container">
         <h5 class="project-title">Uttarakhand Culture</h5>
@@ -59,7 +58,7 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
 
 <section class="project-card" aria-labelledby="vayu-project">
     <!-- Heading for the section (helps with screen reader navigation) -->
-    <h2 id="vayu-project" class="sr-only">Vayu Web Server Project</h2>
+    <h2 id="vayu-project" class="hidden">Vayu Web Server Project</h2>
 
     <div class="project-card-left-side-container">
         <h5 class="project-title">Vayu - Web Server</h5>
@@ -96,20 +95,6 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
 
 
 <style>
-
-    .project-card > .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
-        clip: rect(0, 0, 0, 0);
-        clip-path: inset(50%);
-        overflow: hidden;
-    }
-
-
     .project-card {
         display: flex;
         flex-direction: row;
@@ -118,25 +103,20 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         width: 100%;
         padding: 1rem;
         border-radius: 10px;
-
         border: 1px solid rgb(38 38 38/1);
         transition: border 0.3s ease-in-out;
     }
-
     .project-card:hover {
         border: 1px solid var(--text5);
         cursor: pointer;
-
         background-color: #ffffff0d;
     }
-
     .project-card > .project-card-left-side-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 0.3rem;
     }
-
     .project-card-left-side-container > p {
         font-size: 14px;
         font-weight: 330;
@@ -144,14 +124,12 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         line-height: 1.35;
         color: var(--text4);
     }
-
     .project-card-right-side-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
-
     .project-links {
         display: flex;
         flex-direction: row;
@@ -161,64 +139,48 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         width: 100%;
         margin-top: 0.3rem;
     }
-
     .project-links > .project-link {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 0.2rem;
-
         font-size: 13px;
-
         border-radius: 5px;
-
         background-color: #26262699;
-
         border: 1px solid rgb(38 38 38 / 2);
         color: var(--text5);
     }
-
     .project-link > a {
         padding: 0.25rem 0.5rem;
         color: rgb(212 212 212 / 1); /* #D4D4D4FF */
     }
-
     .project-link:hover > a > span,
     .project-link:hover > a > svg {
         color: var(--link-hover);
         cursor: pointer;
     }
-
-
     .project-links > .project-link > a > svg {
         font-size: 13px;
     }
-
-
     .project-card-right-side-container > img {
         width: 180px;
         height: auto;
         border-radius: 5px;
     }
-
     @media (max-width: 499px) {
         .project-card {
             flex-direction: column-reverse;
         }
-
         .project-card-right-side-container > img {
             width: 100%;
             height: auto;
         }
-
         .project-card-left-side-container > p {
             font-weight: 400;
             letter-spacing: 0.3px;
             line-height: 1.35;
         }
     }
-
-
 </style>
 

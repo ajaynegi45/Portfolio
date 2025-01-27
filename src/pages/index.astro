@@ -1,11 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProfileImage from "../assets/img/profilephoto.avif";
 import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-const profileImage = "https://ajaynegi.web.app/" + ProfileImage.src;
-import {Code} from 'astro:components';
 ---
 
 <Layout title="Ajay Negi | Software Engineer"
@@ -71,11 +68,6 @@ import {Code} from 'astro:components';
                     </p>
                 </div>
             </header>
-
-            <figure class="hero-right">
-                <!--<img src={ProfileImage.src} alt="Ajay's profile picture" class="profile-image"/>-->
-                <!--<figcaption class="sr-only">Ajay Negi's Profile Picture</figcaption>-->
-            </figure>
         </section>
 
         <!-- About Section -->
@@ -88,7 +80,7 @@ import {Code} from 'astro:components';
 
 
         <!-- First divider with a label -->
-        <div id="divider-label-1" class="sr-only">First Section Divider</div>
+        <div id="divider-label-1" class="hidden">First Section Divider</div>
         <div class="section-divider" role="separator" aria-labelledby="divider-label-1">
             <div></div>
         </div>
@@ -99,7 +91,7 @@ import {Code} from 'astro:components';
 
 
         <!-- Second divider with a label -->
-        <div id="divider-label-2" class="sr-only">Second Section Divider</div>
+        <div id="divider-label-2" class="hidden">Second Section Divider</div>
         <div class="section-divider" role="separator" aria-labelledby="divider-label-2">
             <div></div>
         </div>
@@ -126,45 +118,10 @@ import {Code} from 'astro:components';
                 <ProjectCard/>
             </div>
         </section>
-
-
-        <!--<section class="substack-newsletter-section">-->
-        <!--    <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;"-->
-        <!--            frameborder="0" scrolling="no"></iframe>-->
-        <!--</section>-->
-
-        <!--<section class="sperator-divider-container">-->
-        <!--    <Image src={SpiralDivider} alt="Sperator Divider" />-->
-        <!--</section>-->
-
-
-        <!-- Syntax highlight some JavaScript code. -->
-        <!--  <Code code={`import java.awt.Rectangle;`} lang="java" theme="vitesse-dark"  />  -->
-
-
     </main>
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Ajay Negi",
-            "url": "https://ajaynegi.web.app",
-            "jobTitle": "Software Engineer",
-            "sameAs": [
-                "https://www.linkedin.com/in/ajaynegi45/",
-                "https://github.com/ajaynegi45",
-                "https://x.com/ajaynegi45"
-            ],
-            "image": "{{profileImage}}"
-        }
-    </script>
-
 </Layout>
 
 <style>
-
     .section-divider {
         width: 100%;
         display: flex;
@@ -174,13 +131,11 @@ import {Code} from 'astro:components';
         text-align: center;
         margin: 2rem 0;
     }
-
     .section-divider > div {
         position: relative; /* Position the inner div for the pseudo-element to be placed correctly */
         width: 100%; /* The width should be full of its parent container */
         max-width: 400px;
     }
-
     .section-divider > div::before {
         content: "";
         position: absolute;
@@ -192,48 +147,13 @@ import {Code} from 'astro:components';
         z-index: -1; /* Ensure the pseudo-element stays behind the content */
         transform: translateY(-50%); /* Correct the vertical centering of the divider line */
     }
-
     .section-divider[role="separator"] {
         border: none;
         outline: none;
     }
-
-
     main {
         margin-bottom: 5rem;
     }
-
-
-    .substack-newsletter-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem;
-        background: #fff;
-        border: 1px solid #EEE;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .substack-newsletter-section > iframe {
-        width: 480px;
-        height: 320px;
-        overflow: hidden;
-    }
-
-
-    @media (max-width: 499px) {
-        .substack-newsletter-section > iframe {
-            width: 90vw;
-            height: 100vw;
-
-        }
-    }
-
-
     .projects-section {
         display: flex;
         flex-direction: column;
@@ -242,8 +162,6 @@ import {Code} from 'astro:components';
         gap: 1rem;
         margin: 1rem 0 3rem 0;
     }
-
-    /* Hero Section */
     .hero-section {
         display: flex;
         flex-direction: column-reverse;
@@ -251,24 +169,20 @@ import {Code} from 'astro:components';
         gap: 2rem;
         margin-bottom: 2rem;
     }
-
     .hero-left {
         flex: 1;
     }
-
     .hero-left h1 {
         font-size: 2.41rem;
         font-weight: 600;
         margin-bottom: 1rem;
     }
-
     .hero-left p.subtitle {
         color: rgb(212 212 216);
         font-size: 1.2rem;
         margin-top: -0.2rem;
         margin-bottom: 1rem;
     }
-
     .contact-links {
         display: flex;
         flex-direction: row;
@@ -276,44 +190,35 @@ import {Code} from 'astro:components';
         gap: 1rem;
         align-items: center;
     }
-
     .hero-left p.email {
         font-size: 1rem;
         display: flex;
         gap: 0.5rem;
         align-items: center;
     }
-
-
     .hero-left p.resume-download {
-
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
-
     }
-
     .hero-left p.email > svg {
         color: var(--subheading);
         width: 1.25rem;
         height: auto;
     }
-
     .hero-left p.resume-download > svg {
         fill: var(--subheading);
         width: 1.12rem;
         height: auto;
     }
-
     .hero-right {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .hero-right img.profile-image {
         display: none;
         width: 150px;
@@ -321,28 +226,21 @@ import {Code} from 'astro:components';
         border-radius: 50%;
         filter: grayscale(100%);
     }
-
-    /* About Section */
     .about-section {
         margin-bottom: 2rem;
     }
-
     .about-section > p {
         font-weight: 350;
     }
-
-
     .projects-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-
     .projects-header > h4 {
         margin-bottom: 0.5rem;
     }
-
     .projects-header > a {
         font-size: 14px;
         display: flex;
@@ -352,14 +250,8 @@ import {Code} from 'astro:components';
         text-decoration: none;
         gap: 0.3rem;
     }
-
     .projects-header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
     }
-
-    .sr-only {
-        display: none;
-    }
-
 </style>

@@ -1,34 +1,6 @@
----
-import {Image} from 'astro:assets';
----
-
 <footer class="footer">
-    <!-- Sponsor Section -->
-    <!--<section class="sponsor-container" aria-labelledby="sponsor-section">-->
-    <!--    <h2 id="sponsor-section" class="hidden">Sponsor Section</h2>-->
-    <!--    <p>If you enjoy my work and find it useful, consider sponsoring me to help make Open Source sustainable. Thank you!</p>-->
-
-    <!--    <div class="sponsor-links" role="list">-->
-    <!--        <a href="https://github.com/sponsors/adrian-ub" target="_blank" rel="noopener noreferrer" class="sponsor-link" aria-label="Sponsor Ajay Negi via Buy me a Coffee">-->
-    <!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" height="1.2em" width="1.2em" aria-hidden="true">-->
-    <!--                <g fill="currentColor">-->
-    <!--                    <path d="M232 102c0 66-104 122-104 122S24 168 24 102a54 54 0 0 1 54-54c22.59 0 41.94 12.31 50 32c8.06-19.69 27.41-32 50-32a54 54 0 0 1 54 54" opacity=".2"/>-->
-    <!--                    <path d="M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62m-50 174.8c-18.26-10.64-96-59.11-96-112.8a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8"/>-->
-    <!--                </g>-->
-    <!--            </svg>-->
-    <!--            Buy me a coffee-->
-    <!--        </a>-->
-    <!--        <a href="https://github.com/sponsors/antfu" target="_blank" rel="noopener noreferrer" class="sponsor-link" aria-label="Sponsor Antfu on GitHub">-->
-    <!--            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACaklEQVR4nO2Xu49NURTGf94SIRidRzTeCTMejVehGFFIKLRKxRQoKBRcGgohhMZ/IKYyU00hJnGRUFCMR6cYIhKRmAwJgytb1o6TNWefdfYZEZL1JTvnfud+37fOvmeffdcBh8PhcDgcDofD4fh30A10MsZ18W0S/tTI17oyvrvmtc4A+lJfnsycyEXxnVA8Ba0r4yPATCNnLtBfVW9IgvcaQVoXeW9NX6/B+yoyFgPtqnphlp+AL8C8iqA5ohsFZssYr+HTuhTvAB+AJSUZK4GXoknW25OxpCaAfQ18YdxRPs076vmL2Ay8LcmZhAsZFzNe+DXOZ07klPJpPiTHb8BG+S4soTEZD5RvEh6LYBvVeCS6Zcq31fBpXRUflM/DwGHgK/AO2GLV6wK+y9oM21oKi+SXirroew9Mr/BpncXXyMXHu/gKWF2n3qHM5dGvfLeMu6F1Fg+4JudGCnffrHcjYxJvCssv+o6kghM6iyO71m1gIb9Rt57jv8Co3M6lhu610kVeZ4SHuSxnGnBAzh+cyiTWSegzQ7de6SKvO54ncjZIO7IWeDiViRyV4CuG7lhNXSr/aoIfB34Al+X8KhpiQAL2/yGd5RtQfLDQEoXj6QZz+NVKf5SQBRm6yOsuK+2bqMh50WQiO8V8L1MXeZ0ROtiW8rWF7yrRX2oykbNiPmPozomupXythvVaKje2KjeNNiiJ+xKwPVMXX3p2ZNZrK1/ocu9Kkzos70HZmK+aNmuE9npWwRd5br2xQs4TYLkcQ7PaCCsKb2vW+CzbL7LbdGT3yYH29cgfYnehYXQ4HA6Hw+Fw8PfxEyWmf5sEmp4DAAAAAElFTkSuQmCC" alt="bhim-upi">-->
-    <!--            UPI Payments-->
-    <!--        </a>-->
-    <!--    </div>-->
-    <!--</section>-->
-
-    <!-- Footer Text Section -->
     <section class="footer-info-container" aria-labelledby="footer-info">
         <h2 id="footer-info" class="hidden">Footer Information</h2>
-
         <div class="contact-info">
             <p>&copy; 2025 | Portfolio</p>
             <p class="footer-text">Made with
@@ -47,7 +19,6 @@ import {Image} from 'astro:assets';
 </footer>
 
 <style>
-
     .contact-info {
         display: flex;
         flex-direction: row;
@@ -55,7 +26,6 @@ import {Image} from 'astro:assets';
         align-items: center;
         padding: 1rem 0;
     }
-
     .contact-info > p {
         display: flex;
         flex-direction: row;
@@ -63,33 +33,26 @@ import {Image} from 'astro:assets';
         align-items: center;
         font-size: 12px;
     }
-
     .contact-info > p > span {
         padding: 0 7px;
         margin: 0;
     }
-
     .contact-info > p > span > svg {
         margin-top: 7px;
         width: 10px;
         height: auto;
     }
-
-
     @media (max-width: 768px) {
         .sponsor-links {
             flex-direction: column;
             align-items: center;
         }
     }
-
-
     .footer {
         position: relative;
         color: var(--text4);
         margin-top: 2rem;
     }
-
     .footer::before {
         content: "";
         position: absolute;
@@ -100,8 +63,6 @@ import {Image} from 'astro:assets';
         background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg));
         z-index: -1;
     }
-
-
     .sponsor-container {
         display: flex;
         flex-direction: column;
@@ -111,15 +72,12 @@ import {Image} from 'astro:assets';
         gap: 1rem;
         margin-bottom: 3rem;
     }
-
-
     .sponsor-links {
         display: flex;
         gap: 1rem;
         justify-content: center;
         flex-wrap: wrap;
     }
-
     .sponsor-link {
         display: inline-flex;
         align-items: center;
@@ -129,25 +87,19 @@ import {Image} from 'astro:assets';
         padding: 0.5rem 1rem;
         border-radius: 8px;
         transition: background-color 0.25s ease-in-out;
-
         border: 1px dashed var(--card-border);
     }
-
     .sponsor-link svg {
         margin-right: 0.5rem;
     }
-
     .sponsor-link:hover,
     .sponsor-link:focus {
         background-color: #fb71851a;
         color: rgb(251 113 133 / 1);
     }
-
     .sponsor-link:hover > svg,
     .sponsor-link:focus > svg {
         fill: rgb(251 113 133 / 1);
         color: rgb(251 113 133 / 1);
     }
-
-
 </style>
