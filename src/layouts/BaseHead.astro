@@ -12,13 +12,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 import {ClientRouter} from 'astro:transitions';
 
 import {format} from 'date-fns';
-
-let pubDateObj = new Date(pubDate);
-if (isNaN(pubDateObj.getTime())) {
-    console.error('Invalid pubDate value, falling back to current date.');
-    pubDateObj = new Date();
-}
-const formattedPubDate = format(pubDateObj, 'yyyy-MM-dd\'T\'HH:mm:ssXXX');
 ---
 
 <!-- Global Metadata -->
@@ -53,7 +46,7 @@ const formattedPubDate = format(pubDateObj, 'yyyy-MM-dd\'T\'HH:mm:ssXXX');
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content={title}/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:published_time" content={formattedPubDate}/>
+<meta property="og:published_date" content="15 January 2025" />
 <meta property="og:author" content="Ajay Negi"/>
 <meta property="og:site_name" content="Ajay Negi Portfolio"/>
 
