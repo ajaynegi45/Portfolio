@@ -10,8 +10,19 @@ const {title, description, image} = Astro.props;
     <BaseHead title={title} description={description} image={image}/>
 </head>
 <body transition:animate="initial">
-    <Navbar/>
-    <slot/>
-    <Footer/>
+<Navbar/>
+<slot/>
+<Footer/>
+<script type="module" is:inline>
+    const audio = new Audio('/sound/click.mp3');
+    audio.preload = 'auto';
+    document.addEventListener('mousedown', (event) => {
+        const link = event.target.closest('a');
+        if (!link) return;
+        audio.currentTime = 0;
+        audio.play().catch(() => {
+        });
+    });
+</script>
 </body>
 </html>

@@ -23,10 +23,9 @@
                 </div>
                 <p class="company">Infosys</p>
                 <p class="achievements" role="article">
-                    Accomplished a 90% improvement in reliability and increased user engagement for the ShieldMe
-                    platform by implementing robust logging, detailed error handling, and adding key features such as
-                    authentication, geolocation tracking, journaling, and SOS alerts with real-time notifications, all
-                    built using Spring Boot, MongoDB, and React.
+                    Built ShieldMe platform, improving reliability by 90% and boosting user engagement with robust
+                    logging, error handling, and key features like authentication, geolocation, journaling, and SOS
+                    alerts with real-time notifications, using Spring Boot, Kafka, MongoDB, and React.
                 </p>
             </div>
         </div>
@@ -34,51 +33,33 @@
 </section>
 
 <style>
-    .work-experience {
-        margin: 1rem 0;
-    }
+    /* Header Section */
     .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+
     .header > h4 {
         margin-bottom: 0.5rem;
     }
+
     .header > a {
         font-size: 14px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
         gap: 0.3rem;
     }
+
     .header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
     }
-    .header-info {
-        margin-top: 0.7rem;
 
-    }
-    .header-info > p {
-        font-size: 14px;
-        color: var(--text4);
-        margin-bottom: 0.7rem;
-    }
-    .achievements {
-        font-family: 'Inter', sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        letter-spacing: 0.25px;
-        line-height: 1.35;
-        color: var(--text4);
-        text-rendering: optimizeSpeed;
-        -webkit-font-smoothing: subpixel-antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+    /* Timeline Section */
     .timeline {
         max-width: 700px;
         margin-left: 0.5rem;
@@ -92,11 +73,13 @@
         border-image-slice: 1; /* Ensures the border spans the entire length */
         transition: border-image 0.3s ease; /* Smooth transition for the border */
     }
+
     .timeline-item {
         display: flex;
         gap: 20px;
         position: relative;
     }
+
     .timeline-item::before {
         content: '';
         width: 14px;
@@ -110,8 +93,34 @@
         transform: translateY(-50%);
         z-index: 1;
     }
+
     .timeline-item-content {
         padding-left: 1rem;
         padding-bottom: 1rem;
+    }
+
+    .header-info {
+        margin-top: 0.7rem;
+    }
+
+    .timeline-item-content .header-info > p {
+        font-size: 14px;
+        color: var(--text4);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .timeline-item-content .header-info > h5 {
+        margin-bottom: 0.4rem;
+    }
+
+    .company {
+        margin-bottom: 0.3rem;
+    }
+
+    .achievements {
+        font-size: 15px;
+        color: var(--text4);
+        font-weight: 400;
     }
 </style>

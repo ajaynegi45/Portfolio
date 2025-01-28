@@ -26,6 +26,7 @@
         align-items: center;
         padding: 1rem 0;
     }
+
     .contact-info > p {
         display: flex;
         flex-direction: row;
@@ -33,26 +34,31 @@
         align-items: center;
         font-size: 12px;
     }
+
     .contact-info > p > span {
         padding: 0 7px;
         margin: 0;
     }
+
     .contact-info > p > span > svg {
         margin-top: 7px;
         width: 10px;
         height: auto;
     }
+
     @media (max-width: 768px) {
         .sponsor-links {
             flex-direction: column;
             align-items: center;
         }
     }
+
     .footer {
         position: relative;
         color: var(--text4);
         margin-top: 2rem;
     }
+
     .footer::before {
         content: "";
         position: absolute;
@@ -63,6 +69,7 @@
         background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg));
         z-index: -1;
     }
+
     .sponsor-container {
         display: flex;
         flex-direction: column;
@@ -72,12 +79,14 @@
         gap: 1rem;
         margin-bottom: 3rem;
     }
+
     .sponsor-links {
         display: flex;
         gap: 1rem;
         justify-content: center;
         flex-wrap: wrap;
     }
+
     .sponsor-link {
         display: inline-flex;
         align-items: center;
@@ -89,14 +98,17 @@
         transition: background-color 0.25s ease-in-out;
         border: 1px dashed var(--card-border);
     }
+
     .sponsor-link svg {
         margin-right: 0.5rem;
     }
+
     .sponsor-link:hover,
     .sponsor-link:focus {
         background-color: #fb71851a;
         color: rgb(251 113 133 / 1);
     }
+
     .sponsor-link:hover > svg,
     .sponsor-link:focus > svg {
         fill: rgb(251 113 133 / 1);

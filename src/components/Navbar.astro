@@ -5,7 +5,7 @@ import Navicon from "../assets/img/profilephoto.avif";
     <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-left">
             <!-- Navbar Icon -->
-            <a href="/" title="Home" aria-label="Go to homepage">
+            <a href="/" title="Home" aria-label="Go to homepage" class="play-clicked-sound">
                 <img src={Navicon.src} alt="Ajay's profile picture" class="navbar-photo" decoding="async"
                      loading="eager" fetchpriority="high"/>
             </a>
@@ -13,9 +13,10 @@ import Navicon from "../assets/img/profilephoto.avif";
         <div class="navbar-right">
             <ul class="navbar-links" role="menu">
                 <!-- Navigation Links -->
-                <li role="menuitem"><a href="/blog" class="navbar-link" aria-label="Go to blog">Blog</a>
+                <li role="menuitem"><a href="/blog" class="navbar-link play-clicked-sound"
+                                       aria-label="Go to blog">Blog</a>
                 </li>
-                <li role="menuitem"><a href="/contact" class="navbar-link"
+                <li role="menuitem"><a href="/contact" class="navbar-link play-clicked-sound"
                                        aria-label="Go to contact section">Contact</a></li>
             </ul>
         </div>
@@ -41,10 +42,6 @@ import Navicon from "../assets/img/profilephoto.avif";
         max-width: 700px;
         margin: 0 auto;
     }
-    .navbar-empty {
-        width: 100%;
-        height: 5rem;
-    }
     .navbar-left {
         display: flex;
         align-items: center;
@@ -60,7 +57,7 @@ import Navicon from "../assets/img/profilephoto.avif";
         align-items: center;
     }
     .navbar-links {
-        color: rgb(212 212 216);
+        color: var(--subheading);
         display: flex;
         list-style: none;
     }
@@ -72,7 +69,8 @@ import Navicon from "../assets/img/profilephoto.avif";
         font-weight: 500;
         transition: color 0.3s ease;
     }
-    .navbar-link:hover {
-        color: var(--link-hover);
+    .navbar-empty {
+        width: 100%;
+        height: 5rem;
     }
 </style>

@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..400&display=swap');
-
 *,
 *::before,
 *::after {
@@ -11,9 +8,10 @@
 }
 
 :root {
+    /* Dark Mode Color Scheme */
     --bg: #18181b;
     --heading: #f5f5f7;
-    --subheading: rgb(212 212 216);
+    --subheading: rgb(212 212 216); /* D4D4D8FF */
 
     --text: #B0B0B8;
     --text1: #A1A1A6; /* 6.88 */
@@ -26,9 +24,12 @@
     --link-hover: #0056b3;
 
     --card-border: rgb(38 38 38/1);
+    --background-hover: #ffffff0d;
+    /*background-color: #26262699; project card*/
 
     --ring-color: #4b4b4b;
 
+    /* Light Mode Color Scheme */
     --light-bg: #ffffff;
     --light-heading: #ffffff;
     --light-text: #222222;
@@ -56,33 +57,36 @@ html, body {
     -ms-overflow-style: none; /* IE 10+ */
 }
 
-
-html {
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeSpeed;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
 body {
-    font-family: 'Inter', sans-serif; /* Web-safe and performant */
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-optical-sizing: auto;
-    letter-spacing: 0.35px;
-    line-height: 1.5;
-    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; /* For light mode use subpixel-antialiased */
+    -moz-osx-font-smoothing: auto;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
     background-color: var(--bg);
     color: var(--text);
     max-width: 700px;
     height: 100%;
     margin: 0 auto;
-    transition: background-color 0.3s, color 0.3s;
     padding: 0 1rem 0 1rem;
     overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+
+
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    font-size: 16px;
 
     /* Adding the enhanced blur reveal animation */
     /*animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
     /*animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
+    /*will-change: transform, opacity;*/
+
+    user-select: none;
 }
 
 @keyframes blur-reveal {
@@ -111,18 +115,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--heading);
     font-weight: 600;
 }
+
 h1 {
     font-size: 3.618rem;
 }
+
 h2 {
     font-size: 2.236rem;
 }
+
 h3 {
     font-size: 1.618rem;
 }
+
 h4 {
     font-size: 1.1rem;
 }
+
 h5 {
     color: var(--subheading);
     font-size: 1rem;
@@ -130,9 +139,9 @@ h5 {
 
 p {
     font-size: 15.5px;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.7px;
 }
+
 li {
     font-size: 15.5px;
     font-weight: 350;
@@ -181,27 +190,21 @@ button {
     transition: background-color 0.2s ease;
 }
 
+.sr-only {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px 1px 1px 1px);
+    /* maybe deprecated but we need to support legacy browsers */
+    clip: rect(1px, 1px, 1px, 1px);
+    /* modern browsers, clip-path works inwards from each corner */
+    clip-path: inset(50%);
+    /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+    white-space: nowrap;
+}
 
-/*'Gloria Hallelujah', cursive*/
-
-/*from-\[\#a6d7f7\] {*/
-/*    --tw-gradient-from: #a6d7f7 var(--tw-gradient-from-position);*/
-/*    --tw-gradient-to: rgba(166, 215, 247, 0) var(--tw-gradient-to-position);*/
-/*    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);*/
-/*}*/
-
-
-/*.bg-gradient-to-b {*/
-/*    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));*/
-/*}*/
-
-
-/*.bg-mist {*/
-/*    --tw-bg-opacity: 1;*/
-/*    background-color: #edeff4;*/
-/*    background-color: rgb(237 239 244 / var(--tw-bg-opacity, 1));*/
-/*}*/
-
-/*class="bg-[length:100%_280px] bg-fixed bg-gradient-to-b bg-mist bg-no-repeat flex flex-col from-[#a6d7f7] min-h-screen min-w-[300px]"*/
-
-/* Best for hindi font: https://fontsource.org/fonts/kalam */
