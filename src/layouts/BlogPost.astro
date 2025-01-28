@@ -1,0 +1,228 @@
+---
+import type {CollectionEntry} from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import Layout from "./Layout.astro";
+type Props = CollectionEntry<'blog'>['data'];
+const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
+---
+<Layout title={title} description={description}>
+    <section>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
+        <ol class="breadcrumb-list">
+            <li class="breadcrumb-item">
+                <a href="/" class="breadcrumb-link" aria-label="Go to home page">
+                    <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         fill="currentColor">
+                        <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
+                        <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
+                    </svg>
+                </a>
+            </li>
+            <span class="breadcrumb-divider">/</span>
+            <li class="breadcrumb-item">
+                <a href="/blog" class="breadcrumb-link" aria-current="page">Blog</a>
+            </li>
+            <span class="breadcrumb-divider">/</span>
+            <li class="breadcrumb-item">
+                <a href="#" class="breadcrumb-link blog-post-nav-title" aria-current="page">{title}</a>
+            </li>
+        </ol>
+    </nav>
+
+
+
+
+    <main>
+        <section class="blog-post">
+            <div class="blog-hero-image"> {heroImage && <img src={heroImage} alt=""/>}</div>
+            <div class="blog-post-content-container">
+                <div class="title">
+                    <div class="date"><FormattedDate date={pubDate}/>{updatedDate && (<div class="last-updated-on">Last updated on<FormattedDate date={updatedDate}/></div>)}</div>
+                    <h1>{title}</h1>
+                    <!--  divider -->
+                    <div id="divider-label" class="hidden">First Section Divider</div>
+                    <div class="section-divider" role="separator" aria-labelledby="divider-label">
+                        <div></div>
+                    </div>
+                </div>
+                <slot/>
+            </div>
+        </section>
+    </main>
+    </section>
+
+</Layout>
+
+
+<style is:inline>
+
+    .blog-post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .hero-image {
+        width: 100%;
+    }
+    .blog-hero-image img {
+        width: 100% !important;
+        max-width: 700px !important;
+        height: auto !important;
+        margin: 0.5rem 0 1rem 0;
+    }
+
+    img {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .blog-post-content-container {
+        width: 100%;
+        max-width: 700px;
+        color: rgb(var(--text5));
+    }
+
+    .blog-post .title {
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .blog-post .title h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .blog-post .date {
+        margin-bottom: 0.5em;
+        color: var(--text4);
+    }
+    .blog-post .last-updated-on {
+        margin-top: 0.5em;
+        font-style: italic;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        margin:  1rem 0 2rem 0 ;
+        color: var(--heading);
+    }
+    h3,h4,h5,h6 {
+        color: var(--subheading) !important;
+    }
+    strong{
+        color: var(--subheading);
+    }
+    p {
+        margin-bottom:  1.5rem;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        font-weight: normal;
+        font-size: 16px;
+
+        color: var(--text);
+    }
+    em {
+        display: block;
+        margin: -1.5rem 0 2rem 0;
+        text-align: center;
+    }
+
+
+    p.a {
+        display: block;
+        border: 1px solid red;
+        text-align: center;
+    }
+
+
+    /* Breadcrumb Navigation */
+    .breadcrumb-nav {
+        padding: 0.5rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgb(38 38 38/1);
+    }
+    .breadcrumb-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        font-size: 1rem;
+        list-style-type: none;
+        color: #ffffffb3;
+    }
+    .breadcrumb-link > svg {
+        width: 1.1rem;
+        height: auto;
+    }
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+    }
+    .breadcrumb-link {
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+    }
+    .blog-post-nav-title {
+        width: 63vw;
+        text-wrap: nowrap;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .breadcrumb-link:hover {
+        color: rgba(226, 232, 240, 1);
+    }
+    .breadcrumb-divider {
+        color: #fff6;
+    }
+    .breadcrumb-item span {
+        color: rgba(38, 38, 38, 0.7);
+    }
+
+
+
+
+    /* Divider */
+    .section-divider {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 2.5rem 0;
+    }
+
+    .section-divider > div {
+        position: relative; /* Position the inner div for the pseudo-element to be placed correctly */
+        width: 100%; /* The width should be full of its parent container */
+        max-width: 330px;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .section-divider > div::before {
+        content: "";
+        position: absolute;
+        top: 50%; /* Position the line vertically centered */
+        left: 0;
+        right: 0;
+        height: 0.1rem; /* Height of the divider line */
+        background: linear-gradient(to right, var(--bg), var(--ring-color), var(--bg)); /* Gradient border */
+        z-index: -1; /* Ensure the pseudo-element stays behind the content */
+        transform: translateY(-50%); /* Correct the vertical centering of the divider line */
+    }
+
+    .section-divider[role="separator"] {
+        border: none;
+        outline: none;
+    }
+</style>

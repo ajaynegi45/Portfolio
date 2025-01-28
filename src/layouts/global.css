@@ -208,3 +208,24 @@ button {
     white-space: nowrap;
 }
 
+table {
+    width: 100%;
+}
+hr {
+    border: none;
+}
+
+pre {
+    padding: 1em;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+pre > code {
+    all: unset;
+}
+blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 0 0 0 20px;
+    margin: 0px;
+    font-size: 1.333em;
+}

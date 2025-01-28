@@ -1,8 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import JavaArchitectureBanner from "../assets/svg/Java-Architecture-Seo-Banner.svg";
-import BlogsBanner from "../assets/img/Banner.avif";
-import Divider from "../assets/svg/Vector 3.svg";
+import Layout from "../../layouts/Layout.astro";
+import JavaArchitectureBanner from "/public/Java-Architecture-Seo-Banner.svg";
+import BlogsBanner from "../../assets/img/Banner.avif";
+import Divider from "../../assets/svg/Vector 3.svg";
+
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),);
 ---
 <Layout
         title="Codies Coder - Software Engineering Insights By Ajay Negi"
@@ -15,7 +20,7 @@ import Divider from "../assets/svg/Vector 3.svg";
         <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
-                    <a href="/public" class="breadcrumb-link" aria-label="Go to home page">
+                    <a href="/" class="breadcrumb-link" aria-label="Go to home page">
                         <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                              fill="currentColor">
                             <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
@@ -68,7 +73,7 @@ import Divider from "../assets/svg/Vector 3.svg";
                     <div class="post-link">
                         <a href="https://open.substack.com/pub/codiescoder/p/java-architecture?r=2b2cjl&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false"
                            target="_blank" rel="noopener noreferrer" aria-label="Read more about Java Architecture">
-                            <span>Read More</span>
+                            <span>Read Substack</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
@@ -84,7 +89,91 @@ import Divider from "../assets/svg/Vector 3.svg";
                 <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"/>
             </div>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            posts.map((post) => (
+
+        <article class="blog-post-container">
+            <div class="blog-post-left-side-container">
+                <h5 class="post-title">{post.data.title}</h5>
+                <p>{post.data.description}</p>
+                <div class="blog-post-links">
+                    <div class="post-link">
+                        <a href={`/blog/${post.id}/`} aria-label="Read more about Java Architecture">
+                            <span>Read More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="m18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-post-right-side-container">
+                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"/>
+            </div>
+        </article>
+            ))
+        }
+
     </section>
+
+
+
+    <!--<main>-->
+    <!--    <section>-->
+    <!--        <ul>-->
+    <!--            {-->
+    <!--                posts.map((post) => (-->
+    <!--                        <li>-->
+    <!--                            <a href={`/blog/${post.id}/`}>-->
+    <!--                                <img width={720} height={360} src={post.data.heroImage} alt="" />-->
+    <!--                                <h4 class="title">{post.data.title}</h4>-->
+    <!--                                <p class="date">-->
+    <!--                                    <FormattedDate date={post.data.pubDate} />-->
+    <!--                                </p>-->
+    <!--                            </a>-->
+    <!--                        </li>-->
+    <!--                ))-->
+    <!--            }-->
+    <!--        </ul>-->
+    <!--    </section>-->
+    <!--</main>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="sperator-divider-container">
         <img src={Divider.src} alt="Sperator Divider"/>

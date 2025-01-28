@@ -8,15 +8,9 @@ export default defineConfig({
     site: 'https://ajaynegi.web.app',
     integrations: [mdx(), sitemap()],
     markdown: {
-        syntaxHighlight: 'prism',
         shikiConfig: {
             theme: 'vitesse-dark',
         },
     },
 });
 
-
-// themes: {
-//   light: 'github-light',
-//   dark: 'github-dark',
-// },
