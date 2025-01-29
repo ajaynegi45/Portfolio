@@ -83,7 +83,7 @@ body {
 
     /* Adding the enhanced blur reveal animation */
     /*animation: blur-reveal 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
-    /*animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;*/
+    animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     /*will-change: transform, opacity;*/
 
     user-select: none;

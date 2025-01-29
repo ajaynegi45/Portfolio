@@ -35,9 +35,13 @@ const posts = (await getCollection('blog')).sort(
             </ol>
         </nav>
 
-        <!-- Banner Section -->
+         <!-- Banner Section -->
         <div class="blogs-Banner">
-            <img src={BlogsBanner.src} alt="Codies Coder Blog Banner showcasing software engineering topics"/>
+            <img src={BlogsBanner.src}
+                 alt="Codies Coder Blog Banner showcasing software engineering topics"
+                 decoding="async"
+                 loading="eager"
+                 fetchpriority="high" />
         </div>
 
         <!-- Search Box -->
@@ -57,19 +61,34 @@ const posts = (await getCollection('blog')).sort(
                     placeholder="Search Blog Posts"
                     autocomplete="off"
                     aria-label="Search Blog Posts"
-                    autofocus
             />
+            <!-- autofocus add this when search functionality is active.... -->
         </div>
 
 
         <!-- Blog Post Container -->
-        <section class="blog-post-container">
+        {
+            posts.map((post) => (
+
+        <article class="blog-post-container">
             <div class="blog-post-left-side-container">
-                <h5 class="post-title">How Does Java Really Work? Inside the JVM Architecture</h5>
-                <p>Have you ever wondered what really happens when you run a Java program? How does Java go from the
-                    code you write to something your computer can actually run? And how does it manage to do all of this
-                    across different platforms with the same code? If so, you're in the right place.</p>
+                <h5 class="post-title">{post.data.title}</h5>
+                <p>{post.data.description}</p>
                 <div class="blog-post-links">
+
+                    <div class="post-link">
+                        <a href={`/blog/${post.id}/`} aria-label="Read more about Java Architecture">
+                            <span>Read More</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path d="m18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </a>
+                    </div>
+
                     <div class="post-link">
                         <a href="https://open.substack.com/pub/codiescoder/p/java-architecture?r=2b2cjl&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false"
                            target="_blank" rel="noopener noreferrer" aria-label="Read more about Java Architecture">
@@ -86,94 +105,13 @@ const posts = (await getCollection('blog')).sort(
                 </div>
             </div>
             <div class="blog-post-right-side-container">
-                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"/>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-        {
-            posts.map((post) => (
-
-        <article class="blog-post-container">
-            <div class="blog-post-left-side-container">
-                <h5 class="post-title">{post.data.title}</h5>
-                <p>{post.data.description}</p>
-                <div class="blog-post-links">
-                    <div class="post-link">
-                        <a href={`/blog/${post.id}/`} aria-label="Read more about Java Architecture">
-                            <span>Read More</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
-                                <path d="M15 3h6v6"></path>
-                                <path d="M10 14 21 3"></path>
-                                <path d="m18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-post-right-side-container">
-                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"/>
+                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"
+                     decoding="async" loading="lazy" fetchpriority="auto"  />
             </div>
         </article>
             ))
         }
-
     </section>
-
-
-
-    <!--<main>-->
-    <!--    <section>-->
-    <!--        <ul>-->
-    <!--            {-->
-    <!--                posts.map((post) => (-->
-    <!--                        <li>-->
-    <!--                            <a href={`/blog/${post.id}/`}>-->
-    <!--                                <img width={720} height={360} src={post.data.heroImage} alt="" />-->
-    <!--                                <h4 class="title">{post.data.title}</h4>-->
-    <!--                                <p class="date">-->
-    <!--                                    <FormattedDate date={post.data.pubDate} />-->
-    <!--                                </p>-->
-    <!--                            </a>-->
-    <!--                        </li>-->
-    <!--                ))-->
-    <!--            }-->
-    <!--        </ul>-->
-    <!--    </section>-->
-    <!--</main>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <section class="sperator-divider-container">
         <img src={Divider.src} alt="Sperator Divider"/>
@@ -214,6 +152,7 @@ const posts = (await getCollection('blog')).sort(
         align-items: center;
     }
     .breadcrumb-link {
+        font-weight: normal;
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
     }
@@ -254,7 +193,8 @@ const posts = (await getCollection('blog')).sort(
     }
     .search-input {
         font-family: 'Inter', sans-serif;
-        font-weight: 300;
+        font-weight: normal;
+        letter-spacing: 0.5px;
         font-size: 14px;
         color: var(--heading);
         width: 100%;
@@ -265,6 +205,7 @@ const posts = (await getCollection('blog')).sort(
         background-color: var(--bg);
         outline: none;
         transition: all 0.2s ease-in-out;
+
     }
     .search-input::placeholder {
         color: rgb(157, 163, 174);
@@ -297,6 +238,8 @@ const posts = (await getCollection('blog')).sort(
         border-radius: 10px;
         border: 1px solid rgb(38 38 38/1);
         transition: border 0.3s ease-in-out;
+
+        overflow: hidden;
     }
     .blog-post-container:hover {
         border: 1px solid var(--text5);
@@ -309,12 +252,15 @@ const posts = (await getCollection('blog')).sort(
         justify-content: space-between;
         gap: 0.3rem;
     }
+    .blog-post-left-side-container > h5 {
+        color: var(--subheading);
+    }
     .blog-post-left-side-container > p {
         font-size: 14px;
-        font-weight: 330;
-        letter-spacing: 0.35px;
-        line-height: 1.35;
-        color: var(--text4);
+        font-weight: normal;
+        letter-spacing: 0.3px;
+        line-height: 1.3;
+        color: var(--text3);
     }
     .blog-post-links {
         display: flex;
@@ -362,15 +308,15 @@ const posts = (await getCollection('blog')).sort(
     @media (max-width: 599px) {
         .blog-post-container {
             flex-direction: column-reverse;
+            gap: 0.5rem;
+            padding: 0.8rem;
+        }
+        .blog-post-left-side-container > h5 {
+            margin-bottom: 0.3rem;
         }
         .blog-post-right-side-container > img {
             width: 100%;
             height: auto;
-        }
-        .blog-post-left-side-container > p {
-            font-weight: 400;
-            letter-spacing: 0.3px;
-            line-height: 1.35;
         }
     }
 
