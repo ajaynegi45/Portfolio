@@ -60,3 +60,4 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 [//]: # (now get the project id from the list and then paste it into the <project-id>    eg: firebase use abc)
 [//]: # (2. firebase use <project-id>)
 [//]: # (3. now try to deploy it)
+[//]: # (firebase hosting:channel:deploy ajaynegitest    for deployig it on test environment)

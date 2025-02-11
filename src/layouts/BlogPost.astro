@@ -5,52 +5,55 @@ import Layout from "./Layout.astro";
 type Props = CollectionEntry<'blog'>['data'];
 const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
 ---
-<Layout title={title} description={description}>
+<Layout title={title} description={description} {...(heroImage ? { image: heroImage } : {})}>
     <section>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/" class="breadcrumb-link" aria-label="Go to home page">
+                        <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="currentColor">
+                            <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
+                            <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <span class="breadcrumb-divider">/</span>
+                <li class="breadcrumb-item">
+                    <a href="/blog" class="breadcrumb-link" aria-current="page">Blog</a>
+                </li>
+                <span class="breadcrumb-divider">/</span>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link blog-post-nav-title" aria-current="page">{title}</a>
+                </li>
+            </ol>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
-        <ol class="breadcrumb-list">
-            <li class="breadcrumb-item">
-                <a href="/" class="breadcrumb-link" aria-label="Go to home page">
-                    <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                         fill="currentColor">
-                        <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
-                        <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
-                    </svg>
-                </a>
-            </li>
-            <span class="breadcrumb-divider">/</span>
-            <li class="breadcrumb-item">
-                <a href="/blog" class="breadcrumb-link" aria-current="page">Blog</a>
-            </li>
-            <span class="breadcrumb-divider">/</span>
-            <li class="breadcrumb-item">
-                <a href="#" class="breadcrumb-link blog-post-nav-title" aria-current="page">{title}</a>
-            </li>
-        </ol>
-    </nav>
-
-
-
-
-    <main>
-        <section class="blog-post">
-            <div class="blog-hero-image"> {heroImage && <img src={heroImage} alt="" decoding="async" loading="eager" fetchpriority="high" />}</div>
-            <div class="blog-post-content-container">
-                <div class="title">
-                    <div class="date"><FormattedDate date={pubDate}/>{updatedDate && (<div class="last-updated-on">Last updated on<FormattedDate date={updatedDate}/></div>)}</div>
-                    <h1>{title}</h1>
-                    <!--  divider -->
-                    <div id="divider-label" class="hidden">First Section Divider</div>
-                    <div class="section-divider" role="separator" aria-labelledby="divider-label">
-                        <div></div>
-                    </div>
+        <main>
+            <section class="blog-post">
+                <div class="blog-hero-image">
+                    {heroImage && <img src={heroImage} alt="" decoding="async" loading="eager" fetchpriority="high"/>}
                 </div>
-                <slot/>
-            </div>
-        </section>
-    </main>
+                <div class="blog-post-content-container">
+                    <div class="title">
+                        <div class="date">
+                            <FormattedDate date={pubDate}/>
+                            {updatedDate && (
+                                    <div class="last-updated-on">Last updated on
+                                        <FormattedDate date={updatedDate}/>
+                                    </div>)}</div>
+                        <h1>{title}</h1>
+                        <!--  divider -->
+                        <div id="divider-label" class="hidden">First Section Divider</div>
+                        <div class="section-divider" role="separator" aria-labelledby="divider-label">
+                            <div></div>
+                        </div>
+                    </div>
+                    <slot/>
+                </div>
+            </section>
+        </main>
     </section>
 
 </Layout>
@@ -64,16 +67,17 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-
-        user-select: auto;
     }
+
     .hero-image {
         width: 100%;
     }
+
     .blog-hero-image img {
         width: 100% !important;
         max-width: 700px !important;
         height: auto !important;
+        max-height: 400px;
         margin: 0.5rem 0 1rem 0;
     }
 
@@ -105,35 +109,41 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         margin-bottom: 0.5em;
         color: var(--text4);
     }
+
     .blog-post .last-updated-on {
         margin-top: 0.5em;
         font-style: italic;
     }
 
-    h1,h2 {
-        margin:  1rem 0 2rem 0 ;
+    h1, h2 {
+        margin: 1rem 0 2rem 0;
         color: var(--heading);
     }
-    h3,h4,h5,h6 {
-        margin:  1rem 0 2rem 0 ;
+
+    h3, h4, h5, h6 {
+        margin: 1rem 0 2rem 0;
         color: var(--subheading) !important;
     }
-    h1 * , h2 * , h3 * , h4 * , h5 * , h6 * {
+
+    h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
         font-weight: inherit !important;
         font-size: inherit !important;
         color: inherit !important;
     }
+
     strong {
         color: var(--subheading);
     }
+
     p {
-        margin-bottom:  1.5rem;
+        margin-bottom: 1.5rem;
         letter-spacing: 1px;
         line-height: 1.6em;
         font-weight: 400;
         font-size: 18px;
         color: var(--text);
     }
+
     em {
         font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         font-weight: 300;
@@ -146,7 +156,7 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
     }
 
 
-  p > a {
+    p > a {
         display: block;
         text-align: center;
     }
@@ -158,6 +168,7 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         width: 100%;
         border-bottom: 1px solid rgb(38 38 38/1);
     }
+
     .breadcrumb-list {
         display: flex;
         flex-direction: row;
@@ -169,19 +180,23 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         list-style-type: none;
         color: #ffffffb3;
     }
+
     .breadcrumb-link > svg {
         width: 1.1rem;
         height: auto;
     }
+
     .breadcrumb-item {
         display: flex;
         align-items: center;
     }
+
     .breadcrumb-link {
         font-weight: normal;
         color: rgba(255, 255, 255, 0.7);
         text-decoration: none;
     }
+
     .blog-post-nav-title {
         width: 63vw;
         text-wrap: nowrap;
@@ -189,17 +204,18 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
     .breadcrumb-link:hover {
         color: rgba(226, 232, 240, 1);
     }
+
     .breadcrumb-divider {
         color: #fff6;
     }
+
     .breadcrumb-item span {
         color: rgba(38, 38, 38, 0.7);
     }
-
-
 
 
     /* Divider */
@@ -236,4 +252,16 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         border: none;
         outline: none;
     }
+
+    @media (max-width: 425px) {
+
+        .blog-post .title h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+        }
+    }
+
 </style>

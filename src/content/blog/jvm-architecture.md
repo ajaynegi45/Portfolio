@@ -1,8 +1,9 @@
 ---
 title: 'How Does Java Really Work? Inside the JVM Architecture'
 description: 'Have you ever wondered what really happens when you run a Java program? How does Java go from the code you write to something your computer can actually run? And how does it manage to do all of this across different platforms with the same code? If so, your''e in the right place.'
-pubDate: 'Jun 21 2025'
+pubDate: 'Jan 21 2025'
 heroImage: '/Java-Architecture-Seo-Banner.svg'
+substack: 'https://open.substack.com/pub/codiescoder/p/java-architecture?r=2b2cjl&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false'
 ---
 
 

@@ -168,7 +168,7 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         padding: 0.5rem;
         border-radius: 0.25rem;
         font-size: 0.75rem;
-        max-width: 200px;
+        max-width: 500px;
         text-align: center;
         z-index: 10;
         opacity: 0;
@@ -179,12 +179,12 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         content: "";
         position: absolute;
         top: 100%;
-        left: 30%;
+        left: 31.3%;
         transform: translateX(-50%);
         border-width: 8px;
         border-style: solid;
         border-color: var(--subheading) transparent transparent transparent;
-        opacity: 0.8;
+        opacity: 1;
     }
 
     .dot:hover + .info {
@@ -267,6 +267,18 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
 
         .project-card-left-side-header {
             justify-content: space-between;
+        }
+
+
+        .info {
+            left: 90%;
+            transform: translateX(-72%);
+            width: 209.16px;
+        }
+
+        .info::after {
+            left: 85.9%;
+            transform: translateX(-50%);
         }
     }
 </style>

@@ -89,23 +89,25 @@ const posts = (await getCollection('blog')).sort(
                         </a>
                     </div>
 
-                    <div class="post-link">
-                        <a href="https://open.substack.com/pub/codiescoder/p/java-architecture?r=2b2cjl&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false"
-                           target="_blank" rel="noopener noreferrer" aria-label="Read more about Java Architecture">
-                            <span>Read Substack</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
-                                <path d="M15 3h6v6"></path>
-                                <path d="M10 14 21 3"></path>
-                                <path d="m18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    {post.data.substack && (
+                        <div class="post-link">
+                            <a href={post.data.substack}
+                               target="_blank" rel="noopener noreferrer" aria-label="Read more about Java Architecture">
+                                <span>Read Substack</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true">
+                                    <path d="M15 3h6v6"></path>
+                                    <path d="M10 14 21 3"></path>
+                                    <path d="m18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
             <div class="blog-post-right-side-container">
-                <img src={JavaArchitectureBanner.src} alt="Diagram illustrating Java Architecture"
+                <img src={post.data.heroImage} alt="Diagram illustrating Java Architecture"
                      decoding="async" loading="lazy" fetchpriority="auto"  />
             </div>
         </article>
