@@ -31,9 +31,9 @@ Glad you asked! Here’s why this blog is your new secret weapon:
 
 
 ### **Join the Codies Crew**
-Hit **[Subscribe](https://www.youtube.com/watch?v=jCDqPJ4Fua0)** like it’s the last slice of pizza. Get our monthly deep dives delivered straight to your inbox.
+Hit **[Subscribe](https://codiescoder.substack.com/subscribe)** like it’s the last slice of pizza. Get our monthly deep dives delivered straight to your inbox.
 
-[Subscribe Now](https://www.youtube.com/watch?v=jCDqPJ4Fua0)
+[Subscribe Now](https://codiescoder.substack.com/subscribe)
 
 ---
 
