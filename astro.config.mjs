@@ -6,7 +6,12 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://ajaynegi.web.app',
-    integrations: [mdx(), sitemap()],
+    integrations: [
+        mdx(),
+        sitemap({
+                xslURL: '/sitemap.xsl'
+        })
+    ],
     markdown: {
         shikiConfig: {
             theme: 'vitesse-dark',

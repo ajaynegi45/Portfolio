@@ -50,6 +50,9 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+html {
+    /*background: url('background.png') top center / 100% auto no-repeat; */
+}
 html, body {
     overflow: hidden; /* Hide overflow initially */
     overflow-y: scroll; /* Enable vertical scrolling */

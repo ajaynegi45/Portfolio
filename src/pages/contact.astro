@@ -11,8 +11,10 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="contact-form">
             <!-- Contact Form -->
-            <form action="/submit-form" method="POST" aria-labelledby="contact-form">
+            <form method="POST" aria-labelledby="contact-form" id="form">
+                <input type="hidden" name="access_key" value="197f6bde-3b19-4470-8a5b-862493338e8c">
                 <fieldset>
+
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -34,6 +36,7 @@ import Layout from "../layouts/Layout.astro";
                             />
                         </div>
                     </div>
+
                     <!-- Email -->
                     <div class="form-group">
                         <label for="email">Email Address</label>
@@ -55,6 +58,7 @@ import Layout from "../layouts/Layout.astro";
                             />
                         </div>
                     </div>
+
                     <!-- Reason -->
                     <div class="form-group">
                         <label for="reason">Reason</label>
@@ -80,6 +84,7 @@ import Layout from "../layouts/Layout.astro";
                             />
                         </div>
                     </div>
+
                     <!-- Message -->
                     <div class="form-group">
                         <label for="message">Your Message</label>
@@ -94,10 +99,11 @@ import Layout from "../layouts/Layout.astro";
                         ></textarea>
                     </div>
 
+                    <!-- Submit Button -->
                     <div class="submit-btn-container">
-                        <!-- Submit Button -->
                         <button type="submit" class="submit-btn">Send Message</button>
                     </div>
+
                 </fieldset>
             </form>
         </div>
@@ -111,6 +117,62 @@ import Layout from "../layouts/Layout.astro";
                 this.style.height = `${this.scrollHeight}px`;
             });
         }
+    </script>
+
+    <script is:inline>
+        // use astro:page-load event if you are using View Transitions
+        document.addEventListener("DOMContentLoaded", () => {
+
+                const form = document.getElementById("form");
+                const result = document.getElementById("result");
+
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    form.classList.add("was-validated");
+                    if (!form.checkValidity()) {
+                        form.querySelectorAll(":invalid")[0].focus();
+                        return;
+                    }
+                    const formData = new FormData(form);
+                    const object = Object.fromEntries(formData);
+                    const json = JSON.stringify(object);
+
+                    result.innerHTML = "Sending...";
+
+                    fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json",
+                        },
+                        body: json,
+                    })
+                        .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                                result.classList.add("text-green-500");
+                                result.innerHTML = json.message;
+                            } else {
+                                console.log(response);
+                                result.classList.add("text-red-500");
+                                result.innerHTML = json.message;
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            result.innerHTML = "Something went wrong!";
+                        })
+                        .then(function () {
+                            form.reset();
+                            form.classList.remove("was-validated");
+                            setTimeout(() => {
+                                result.style.display = "none";
+                            }, 5000);
+                        });
+                });
+            },
+            { once: true },
+        );
     </script>
 </Layout>
 
