@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
             <p>We'd love to hear from you. Please fill out the form below to reach out to us with your inquiries.</p>
         </div>
         <div class="contact-form">
+
             <!-- Contact Form -->
             <form method="POST" aria-labelledby="contact-form" id="form">
                 <input type="hidden" name="access_key" value="197f6bde-3b19-4470-8a5b-862493338e8c">
@@ -92,7 +93,7 @@ import Layout from "../layouts/Layout.astro";
                         <textarea
                                 id="message"
                                 name="message"
-                                placeholder="Currently work on it - Soon it will start..."
+                                placeholder="Write your message here"
                                 required
                                 aria-required="true"
                                 aria-label="Write your message here"
@@ -101,7 +102,7 @@ import Layout from "../layouts/Layout.astro";
 
                     <!-- Submit Button -->
                     <div class="submit-btn-container">
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn" id="result">Send Message</button>
                     </div>
 
                 </fieldset>
@@ -109,52 +110,51 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <script>
-        const textarea = document.getElementById('message') as HTMLElement | null;
+    <script is:inline>
+        const textarea = document.getElementById('message');
         if (textarea) {
             textarea.addEventListener('input', function () {
                 this.style.height = 'auto';
                 this.style.height = `${this.scrollHeight}px`;
             });
         }
-    </script>
 
-    <script is:inline>
+
         // use astro:page-load event if you are using View Transitions
         document.addEventListener("DOMContentLoaded", () => {
 
                 const form = document.getElementById("form");
-                const result = document.getElementById("result");
+                const result = document.getElementById('result');
 
                 form.addEventListener("submit", function (e) {
-                    e.preventDefault();
                     form.classList.add("was-validated");
                     if (!form.checkValidity()) {
                         form.querySelectorAll(":invalid")[0].focus();
                         return;
                     }
                     const formData = new FormData(form);
+
+                    e.preventDefault();
                     const object = Object.fromEntries(formData);
                     const json = JSON.stringify(object);
 
                     result.innerHTML = "Sending...";
 
-                    fetch("https://api.web3forms.com/submit", {
-                        method: "POST",
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
                         headers: {
-                            "Content-Type": "application/json",
-                            Accept: "application/json",
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
                         },
-                        body: json,
+                        body: json
                     })
+
                         .then(async (response) => {
                             let json = await response.json();
-                            if (response.status == 200) {
-                                result.classList.add("text-green-500");
+                            if (response.status === 200) {
                                 result.innerHTML = json.message;
                             } else {
                                 console.log(response);
-                                result.classList.add("text-red-500");
                                 result.innerHTML = json.message;
                             }
                         })
@@ -281,8 +281,8 @@ import Layout from "../layouts/Layout.astro";
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: var(--link-hover);
-        color: var(--text);
+        background-color: var(--link);
+        color: var(--light-text);
         padding: 0.75rem 1.5rem;
         border: none;
         border-radius: 5px;
@@ -291,7 +291,8 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .submit-btn:hover {
-        color: var(--light-text);
+        color: var(--subheading);
+        background-color: var(--link-hover);
         transition: background-color 0.3s ease;
     }
 </style>
