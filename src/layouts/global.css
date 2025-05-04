@@ -43,6 +43,12 @@
     --hover-accent: #ff9e72;
 }
 
+::selection {
+    background: #22C55E4D;
+    color: #22C55E;
+}
+
+
 
 /* Hide scrollbar for Chrome, Safari, and Edge */
 html::-webkit-scrollbar,
