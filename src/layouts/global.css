@@ -9,7 +9,8 @@
 
 :root {
     /* Dark Mode Color Scheme */
-    --bg: #18181b;
+    /*--bg: #18181b;*/
+    --bg: hsl(220 20% 5%);
     --heading: #f5f5f7;
     --subheading: rgb(212 212 216); /* D4D4D8FF */
 
@@ -77,6 +78,8 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
     background-color: var(--bg);
+
+    /*background: hsl(220 20% 5%);*/
     color: var(--text);
     max-width: 700px;
     height: 100%;
