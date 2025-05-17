@@ -16,25 +16,28 @@ import NoSQL from "../assets/certificate/InfosysIntroductiontoNoSQLdatabases.avi
 import ProgrammingJava from "../assets/certificate/InfosysProgrammingusingJava.avif";
 import SoftwareEngg from "../assets/certificate/InfosysSoftwareEngineeringandAgilesoftwaredevelopment.avif";
 import TimeManagement from "../assets/certificate/InfosysTimeManagement.avif";
-import GSSOCInternship from "../assets/certificate/GSSOC2024Extd.avif"
+import GSSOCInternship from "../assets/certificate/GSSOC2024Extd.avif";
+import SolidPrinciples from "../assets/certificate/SOLIDPrinciples.avif";
+import MonolithicMicroservicesArchitecture from "../assets/certificate/Monolithic&MicroservicesArchitecture.avif"
 
 // Array of certificate data
 const certificates = [
     { img: Internship, title: "Infosys Internship" },
     { img: GSSOCInternship, title: "GirlScript Summer of Code Internship" },
-
     { img: CKAD, title: "Certified Kubernetes Application Developer" },
-
     { img: DSA, title: "Data Structures and Algorithms using Java" },
-    { img: Java, title: "Java Foundation" },
-    { img: ProgrammingJava, title: "Programming using Java" },
 
-    { img: GooglePython, title: "Crash Course on Python" },
+    { img: MonolithicMicroservicesArchitecture, title: "Monolithic & Microservices Architecture" },
+    { img: SolidPrinciples, title: "Solid Principles" },
+
+
 
     { img: DBMS1, title: "Database Management System Part 1" },
     { img: DBMS2, title: "Database Management System Part 2" },
     { img: NoSQL, title: "Introduction to NoSQL Databases" },
-
+    { img: GooglePython, title: "Crash Course on Python" },
+    { img: Java, title: "Java Foundation" },
+    { img: ProgrammingJava, title: "Programming using Java" },
     { img: SoftwareEngg, title: "Software Engineering & Agile Software Development" },
     { img: AgileScrum, title: "Agile Scrum in Practice" },
     { img: GoogleDigitalMarketing, title: "The Fundamentals of Digital Marketing" },
@@ -54,7 +57,7 @@ const certificates = [
         <div class="grid">
             {certificates.map((cert) => (
                     <div class="card">
-                        <img src={cert.img.src} alt={cert.title} />
+                        <img src={cert.img.src} alt={cert.title} decoding="async" loading="eager" fetchpriority="high" />
                         <p>{cert.title}</p>
                     </div>
             ))}
@@ -64,7 +67,7 @@ const certificates = [
 
 <style>
     .certificates {
-        padding: 2rem 0rem;
+        padding: 2rem 0;
         text-align: center;
     }
 
