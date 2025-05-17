@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Internship from "../assets/certificate/InfosysInternship.avif";
+import Java from "../assets/certificate/InfosysJavaFoundation.avif";
+import AdvancedExcel from "../assets/certificate/AdvancedExcel.avif";
+import AgileScrum from "../assets/certificate/AgileScrum.avif";
+import CKAD from "../assets/certificate/CKAD.avif";
+import GoogleDigitalMarketing from "../assets/certificate/GoogleDigitalMarketing.avif";
+import GooglePython from "../assets/certificate/GooglePython.avif";
+import DBMS1 from "../assets/certificate/InfosysDatabaseManagementSystemPart1.avif";
+import DBMS2 from "../assets/certificate/InfosysDatabaseManagementSystemPart2.avif";
+import DSA from "../assets/certificate/InfosysDataStructuresandAlgorithmsusingJava.avif";
+import EmailWriting from "../assets/certificate/InfosysEmailWritingSkills.avif";
+import Presentations from "../assets/certificate/InfosysHighImpactPresentations.avif";
+import NoSQL from "../assets/certificate/InfosysIntroductiontoNoSQLdatabases.avif";
+import ProgrammingJava from "../assets/certificate/InfosysProgrammingusingJava.avif";
+import SoftwareEngg from "../assets/certificate/InfosysSoftwareEngineeringandAgilesoftwaredevelopment.avif";
+import TimeManagement from "../assets/certificate/InfosysTimeManagement.avif";
+import GSSOCInternship from "../assets/certificate/GSSOC2024Extd.avif"
+
+// Array of certificate data
+const certificates = [
+    { img: Internship, title: "Infosys Internship" },
+    { img: GSSOCInternship, title: "GirlScript Summer of Code Internship" },
+
+    { img: CKAD, title: "Certified Kubernetes Application Developer" },
+
+    { img: DSA, title: "Data Structures and Algorithms using Java" },
+    { img: Java, title: "Java Foundation" },
+    { img: ProgrammingJava, title: "Programming using Java" },
+
+    { img: GooglePython, title: "Crash Course on Python" },
+
+    { img: DBMS1, title: "Database Management System Part 1" },
+    { img: DBMS2, title: "Database Management System Part 2" },
+    { img: NoSQL, title: "Introduction to NoSQL Databases" },
+
+    { img: SoftwareEngg, title: "Software Engineering & Agile Software Development" },
+    { img: AgileScrum, title: "Agile Scrum in Practice" },
+    { img: GoogleDigitalMarketing, title: "The Fundamentals of Digital Marketing" },
+    { img: EmailWriting, title: "Email Writing Skills" },
+    { img: TimeManagement, title: "Time Management" },
+    { img: Presentations, title: "High Impact Presentations" },
+    { img: AdvancedExcel, title: "Advanced Excel" },
+];
+---
+
+<Layout
+        title="Certificates | Ajay Negi"
+        description="Explore the professional certifications earned by Ajay Negi. These validate his skills and training across various domains."
+>
+    <section class="certificates">
+        <h1>Certification Journey 🚀</h1>
+        <div class="grid">
+            {certificates.map((cert) => (
+                    <div class="card">
+                        <img src={cert.img.src} alt={cert.title} />
+                        <p>{cert.title}</p>
+                    </div>
+            ))}
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .certificates {
+        padding: 2rem 0rem;
+        text-align: center;
+    }
+
+    .certificates h1 {
+        font-size: 1.60rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 0.6rem;
+        border-radius: 10px;
+        border: 1px solid var(--card-border);
+        transition: border 0.2s ease-in-out;
+        margin-bottom: 1.5rem;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        border: 1px solid var(--text5);
+        cursor: pointer;
+        background-color: var(--background-hover);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+        color: var(--text);
+        padding: 0.31rem 0;
+    }
+</style>

@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+        title="System Breached | Ajay Negi"
+        description="A cinematic hacking simulation with typing effects and infinite scrolling terminal logs."
+>
+
+    <div id="hacked-container">
+        <div id="intro-message"><span id="typed-text"></span></div>
+
+        <div id="scroll-wrapper" style="display: none;">
+            <div class="scroll-text">
+    <pre id="log-content">
+[+] Initializing connection...
+[+] Target IP: 192.168.0.5
+[+] MAC: 3A-F4-5C-1D-93-BA
+[+] OS: Linux Debian 12
+[+] Kernel Version: 5.15.0-86-generic
+[+] Uptime: 23 days
+[+] CPU: Intel(R) Xeon(R) CPU E5-2670 v3 @ 2.30GHz
+[+] Memory: 16GB
+[+] Port scan in progress...
+[+] Port 21 [FTP] - Closed
+[+] Port 22 [SSH] - Open
+[+] Port 80 [HTTP] - Open
+[+] Port 443 [HTTPS] - Open
+[+] SSH handshake complete.
+[+] Bypassing firewall rules...
+[+] Injecting privilege escalation exploit...
+[+] Exploit: CVE-2023-27163
+[+] ROOT shell obtained.
+[+] Access Level: Administrator
+[+] Mounting file systems...
+[+] /mnt/c/user → mounted
+[+] /etc/passwd → 6.5 KB
+[+] /etc/shadow → 2.3 KB
+[+] Copying credentials...
+[+] cat /etc/shadow > dump/shadow.txt
+[+] Searching for saved browser data...
+[+] Found Chrome: /home/user/.config/google-chrome/
+[+] Extracting Cookies.db, History, Login Data...
+[+] Decoding password vault...
+[+] Grabbed 42 saved passwords
+[+] Accessing email logs...
+[+] Found Outlook PST archive
+[+] Scanning for tokens and API keys...
+[+] Key found: ghp_x8Zj8NaK39zLtqA29LME****
+[+] Key found: sk-live-78f38cfe****
+[+] Encrypting data for exfil...
+[+] Uploading to http://darkdrop.zone/upload/
+[+] Upload success ✔
+[+] Cleaning traces...
+[+] Shredding log history...
+[+] rm -rf ~/.bash_history
+[+] rm -rf /var/log/*
+[+] Disabling system logs...
+[+] Done.
+[+] Triggering system shutdown in 30s...
+[+] Awaiting next target...
+    </pre>
+            </div>
+        </div>
+
+    </div>
+
+    <script is:inline>
+        const messages = [
+            "Initializing breach protocol...",
+            "Finding your device...",
+            "Checking for access...",
+            "Access granted.",
+            "Gaining root privileges...",
+            "Injecting payload...",
+            "You got hacked.",
+            "Downloading sensitive files..."
+        ];
+
+        const typedText = document.getElementById("typed-text");
+
+        let currentMessage = 0;
+        let currentChar = 0;
+
+        function typeNextChar() {
+            if (currentChar < messages[currentMessage].length) {
+                typedText.textContent += messages[currentMessage].charAt(currentChar);
+                currentChar++;
+                setTimeout(typeNextChar, 100); // typing speed
+            } else {
+                currentMessage++;
+                if (currentMessage < messages.length) {
+                    setTimeout(() => {
+                        typedText.textContent = ""; // clear for next message
+                        currentChar = 0;
+                        typeNextChar();
+                    }, 900); // pause between messages
+                } else {
+                    // All messages done, show logs
+                    setTimeout(() => {
+                        document.getElementById("intro-message").style.display = "none";
+                        document.getElementById("scroll-wrapper").style.display = "block";
+                    }, 1500);
+                }
+            }
+        }
+
+        typeNextChar();
+    </script>
+
+</Layout>
+
+<style>
+    #hacked-container {
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        font-family: monospace;
+        color: #00ff00;
+        pointer-events: none;
+        z-index: 9999;
+    }
+
+    #intro-message {
+        font-size: 18px;
+        color: #00ff00;
+        white-space: pre;
+    }
+
+    #scroll-wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        animation: scrollInfinite 25s linear infinite;
+    }
+
+    .scroll-text {
+        padding: 1rem 2rem;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .scroll-text pre {
+        margin: 0;
+        white-space: pre-wrap;
+    }
+
+    @keyframes scrollInfinite {
+        0% {
+            transform: translateY(65%);
+        }
+        100% {
+            transform: translateY(-120%);
+        }
+    }
+</style>
