@@ -32,7 +32,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         <!-- About Section -->
         <section class="about-section">
             <h2 style="font-size: 1.1rem;" >About Me</h2>
-            <p>I design and engineer robust software systems that scale across cloud environments and adapt to real-world complexity. With a strong foundation in distributed architectures and microservices, my work is grounded in clean code, system reliability, and long-term maintainability. I specialize in taking high-impact problems from concept to production-ready cloud-native solutions — <strong>engineered to last</strong>.</p>
+            <p>I design and engineer robust software systems that scale across cloud environments and adapt to real-world complexity. With a strong foundation in distributed architectures, my work is grounded in clean code, system reliability, and long-term maintainability. I specialize in taking high-impact problems from concept to production-ready cloud-native solutions — <strong>engineered to last</strong>.</p>
 
 
             <!--<p>Always be Architecting and Engineering.</p>-->
@@ -150,8 +150,9 @@ import ProjectCard from "../components/ProjectCard.astro";
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        gap: 1rem;
+        align-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
     .hero-content p.email,
@@ -185,6 +186,28 @@ import ProjectCard from "../components/ProjectCard.astro";
         color: var(--subheading);
         width: 0.9rem;
         height: auto;
+    }
+
+    @media (max-width: 425px) {
+        .contact-links {
+            gap: 0.52rem;
+        }
+        .hero-content p.resume-download {
+            padding: 0.2rem 0.50rem;
+        }
+    }
+    @media (max-width: 400px) {
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content:  flex-start;
+            align-items:  flex-start;
+            gap: 1rem;
+        }
+        .hero-content p.resume-download {
+            padding: 0.25rem 0.7rem;
+        }
     }
 
     /* About Section */
