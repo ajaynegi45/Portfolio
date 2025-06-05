@@ -10,6 +10,8 @@ import ProjectCard from "../components/ProjectCard.astro";
     <!-- Main Section -->
     <main class="main-section">
 
+
+
         <!-- Hero Section -->
         <section class="hero-section" aria-labelledby="hero-heading">
             <header class="hero-content">
@@ -32,7 +34,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         <!-- About Section -->
         <section class="about-section">
             <h2 style="font-size: 1.1rem;" >About Me</h2>
-            <p>I design and engineer robust software systems that scale across cloud environments and adapt to real-world complexity. With a strong foundation in distributed architectures, my work is grounded in clean code, system reliability, and long-term maintainability. I specialize in taking high-impact problems from concept to production-ready cloud-native solutions — <strong>engineered to last</strong>.</p>
+            <p>I design and engineer robust software systems that scale across cloud environments and adapt to real-world complexity. With a strong foundation in distributed architectures, my work is grounded in clean code, system reliability, and long-term maintainability. I specialize in taking high-impact problems from concept to production-ready cloud-native solutions — <span class="highlight-spot" ><strong>Engineered to Last</strong></span>.</p>
 
 
             <!--<p>Always be Architecting and Engineering.</p>-->
@@ -127,6 +129,97 @@ import ProjectCard from "../components/ProjectCard.astro";
     </main>
 </Layout>
 <style>
+    @keyframes highlight-sweep {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .highlight-spot {
+        display: inline-block;
+        background: linear-gradient(
+                120deg,
+                #d1c4e9 10%,   /* pastel lavender */
+                #b2ebf2 40%,   /* pastel teal */
+                #ffe0b2 70%,   /* pastel orange */
+                #d1c4e9 100%
+        );
+        background-size: 300% 100%;
+        background-position: 0 0;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: highlight-sweep 2s ease-in-out forwards;
+        animation-delay: 0.3s;
+
+        transform: skewX(-5deg);
+    }
+
+
+
+    //.highlight-spot {
+    //    position: relative;
+    //    display: inline;
+    //    color: white;
+    //    padding: 0.15rem 0.4rem;
+    //    z-index: 1;
+    //    overflow: hidden;
+    //}
+    //
+    //.highlight-spot::before {
+    //    content: '';
+    //    position: absolute;
+    //    top: 0;
+    //    left: -100%;
+    //    width: 100%;
+    //    height: 100%;
+    //    //background: linear-gradient(120deg, hsl(138, 60%, 35%) 0%, hsl(138, 60%, 45%) 70%);
+    //    background-color: #296E01;
+    //    animation: sweepIn 1.2s ease-out forwards;
+    //    transform: rotate(-1deg);
+    //    z-index: -1;
+    //    border-radius: 1px;
+    ////}
+    //
+    //
+    //@keyframes sweepIn {
+    //    0% {
+    //        padding: 0.5rem 0.4rem;
+    //        left: -10%;
+    //        opacity: 0.2;
+    //    }
+    //    50% {
+    //        left: 0%;
+    //        opacity: 0.6;
+    //    }
+    //    100% {
+    //        left: 0%;
+    //        opacity: 1;
+    //        padding: 0.15rem 0.4rem;
+    //    }
+    //}
+
+
+
+    //.main-section {
+    //    position: relative;
+    //    overflow: hidden;
+    //    width: 100%;
+    //    height: 100vh;
+    //    background: #0a0a0a;
+    //    color: white;
+    //    display: flex;
+    //    align-items: center;
+    //    justify-content: center;
+    //    text-align: center;
+    //}
+
+
+
+
     /* Hero Section */
     .hero-section {
         margin-bottom: 2rem;

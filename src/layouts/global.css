@@ -100,11 +100,6 @@ body {
 
     /*background: hsl(220 20% 5%);*/
     color: var(--text);
-    max-width: 700px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 1rem 0 1rem;
-    overflow: hidden;
 
     letter-spacing: 0.5px;
     line-height: 1.5;
@@ -121,22 +116,25 @@ body {
 
 
     transition: background-color 0.3s, color 0.3s;
-    animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) normal forwards;
+    animation-timing-function: ease;
+}
 
+#main-body-section{
+    background-color: var(--bg);
+    max-width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+    overflow: hidden;
 }
 
 @keyframes blur-reveal {
     0% {
-        filter: blur(6px);
-    }
-    20% {
         filter: blur(8px);
     }
     40% {
         filter: blur(6px);
-    }
-    60% {
-        filter: blur(4px);
     }
     80% {
         filter: blur(2px);
@@ -264,4 +262,93 @@ blockquote {
     padding: 0 0 0 20px;
     margin: 0px;
     font-size: 1.333em;
+}
+
+/*!* Dotted Background Layer *!*/
+/*.dots-bg {*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    background-image: radial-gradient(#444 1px, transparent 1px);*/
+/*    background-size: 30px 30px;*/
+/*    opacity: 0.2;*/
+/*    z-index: 0;*/
+/*    pointer-events: none;*/
+/*}*/
+
+.spotlight-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.spotlight {
+    position: absolute;
+    width: 560px;
+    height: 1380px;
+    opacity: 0.6;
+    background: radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 55%, .02) 50%, hsla(210, 100%, 45%, 0) 80%);
+    transform: rotate(-45deg) translateY(-350px);
+    animation: moveLeftRight 5s ease-in-out infinite alternate;
+}
+
+.spotlight-2,
+.spotlight-3 {
+    width: 240px;
+    background: radial-gradient(50% 50% at 50% 50%, hsla(210, 100%, 85%, .06) 0, hsla(210, 100%, 55%, .02) 80%, transparent 100%);
+}
+
+.spotlight-3 {
+    transform: rotate(-45deg) translate(-180%, -70%);
+}
+
+.spotlight-2 {
+    transform: rotate(-45deg) translate(5%, -50%);
+}
+
+.spotlight-4,
+.spotlight-5,
+.spotlight-6 {
+    position: absolute;
+    width: 560px;
+    height: 1380px;
+    opacity: 0.6;
+    background: radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(210, 100%, 85%, .08) 0, hsla(210, 100%, 55%, .02) 50%, hsla(210, 100%, 45%, 0) 80%);
+    transform: rotate(45deg) translateY(-350px);
+    animation: moveRightLeft 7s ease-in-out infinite alternate;
+    right: 0;
+}
+
+.spotlight-5,
+.spotlight-6 {
+    width: 240px;
+    background: radial-gradient(50% 50% at 50% 50%, hsla(210, 100%, 85%, .06) 0, hsla(210, 100%, 45%, .02) 80%, transparent 100%);
+}
+
+.spotlight-5 {
+    transform: rotate(45deg) translate(-5%, -50%);
+}
+
+.spotlight-6 {
+    transform: rotate(45deg) translate(180%, -70%);
+}
+
+/* Animations */
+@keyframes moveLeftRight {
+    0% { transform: translateX(0) rotate(-45deg) translateY(-350px); }
+    50% { transform: translateX(100px) rotate(-45deg) translateY(-350px); }
+    100% { transform: translateX(0) rotate(-45deg) translateY(-350px); }
+}
+
+@keyframes moveRightLeft {
+    0% { transform: translateX(0) rotate(45deg) translateY(-350px); }
+    50% { transform: translateX(-100px) rotate(45deg) translateY(-350px); }
+    100% { transform: translateX(0) rotate(45deg) translateY(-350px); }
 }
