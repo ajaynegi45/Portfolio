@@ -3,14 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import Skills from "../components/Skills.astro";
 ---
 <Layout title="Ajay Negi | Software Engineer"
         description="Hi, I'm Ajay Negi — a Software Engineer who thrives on turning complex challenges into elegant, scalable solutions. Dive into my journey where performance meets precision, and engineering translates into real-world impact.">
 
     <!-- Main Section -->
     <main class="main-section">
-
-
 
         <!-- Hero Section -->
         <section class="hero-section" aria-labelledby="hero-heading">
@@ -40,10 +39,18 @@ import ProjectCard from "../components/ProjectCard.astro";
             <!--<p>Always be Architecting and Engineering.</p>-->
         </section>
 
-
         <!-- First divider with a label -->
         <div id="divider-label-1" class="hidden">First Section Divider</div>
         <div class="section-divider" role="separator" aria-labelledby="divider-label-1">
+            <div></div>
+        </div>
+
+        <Skills/>
+
+
+        <!-- First divider with a label -->
+        <div id="divider-label-2" class="hidden">Second Section Divider</div>
+        <div class="section-divider" role="separator" aria-labelledby="divider-label-2">
             <div></div>
         </div>
 
@@ -53,8 +60,8 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 
         <!-- Second divider with a label -->
-        <div id="divider-label-2" class="hidden">Second Section Divider</div>
-        <div class="section-divider" role="separator" aria-labelledby="divider-label-2">
+        <div id="divider-label-3" class="hidden">Third Section Divider</div>
+        <div class="section-divider" role="separator" aria-labelledby="divider-label-3">
             <div></div>
         </div>
 
@@ -82,8 +89,8 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 
         <!-- Third divider with a label -->
-        <div id="divider-label-2" class="hidden">Third Section Divider</div>
-        <div class="section-divider" role="separator" aria-labelledby="divider-label-2">
+        <div id="divider-label-4" class="hidden">Fourth Section Divider</div>
+        <div class="section-divider" role="separator" aria-labelledby="divider-label-4">
             <div></div>
         </div>
 
@@ -123,15 +130,13 @@ import ProjectCard from "../components/ProjectCard.astro";
                 </a>
             </div>
         </section>
-
-
-
     </main>
 </Layout>
 <style>
     @keyframes highlight-sweep {
         0% {
             background-position: -200% 0;
+            backdrop-filter: blur(10px);
         }
         100% {
             background-position: 200% 0;
@@ -152,56 +157,11 @@ import ProjectCard from "../components/ProjectCard.astro";
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-        animation: highlight-sweep 2s ease-in-out forwards;
+        animation: highlight-sweep 2s ease-in-out infinite alternate ;
         animation-delay: 0.3s;
 
         transform: skewX(-5deg);
     }
-
-
-
-    //.highlight-spot {
-    //    position: relative;
-    //    display: inline;
-    //    color: white;
-    //    padding: 0.15rem 0.4rem;
-    //    z-index: 1;
-    //    overflow: hidden;
-    //}
-    //
-    //.highlight-spot::before {
-    //    content: '';
-    //    position: absolute;
-    //    top: 0;
-    //    left: -100%;
-    //    width: 100%;
-    //    height: 100%;
-    //    //background: linear-gradient(120deg, hsl(138, 60%, 35%) 0%, hsl(138, 60%, 45%) 70%);
-    //    background-color: #296E01;
-    //    animation: sweepIn 1.2s ease-out forwards;
-    //    transform: rotate(-1deg);
-    //    z-index: -1;
-    //    border-radius: 1px;
-    ////}
-    //
-    //
-    //@keyframes sweepIn {
-    //    0% {
-    //        padding: 0.5rem 0.4rem;
-    //        left: -10%;
-    //        opacity: 0.2;
-    //    }
-    //    50% {
-    //        left: 0%;
-    //        opacity: 0.6;
-    //    }
-    //    100% {
-    //        left: 0%;
-    //        opacity: 1;
-    //        padding: 0.15rem 0.4rem;
-    //    }
-    //}
-
 
 
     //.main-section {
@@ -216,9 +176,6 @@ import ProjectCard from "../components/ProjectCard.astro";
     //    justify-content: center;
     //    text-align: center;
     //}
-
-
-
 
     /* Hero Section */
     .hero-section {

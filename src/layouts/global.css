@@ -43,9 +43,6 @@
     --accent: #ff7f50; /* Muted orange */
     --hover-accent: #ff9e72;
 
-
-
-
     --transition-eased: ease-in-out;
 
 
@@ -84,6 +81,8 @@ html, body {
     overflow-y: scroll; /* Enable vertical scrolling */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
+
+    background-color: var(--bg);
 }
 
 body {
@@ -95,8 +94,6 @@ body {
     -moz-osx-font-smoothing: auto;
     font-feature-settings: 'liga' 1, 'calt' 1;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    background-color: var(--bg);
 
     /*background: hsl(220 20% 5%);*/
     color: var(--text);
@@ -118,15 +115,34 @@ body {
     transition: background-color 0.3s, color 0.3s;
     animation: blur-reveal 0.15s cubic-bezier(0.4, 0, 0.2, 1) normal forwards;
     animation-timing-function: ease;
+
 }
+/*.gradient-background {*/
+/*    position: fixed; !* Make it stick to the viewport *!*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100vw;*/
+/*    height: 100%;*/
+/*    z-index: -1; !* Keep it behind your content *!*/
+
+/*    background-image: url("/star-background.png");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*}*/
+
 
 #main-body-section{
-    background-color: var(--bg);
+    /*background-color: var(--bg);*/
     max-width: 700px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1rem 0 1rem;
     overflow: hidden;
+
+    /*backdrop-filter: brightness(10%);*/
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 @keyframes blur-reveal {
@@ -264,16 +280,16 @@ blockquote {
     font-size: 1.333em;
 }
 
-/*!* Dotted Background Layer *!*/
-/*.dots-bg {*/
-/*    position: absolute;*/
-/*    inset: 0;*/
-/*    background-image: radial-gradient(#444 1px, transparent 1px);*/
-/*    background-size: 30px 30px;*/
-/*    opacity: 0.2;*/
-/*    z-index: 0;*/
-/*    pointer-events: none;*/
-/*}*/
+/* Dotted Background Layer */
+.dots-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#444 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+}
 
 .spotlight-wrapper {
     position: absolute;

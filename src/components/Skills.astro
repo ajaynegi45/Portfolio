@@ -1,0 +1,121 @@
+---
+import github from "../assets/skills/github_dark.svg";
+import java from "../assets/skills/java.svg";
+import javascript from "../assets/skills/javascript.svg"
+import react from "../assets/skills/react_dark.svg";
+import typescript from "../assets/skills/typescript.svg";
+import astro from "../assets/skills/astro_dark.svg";
+import k6 from "../assets/skills/K6-load-testing-tool-logo.svg"
+import docker from "../assets/skills/docker.svg";
+import kubernetes from "../assets/skills/kubernetes.svg";
+import go from "../assets/skills/golang_dark.svg";
+import mongodb from "../assets/skills/mongodb.svg";
+import spring from "../assets/skills/spring.svg";
+import postgresql from "../assets/skills/postgresql.svg";
+import aws from "../assets/skills/aws_dark.svg";
+import linux from "../assets/skills/linux.svg";
+import bash from "../assets/skills/bash_dark.svg"
+import nextjs from "../assets/skills/nextjs_icon_dark.svg"
+import postman from "../assets/skills/postman.svg";
+import mysql from "../assets/skills/mysql.svg";
+import kafka from "../assets/skills/kafka.svg"
+import html from "../assets/skills/html5.svg"
+import css from "../assets/skills/css.svg"
+import nodejs from "../assets/skills/nodejs.svg"
+import git from "../assets/skills/git.svg"
+
+const skills = [
+    { name: "Java", icon: java },
+    { name: "Springboot", icon: spring },
+    { name: "AWS", icon: aws },
+    { name: "Docker", icon: docker },
+    { name: "Kubernetes", icon: kubernetes },
+
+    { name: "k6", icon: k6 },
+    { name: "MongoDB", icon: mongodb },
+    { name: "Postgresql", icon: postgresql },
+    { name: "MySql", icon: mysql },
+    { name: "Linux", icon: bash },
+
+    { name: "JavaScript", icon: javascript },
+    { name: "React.js", icon: react },
+    { name: "Next.js", icon: nextjs },
+    { name: "TypeScript", icon: typescript},
+    { name: "Nodejs", icon: nodejs },
+
+    { name: "HTML5", icon: html },
+    { name: "CSS", icon: css },
+    { name: "Astro", icon: astro },
+    { name: "Golang", icon: go },
+    { name: "Postman", icon: postman },
+
+    { name: "Kafka", icon: kafka },
+    { name: "Github", icon: github },
+    { name: "Git", icon: git },
+];
+---
+
+<section>
+    <h2 class="skills-heading">Technical Skills</h2>
+
+    <div class="tech-skills-list-container">
+        {
+            skills.map(skill => (
+                    <div class="tech-skill" title={skill.name}>
+                        <img src={skill.icon.src} alt={skill.name + ' icon'} class="tech-icon" />
+                        <p>{skill.name}</p>
+                    </div>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .skills-heading {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--heading);
+    }
+
+    .tech-skills-list-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .tech-skill {
+        border: 1px dashed var(--card-border);
+        text-align: center;
+        border-radius: 0.5rem;
+        transition: transform 0.2s ease;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 5px;
+
+        padding: 0.6rem;
+        overflow: hidden;
+    }
+
+    .tech-skill:hover {
+        transform: translateY(-5px);
+        background-color: var(--background-hover);
+        border: 0.9px solid var(--text5);
+        cursor: pointer;
+    }
+
+    .tech-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 5%;
+    }
+
+    .tech-skill p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: var(--text);
+    }
+</style>
