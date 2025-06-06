@@ -110,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <script is:inline>
+    <script is:inline astro:page-load>
         window.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById("form");
             const result = document.getElementById("result");
@@ -160,7 +160,6 @@ import Layout from "../layouts/Layout.astro";
                     result.style.background = "#22C55E";
                     result.style.color = "#222";
 
-                    form.reset();
                 } catch (err) {
                     console.error("Error submitting form:", err);
                     result.innerHTML = "❌ Failed to send message. Please try again later.";
@@ -170,6 +169,7 @@ import Layout from "../layouts/Layout.astro";
             });
         });
     </script>
+
 </Layout>
 
 
