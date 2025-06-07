@@ -131,7 +131,6 @@ public class Main {
 }  
 ```
 
-
 #### Why Use `Runnable`?
 
 * **No Multiple Inheritance**: Java doesn’t support multiple inheritance. If you extend the `Thread` class, your class
@@ -353,7 +352,7 @@ public class ThreadDemo {
 }
 ```
 
-Output: 
+Output:
 
 ```java
 Main thread starting. Name: main
@@ -378,7 +377,6 @@ Worker-2 has finished. Current state: TERMINATED
 [Daemon-Thread] Daemon thread running in background...
 Main thread ending. Daemon thread will terminate automatically when main finishes.
 ```
-
 
 Thread Pools: Managing Multiple Threads Efficiently
 ---------------------------------------------------
@@ -455,28 +453,34 @@ public class Main {
 
 Java’s `Executors` class provides several types of thread pools, each suited to different scenarios:
 
-1. **Fixed Thread Pool**: A fixed-size pool where a specific number of threads are available. If all threads are busy, new tasks will wait in a queue until a thread becomes available. Useful when you have a predictable load of tasks that require a constant number of threads.
+1. **Fixed Thread Pool**: A fixed-size pool where a specific number of threads are available. If all threads are busy,
+   new tasks will wait in a queue until a thread becomes available. Useful when you have a predictable load of tasks
+   that require a constant number of threads.
 
     ```java
    // Pool of 4 threads
    ExecutorService executor = Executors.newFixedThreadPool(4);
    ```
 
-2. **Cached Thread Pool**: A pool that creates new threads as needed but reuses previously constructed threads when they’re available. It’s ideal for applications with a large number of short-lived tasks. Ideal for handling a large number of short-lived tasks where you don’t know how many threads you’ll need upfront.
+2. **Cached Thread Pool**: A pool that creates new threads as needed but reuses previously constructed threads when
+   they’re available. It’s ideal for applications with a large number of short-lived tasks. Ideal for handling a large
+   number of short-lived tasks where you don’t know how many threads you’ll need upfront.
 
     ```java
     // Threads are created as needed
     ExecutorService executor = Executors.newCachedThreadPool();
     ```
 
-3. **Single-Threaded Pool**: A pool with a single thread that executes tasks sequentially. This is useful when you need tasks to be executed in a specific order or when shared resources need to be synchronized.
+3. **Single-Threaded Pool**: A pool with a single thread that executes tasks sequentially. This is useful when you need
+   tasks to be executed in a specific order or when shared resources need to be synchronized.
 
     ```java
     // Only one thread
     ExecutorService executor = Executors.newSingleThreadExecutor();
     ```
 
-4. **Scheduled Thread Pool**: A pool designed for tasks that need to be executed periodically or with a delay. It’s useful for scheduling recurring tasks, such as backups or maintenance jobs.
+4. **Scheduled Thread Pool**: A pool designed for tasks that need to be executed periodically or with a delay. It’s
+   useful for scheduling recurring tasks, such as backups or maintenance jobs.
 
     ```java
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(2); 
@@ -548,4 +552,5 @@ knowledge— learning is always better when it’s shared! 🚀_
 
 [Share Codies coder](https://codiescoder.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)
 
-Thanks for reading **Codies coder!** **[Subscribe](https://codiescoder.substack.com/subscribe)** for free to receive new posts and support my work.
+Thanks for reading **Codies coder!** **[Subscribe](https://codiescoder.substack.com/subscribe)** for free to receive new
+posts and support my work.

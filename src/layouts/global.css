@@ -76,6 +76,7 @@ body::-webkit-scrollbar {
 html {
     /*background: url('background.png') top center / 100% auto no-repeat; */
 }
+
 html, body {
     overflow: hidden; /* Hide overflow initially */
     overflow-y: scroll; /* Enable vertical scrolling */
@@ -117,6 +118,7 @@ body {
     animation-timing-function: ease;
 
 }
+
 /*.gradient-background {*/
 /*    position: fixed; !* Make it stick to the viewport *!*/
 /*    top: 0;*/
@@ -131,7 +133,7 @@ body {
 /*}*/
 
 
-#main-body-section{
+#main-body-section {
     /*background-color: var(--bg);*/
     max-width: 700px;
     height: 100%;
@@ -261,6 +263,7 @@ button {
 table {
     width: 100%;
 }
+
 hr {
     border: none;
 }
@@ -270,9 +273,11 @@ pre {
     border-radius: 8px;
     margin: 1rem 0;
 }
+
 pre > code {
     all: unset;
 }
+
 blockquote {
     border-left: 4px solid var(--accent);
     padding: 0 0 0 20px;
@@ -358,13 +363,25 @@ blockquote {
 
 /* Animations */
 @keyframes moveLeftRight {
-    0% { transform: translateX(0) rotate(-45deg) translateY(-350px); }
-    50% { transform: translateX(100px) rotate(-45deg) translateY(-350px); }
-    100% { transform: translateX(0) rotate(-45deg) translateY(-350px); }
+    0% {
+        transform: translateX(0) rotate(-45deg) translateY(-350px);
+    }
+    50% {
+        transform: translateX(100px) rotate(-45deg) translateY(-350px);
+    }
+    100% {
+        transform: translateX(0) rotate(-45deg) translateY(-350px);
+    }
 }
 
 @keyframes moveRightLeft {
-    0% { transform: translateX(0) rotate(45deg) translateY(-350px); }
-    50% { transform: translateX(-100px) rotate(45deg) translateY(-350px); }
-    100% { transform: translateX(0) rotate(45deg) translateY(-350px); }
+    0% {
+        transform: translateX(0) rotate(45deg) translateY(-350px);
+    }
+    50% {
+        transform: translateX(-100px) rotate(45deg) translateY(-350px);
+    }
+    100% {
+        transform: translateX(0) rotate(45deg) translateY(-350px);
+    }
 }

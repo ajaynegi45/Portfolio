@@ -23,32 +23,32 @@ import AmazonElasticContainerService from "../assets/certificate/AmazonElasticCo
 
 // Array of certificate data
 const certificates = [
-    { img: Internship, title: "Infosys Internship" },
-    { img: GSSOCInternship, title: "GirlScript Summer of Code Internship" },
+    {img: Internship, title: "Infosys Internship"},
+    {img: GSSOCInternship, title: "GirlScript Summer of Code Internship"},
 
-    { img: CKAD, title: "Certified Kubernetes Application Developer - CKAD" },
-    { img: MonolithicMicroservicesArchitecture, title: "Monolithic & Microservices Architecture" },
-    { img: SolidPrinciples, title: "Solid Principles" },
-    { img: AmazonElasticContainerService, title: "Amazon Elastic Container Service (ECS)" },
+    {img: CKAD, title: "Certified Kubernetes Application Developer - CKAD"},
+    {img: MonolithicMicroservicesArchitecture, title: "Monolithic & Microservices Architecture"},
+    {img: SolidPrinciples, title: "Solid Principles"},
+    {img: AmazonElasticContainerService, title: "Amazon Elastic Container Service (ECS)"},
 
-    { img: DSA, title: "Data Structures and Algorithms using Java" },
-    { img: SoftwareEngg, title: "Software Engineering & Agile Software Development" },
+    {img: DSA, title: "Data Structures and Algorithms using Java"},
+    {img: SoftwareEngg, title: "Software Engineering & Agile Software Development"},
 
-    { img: AgileScrum, title: "Agile Scrum in Practice" },
-    { img: NoSQL, title: "Introduction to NoSQL Databases" },
+    {img: AgileScrum, title: "Agile Scrum in Practice"},
+    {img: NoSQL, title: "Introduction to NoSQL Databases"},
 
-    { img: DBMS1, title: "Database Management System Part 1" },
-    { img: DBMS2, title: "Database Management System Part 2" },
+    {img: DBMS1, title: "Database Management System Part 1"},
+    {img: DBMS2, title: "Database Management System Part 2"},
 
-    { img: GooglePython, title: "Crash Course on Python" },
-    { img: Java, title: "Java Foundation" },
-    { img: ProgrammingJava, title: "Programming using Java" },
+    {img: GooglePython, title: "Crash Course on Python"},
+    {img: Java, title: "Java Foundation"},
+    {img: ProgrammingJava, title: "Programming using Java"},
 
-    { img: GoogleDigitalMarketing, title: "The Fundamentals of Digital Marketing" },
-    { img: EmailWriting, title: "Email Writing Skills" },
-    { img: TimeManagement, title: "Time Management" },
-    { img: Presentations, title: "High Impact Presentations" },
-    { img: AdvancedExcel, title: "Advanced Excel" },
+    {img: GoogleDigitalMarketing, title: "The Fundamentals of Digital Marketing"},
+    {img: EmailWriting, title: "Email Writing Skills"},
+    {img: TimeManagement, title: "Time Management"},
+    {img: Presentations, title: "High Impact Presentations"},
+    {img: AdvancedExcel, title: "Advanced Excel"},
 ];
 ---
 
@@ -61,7 +61,7 @@ const certificates = [
         <div class="grid">
             {certificates.map((cert) => (
                     <div class="card">
-                        <img src={cert.img.src} alt={cert.title} decoding="async" loading="eager" fetchpriority="high" />
+                        <img src={cert.img.src} alt={cert.title} decoding="async" loading="eager" fetchpriority="high"/>
                         <p>{cert.title}</p>
                     </div>
             ))}

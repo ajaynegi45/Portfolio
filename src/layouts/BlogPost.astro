@@ -5,7 +5,7 @@ import Layout from "./Layout.astro";
 type Props = CollectionEntry<'blog'>['data'];
 const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
 ---
-<Layout title={title} description={description} image={ heroImage || '/AjayNegiPortfolioSEOBanner.png'}>
+<Layout title={title} description={description} image={heroImage || '/AjayNegiPortfolioSEOBanner.png'}>
     <section>
         <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
@@ -161,7 +161,7 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         text-align: center;
     }
 
-    li{
+    li {
         margin-left: 1rem;
     }
 
@@ -188,6 +188,7 @@ const {title, description, pubDate, updatedDate, heroImage} = Astro.props;
         width: 1.1rem;
         height: auto;
     }
+
     .breadcrumb-link > svg:hover {
         color: var(--heading);
     }

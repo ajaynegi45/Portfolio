@@ -7,7 +7,8 @@ import Layout from "../layouts/Layout.astro";
     <section class="contact-container">
         <div class="contact-information">
             <h1>Let’s Chat 💬</h1>
-            <p>Got something on your mind? Whether it's a question, idea, or just a friendly hello — drop us a message below. We’re all ears (and good vibes)! 😊</p>
+            <p>Got something on your mind? Whether it's a question, idea, or just a friendly hello — drop us a message
+                below. We’re all ears (and good vibes)! 😊</p>
             <!--<p>Have something on your mind? We’d absolutely love to hear from you! Just drop us a message using the form below — whether it's a question, idea, or just a friendly hello, we’re all ears.</p>-->
         </div>
         <div class="contact-form">
@@ -111,64 +112,80 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <script is:inline astro:page-load>
-        window.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("form");
             const result = document.getElementById("result");
+            const inputs = form?.querySelectorAll("input, textarea");
 
-            if (!form || !result) return;
+            if (!form || !result || !inputs) return;
 
-            form.addEventListener("submit", async function (e) {
-                e.preventDefault();
+            let pinged = false;
 
-                form.classList.add("was-validated");
+            // Lazy cold-start trigger
+            inputs.forEach((el) => {
+            el.addEventListener("focus", () => {
+            if (!pinged) {
+            pinged = true;
+            fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+            method: "GET", // or OPTIONS
+            mode: "no-cors", // suppress CORS errors if not needed
+        }).catch(() => {
+            // ignore errors – it's just a ping
+        });
+        }
+        }, { once: true });
+        });
 
-                if (!form.checkValidity()) {
-                    form.querySelector(":invalid")?.focus();
-                    return;
-                }
+            form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            form.classList.add("was-validated");
 
-                const formData = new FormData(form);
-                const payload = {
-                    name: formData.get("name"),
-                    email: formData.get("email"),
-                    reason: formData.get("reason"),
-                    message: formData.get("message"),
-                };
+            if (!form.checkValidity()) {
+            form.querySelector(":invalid")?.focus();
+            return;
+        }
 
-                result.innerHTML = "⏳ Sending your message...";
-                result.style.background = "#d4d4d8";
-                result.style.color = "#111";
-                result.style.padding = "8px";
-                result.style.borderRadius = "6px";
-                result.style.marginTop = "10px";
+            const formData = new FormData(form);
+            const payload = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            reason: formData.get("reason"),
+            message: formData.get("message"),
+        };
 
-                try {
-                    const res = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(payload),
-                    });
+            result.innerHTML = "⏳ Sending your message...";
+            result.style.background = "#d4d4d8";
+            result.style.color = "#111";
+            result.style.padding = "8px";
+            result.style.borderRadius = "6px";
+            result.style.marginTop = "10px";
 
-                    if (!res.ok) throw new Error("Server error: " + res.status);
+            try {
+            const res = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+        },
+            body: JSON.stringify(payload),
+        });
 
-                    const data = await res.json();
-                    console.log("Response received:", data);
+            if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
-                    result.innerHTML = `✅ ${data.message || "Message sent successfully!"}`;
-                    result.style.background = "#22C55E";
-                    result.style.color = "#222";
-
-                } catch (err) {
-                    console.error("Error submitting form:", err);
-                    result.innerHTML = "❌ Failed to send message. Please try again later.";
-                    result.style.background = "#f44336";
-                    result.style.color = "#fff";
-                }
-            });
+            const data = await res.json();
+            result.innerHTML = `✅ ${data.message || "Message sent successfully!"}`;
+            result.style.background = "#22C55E";
+            result.style.color = "#222";
+            form.reset();
+        } catch (err) {
+            console.error("Error submitting form:", err);
+            result.innerHTML = "❌ Failed to send message. Please try again.";
+            result.style.background = "#ef4444";
+            result.style.color = "#fff";
+        }
+        });
         });
     </script>
+
 
 </Layout>
 
