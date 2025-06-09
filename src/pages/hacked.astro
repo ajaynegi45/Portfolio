@@ -75,37 +75,37 @@ import Layout from "../layouts/Layout.astro";
             "Injecting payload...",
             "You got hacked.",
             "Downloading sensitive files..."
-            ];
+        ];
 
-            const typedText = document.getElementById("typed-text");
+        const typedText = document.getElementById("typed-text");
 
-            let currentMessage = 0;
-            let currentChar = 0;
+        let currentMessage = 0;
+        let currentChar = 0;
 
-            function typeNextChar() {
-                if (currentChar < messages[currentMessage].length) {
-                    typedText.textContent += messages[currentMessage].charAt(currentChar);
-                    currentChar++;
-                    setTimeout(typeNextChar, 100); // typing speed
-                    } else {
-                    currentMessage++;
-                    if (currentMessage < messages.length) {
-                        setTimeout(() => {
-                            typedText.textContent = ""; // clear for next message
-                            currentChar = 0;
-                            typeNextChar();
-                            }, 900); // pause between messages
-                        } else {
-                        // All messages done, show logs
-                        setTimeout(() => {
-                            document.getElementById("intro-message").style.display = "none";
-                            document.getElementById("scroll-wrapper").style.display = "block";
-                            }, 1500);
-                        }
-                    }
+        function typeNextChar() {
+            if (currentChar < messages[currentMessage].length) {
+                typedText.textContent += messages[currentMessage].charAt(currentChar);
+                currentChar++;
+                setTimeout(typeNextChar, 100); // typing speed
+            } else {
+                currentMessage++;
+                if (currentMessage < messages.length) {
+                    setTimeout(() => {
+                        typedText.textContent = ""; // clear for next message
+                        currentChar = 0;
+                        typeNextChar();
+                    }, 900); // pause between messages
+                } else {
+                    // All messages done, show logs
+                    setTimeout(() => {
+                        document.getElementById("intro-message").style.display = "none";
+                        document.getElementById("scroll-wrapper").style.display = "block";
+                    }, 1500);
                 }
+            }
+        }
 
-            typeNextChar();
+        typeNextChar();
     </script>
 
 </Layout>

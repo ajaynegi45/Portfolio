@@ -111,8 +111,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </section>
 
-    <script is:inline astro:page-load>
-            window.addEventListener("DOMContentLoaded", () => {
+    <script is:inline >
+        window.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("form");
             const result = document.getElementById("result");
             const inputs = form?.querySelectorAll("input, textarea");
@@ -123,66 +123,66 @@ import Layout from "../layouts/Layout.astro";
 
             // Lazy cold-start trigger
             inputs.forEach((el) => {
-            el.addEventListener("focus", () => {
-            if (!pinged) {
-            pinged = true;
-            fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
-            method: "GET", // or OPTIONS
-            mode: "no-cors", // suppress CORS errors if not needed
-        }).catch(() => {
-            // ignore errors – it's just a ping
-        });
-        }
-        }, { once: true });
-        });
+                el.addEventListener("focus", () => {
+                    if (!pinged) {
+                        pinged = true;
+                        fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+                            method: "GET", // or OPTIONS
+                            mode: "no-cors", // suppress CORS errors if not needed
+                        }).catch(() => {
+                            // ignore errors – it's just a ping
+                        });
+                    }
+                }, {once: true});
+            });
 
             form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            form.classList.add("was-validated");
+                e.preventDefault();
+                form.classList.add("was-validated");
 
-            if (!form.checkValidity()) {
-            form.querySelector(":invalid")?.focus();
-            return;
-        }
+                if (!form.checkValidity()) {
+                    form.querySelector(":invalid")?.focus();
+                    return;
+                }
 
-            const formData = new FormData(form);
-            const payload = {
-            name: formData.get("name"),
-            email: formData.get("email"),
-            reason: formData.get("reason"),
-            message: formData.get("message"),
-        };
+                const formData = new FormData(form);
+                const payload = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    reason: formData.get("reason"),
+                    message: formData.get("message"),
+                };
 
-            result.innerHTML = "⏳ Sending your message...";
-            result.style.background = "#d4d4d8";
-            result.style.color = "#111";
-            result.style.padding = "8px";
-            result.style.borderRadius = "6px";
-            result.style.marginTop = "10px";
+                result.innerHTML = "⏳ Sending your message...";
+                result.style.background = "#d4d4d8";
+                result.style.color = "#111";
+                result.style.padding = "8px";
+                result.style.borderRadius = "6px";
+                result.style.marginTop = "10px";
 
-            try {
-            const res = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-        },
-            body: JSON.stringify(payload),
-        });
+                try {
+                    const res = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(payload),
+                    });
 
-            if (!res.ok) throw new Error(`Server error: ${res.status}`);
+                    if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
-            const data = await res.json();
-            result.innerHTML = `✅ ${data.message || "Message sent successfully!"}`;
-            result.style.background = "#22C55E";
-            result.style.color = "#222";
-            form.reset();
-        } catch (err) {
-            console.error("Error submitting form:", err);
-            result.innerHTML = "❌ Failed to send message. Please try again.";
-            result.style.background = "#ef4444";
-            result.style.color = "#fff";
-        }
-        });
+                    const data = await res.json();
+                    result.innerHTML = `✅ ${data.message || "Message sent successfully!"}`;
+                    result.style.background = "#22C55E";
+                    result.style.color = "#222";
+                    form.reset();
+                } catch (err) {
+                    console.error("Error submitting form:", err);
+                    result.innerHTML = "❌ Failed to send message. Please try again.";
+                    result.style.background = "#ef4444";
+                    result.style.color = "#fff";
+                }
+            });
         });
     </script>
 
