@@ -19,8 +19,17 @@ const profileImage = "https://ajaynegi.web.app/" + ProfileImage.src;
 <meta name='generator' content={Astro.generator}/>
 
 <!-- Font preloads -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400&display=swap" as="font"
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400&display=swap" as="font"
       type="font/woff2" crossorigin/>
+
+<!--<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap">-->
+<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap">-->
+
+<!--<link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,600&display=swap" rel="stylesheet">-->
+
 
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL}/>
