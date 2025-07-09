@@ -26,78 +26,75 @@ Docker kickstarted it by donating its core container format and runtime code— 
 
 Think of OCI as the "rulebook" for containers. It defines three critical standards:
 
-1.  **Runtime Specification (runtime-spec)**
+1. **Runtime Specification (runtime-spec)**
 
-    *   Governs how a container runs.
+    * Governs how a container runs.
 
-    *   Defines setup, execution, and isolation using Linux features like `cgroups` and namespaces.
+    * Defines setup, execution, and isolation using Linux features like `cgroups` and namespaces.
 
-    *   Tools like `runc` (the reference implementation) use this to start/stop containers.
+    * Tools like `runc` (the reference implementation) use this to start/stop containers.
 
-2.  **Image Specification (image-spec)**
+2. **Image Specification (image-spec)**
 
-    *   The blueprint for container images.
+    * The blueprint for container images.
 
-    *   Images are built in **layers** (like a cake). Each layer adds files or changes (e.g., installing Python, then your app).
+    * Images are built in **layers** (like a cake). Each layer adds files or changes (e.g., installing Python, then your app).
 
-    *   A manifest file stitches layers together, while a config file sets environment variables or commands.
+    * A manifest file stitches layers together, while a config file sets environment variables or commands.
 
-3.  **Distribution Specification (distribution-spec)**
+3. **Distribution Specification (distribution-spec)**
 
-    *   Rules for pushing/pulling images to registries (like Docker Hub).
+    * Rules for pushing/pulling images to registries (like Docker Hub).
 
-    *   Uses a standardized HTTP API — so any registry works with any client.
-
+    * Uses a standardized HTTP API — so any registry works with any client.
 
 ### **OCI Real-World Impact**
 
 OCI standards freed containers from Docker’s orbit. Today, they’re the invisible backbone of modern tech:
 
-*   **Kubernetes Compatibility:** Tools like CRI-O (a lightweight Docker alternative) use OCI runtimes to launch Kubernetes pods. No Docker needed.
+* **Kubernetes Compatibility:** Tools like CRI-O (a lightweight Docker alternative) use OCI runtimes to launch Kubernetes pods. No Docker needed.
 
-*   **Innovation in Runtimes:**
+* **Innovation in Runtimes:**
 
-    *   **gVisor:** Adds security "sandboxes" (Google Cloud).
+    * **gVisor:** Adds security "sandboxes" (Google Cloud).
 
-    *   **Kata Containers:** Uses lightweight VMs for hardware-level isolation.
+    * **Kata Containers:** Uses lightweight VMs for hardware-level isolation.
 
-    *   **Firecracker:** Powers AWS Lambda with micro-VMs.
+    * **Firecracker:** Powers AWS Lambda with micro-VMs.
 
-*   **Multi-Architecture Support:**  
-    OCI images include manifests for ARM, x86, and more. Build once, run on any chip
-
+* **Multi-Architecture Support:**  
+  OCI images include manifests for ARM, x86, and more. Build once, run on any chip
 
 ### Why Should You Care?
 
-1.  **No More Vendor Lock-in**  
-    Build an image with Google `kaniko`, store it in AWS ECR, run it on Azure with `runc`—all seamlessly.
+1. **No More Vendor Lock-in**  
+   Build an image with Google `kaniko`, store it in AWS ECR, run it on Azure with `runc`—all seamlessly.
 
-2.  **Security by Default**  
-    Standards ensure images are scanned, signed, and run in isolated environments. OCI `config.json` even controls permissions.
+2. **Security by Default**  
+   Standards ensure images are scanned, signed, and run in isolated environments. OCI `config.json` even controls permissions.
 
-3.  **The Innovation Engine**  
-    New runtimes (like WebAssembly-based `wasmEdge`) plug into OCI ecosystems. No reinventing the wheel.
-
+3. **The Innovation Engine**  
+   New runtimes (like WebAssembly-based `wasmEdge`) plug into OCI ecosystems. No reinventing the wheel.
 
 ### The Future: What’s Next for OCI?
 
 Recent updates hint at where OCI is headed:
 
-*   **2024:** Image and Distribution Specs v1.1 improved artifact references (e.g., linking Helm charts to containers).
+* **2024:** Image and Distribution Specs v1.1 improved artifact references (e.g., linking Helm charts to containers).
 
-*   **Security Focus:** Projects like `ocicy` verify image signatures before pulling.
+* **Security Focus:** Projects like `ocicy` verify image signatures before pulling.
 
-*   **Beyond Linux:** Runtimes like `runj` now support FreeBSD Jails.
+* **Beyond Linux:** Runtimes like `runj` now support FreeBSD Jails.
 
 Hungry for more? Dive into the specs at  **[opencontainers.org](https://opencontainers.org/)**
 
 <br/>
 
 _Do you know someone who loves engineering or has a curiosity for tech? 🤔  
-Why not share the joy of simplifying complex ideas with them? Forward this newsletter and spread the knowledge—**learning is always better when it’s shared!** 🚀_
+Why not share the joy of simplifying complex ideas with them? Forward this newsletter and spread the
+knowledge— learning is always better when it’s shared! 🚀_
 
 [Share Codies Coder Newsletter](https://codiescoder.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)
-
 
 Thanks for reading **Codies coder!** **[Subscribe](https://codiescoder.substack.com/subscribe)** for free to receive new
 posts and support my work.

@@ -28,14 +28,15 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+To learn more about the folder structure of an Astro project, refer
+to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
+|:--------------------------|:-------------------------------------------------|
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
@@ -45,7 +46,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [our documentation](https://docs.astro.build) or jump into
+our [Discord server](https://astro.build/chat).
 
 
 [//]: # (For new device just 1st install nodejs then install the firebase using this command "npm install -g firebase-tools" and then login into firebase account using your gmail Id the push changes to firebase.)
@@ -58,6 +60,9 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 [//]: # (1. firebase projects:list)
 
 [//]: # (now get the project id from the list and then paste it into the <project-id>    eg: firebase use abc)
+
 [//]: # (2. firebase use <project-id>)
+
 [//]: # (3. now try to deploy it)
+
 [//]: # (firebase hosting:channel:deploy ajaynegitest    for deployig it on test environment)

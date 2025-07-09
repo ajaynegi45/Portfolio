@@ -14,9 +14,10 @@ export function initContactForm() {
                 fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
                     method: "GET",
                     mode: "no-cors",
-                }).catch(() => {});
+                }).catch(() => {
+                });
             }
-        }, { once: true });
+        }, {once: true});
     });
 
     form.addEventListener("submit", async (e) => {
