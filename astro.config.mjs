@@ -8,9 +8,7 @@ export default defineConfig({
     site: 'https://ajaynegi.web.app',
     integrations: [
         mdx(),
-        sitemap({
-            xslURL: '/sitemap.xsl'
-    }),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: {
