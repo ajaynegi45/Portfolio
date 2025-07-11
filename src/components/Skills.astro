@@ -1,11 +1,12 @@
 ---
+
 import github from "../assets/skills/github_dark.svg";
 import java from "../assets/skills/java.svg";
-import javascript from "../assets/skills/javascript.svg"
+import javascript from "../assets/skills/javascript.svg";
 import react from "../assets/skills/react_dark.svg";
 import typescript from "../assets/skills/typescript.svg";
 import astro from "../assets/skills/astro_dark.svg";
-import k6 from "../assets/skills/K6-load-testing-tool-logo.svg"
+import k6 from "../assets/skills/K6-load-testing-tool-logo.svg";
 import docker from "../assets/skills/docker.svg";
 import kubernetes from "../assets/skills/kubernetes.svg";
 import go from "../assets/skills/golang_dark.svg";
@@ -14,69 +15,86 @@ import spring from "../assets/skills/spring.svg";
 import postgresql from "../assets/skills/postgresql.svg";
 import aws from "../assets/skills/aws_dark.svg";
 import linux from "../assets/skills/linux.svg";
-import bash from "../assets/skills/bash_dark.svg"
-import nextjs from "../assets/skills/nextjs_icon_dark.svg"
+import bash from "../assets/skills/bash_dark.svg";
+import nextjs from "../assets/skills/nextjs_icon_dark.svg";
 import postman from "../assets/skills/postman.svg";
 import mysql from "../assets/skills/mysql.svg";
-import kafka from "../assets/skills/kafka.svg"
-import html from "../assets/skills/html5.svg"
-import css from "../assets/skills/css.svg"
-import nodejs from "../assets/skills/nodejs.svg"
-import git from "../assets/skills/git.svg"
-import jira from "../assets/skills/jira.svg"
-import jenkins from "../assets/skills/jenkins.svg"
-
+import kafka from "../assets/skills/kafka.svg";
+import html from "../assets/skills/html5.svg";
+import css from "../assets/skills/css.svg";
+import nodejs from "../assets/skills/nodejs.svg";
+import git from "../assets/skills/git.svg";
+import jira from "../assets/skills/jira.svg";
+import jenkins from "../assets/skills/jenkins.svg";
+import ansible from "../assets/skills/ansible.svg";
+import terraform from "../assets/skills/terraform.svg";
+import grafana from "../assets/skills/grafana.svg";
+import prometheus from "../assets/skills/prometheus.svg";
+import firebase from "../assets/skills/firebase.svg";
 
 const skills = [
-    {name: "Springboot", icon: spring},
-    {name: "Next.js", icon: nextjs},
-    {name: "Postgresql", icon: postgresql},
-    {name: "MongoDB", icon: mongodb},
-    {name: "Jira", icon: jira},
+
+    { name: "Java", icon: java },
+    { name: "AWS", icon: aws },
+    { name: "Docker", icon: docker },
+    { name: "Kubernetes", icon: kubernetes },
+    { name: "Jira", icon: jira },
 
 
-    {name: "Linux", icon: bash},
-    {name: "AWS", icon: aws},
-    {name: "Docker", icon: docker},
-    {name: "Kubernetes", icon: kubernetes},
-    {name: "Jenkins", icon: jenkins},
+    { name: "Springboot", icon: spring },
+    { name: "JavaScript", icon: javascript },
+    { name: "Postgresql", icon: postgresql },
+    { name: "Linux", icon: bash },
+    { name: "Jenkins", icon: jenkins },
 
 
-    {name: "Java", icon: java},
-    {name: "k6", icon: k6},
-    {name: "MySql", icon: mysql},
+    { name: "Grafana", icon: grafana },
+    { name: "Prometheus", icon: prometheus },
+    { name: "k6", icon: k6 },
+    { name: "Postman", icon: postman },
+    { name: "Firebase", icon: firebase },
+
+    // { name: "Ansible", icon: ansible },
+    // { name: "Terraform", icon: terraform },
 
 
-    {name: "JavaScript", icon: javascript},
-    {name: "React.js", icon: react},
-    {name: "TypeScript", icon: typescript},
-    {name: "Nodejs", icon: nodejs},
+    { name: "TypeScript", icon: typescript },
+    { name: "React.js", icon: react },
+    { name: "Next.js", icon: nextjs },
+    { name: "Nodejs", icon: nodejs },
+    { name: "Golang", icon: go },
 
-    {name: "HTML5", icon: html},
-    {name: "CSS", icon: css},
-    {name: "Astro", icon: astro},
-    {name: "Golang", icon: go},
-    {name: "Postman", icon: postman},
 
-    {name: "Kafka", icon: kafka},
-    {name: "Github", icon: github},
-    {name: "Git", icon: git},
+
+    { name: "HTML5", icon: html },
+    { name: "CSS", icon: css },
+    // { name: "Github", icon: github },
+    { name: "Git", icon: git },
+
+
+    { name: "MySql", icon: mysql },
+    { name: "MongoDB", icon: mongodb },
+
+
+    // { name: "Kafka", icon: kafka },
+    // { name: "Astro", icon: astro },
 ];
 ---
-
 <section>
     <h2 class="skills-heading">Technical Skills</h2>
 
-    <div class="tech-skills-list-container">
+    <div id="skills-container" class="tech-skills-list-container collapsed">
         {
-            skills.map(skill => (
+            skills.map((skill) => (
                     <div class="tech-skill" title={skill.name}>
-                        <img src={skill.icon.src} alt={skill.name + ' icon'} class="tech-icon"/>
+                        <img src={skill.icon.src} alt={skill.name + ' icon'} class="tech-icon" />
                         <p>{skill.name}</p>
                     </div>
             ))
         }
     </div>
+
+    <p id="toggle-button" class="view-more">View more</p>
 </section>
 
 <style>
@@ -91,6 +109,13 @@ const skills = [
         grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
         gap: 1rem;
         padding: 0.5rem 0;
+        //max-height: 400px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .tech-skills-list-container.collapsed {
+        max-height: 110px; /* approx height of 8 items */
     }
 
     .tech-skill {
@@ -104,7 +129,6 @@ const skills = [
         justify-content: space-evenly;
         align-items: center;
         gap: 5px;
-
         padding: 0.6rem;
         overflow: hidden;
     }
@@ -127,4 +151,39 @@ const skills = [
         font-size: 0.8rem;
         color: var(--text);
     }
+
+    .view-more {
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text4);
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.3s ease;
+
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+
+    .view-more:hover {
+        color: var(--text);
+    }
+
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("skills-container");
+        const toggleBtn = document.getElementById("toggle-button");
+
+        if (container && toggleBtn) {
+            toggleBtn.addEventListener("click", () => {
+                const isCollapsed = container.classList.toggle("collapsed");
+                toggleBtn.textContent = isCollapsed ? "View more" : "View less";
+            });
+        }
+    });
+</script>
+
