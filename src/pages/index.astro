@@ -4,6 +4,7 @@ import Resume from '../assets/Resume.pdf';
 import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Skills from "../components/Skills.astro";
+import Review from "../components/Review.astro";
 ---
 <Layout title="Ajay Negi | Software Engineer"
         description="Hi, I'm Ajay Negi — a Software Engineer who thrives on turning complex challenges into elegant, scalable solutions. Dive into my journey where performance meets precision, and engineering translates into real-world impact.">
@@ -103,6 +104,14 @@ import Skills from "../components/Skills.astro";
             <div></div>
         </div>
 
+        <Review/>
+
+        <!-- Third divider with a label -->
+        <div id="divider-label-4" class="hidden">Fourth Section Divider</div>
+        <div class="section-divider" role="separator" aria-labelledby="divider-label-4">
+            <div></div>
+        </div>
+
 
         <!-- Connect Section -->
         <section class="connect-section" aria-labelledby="connect-section-heading">
@@ -166,22 +175,22 @@ import Skills from "../components/Skills.astro";
         }
     }
 
-    .highlight-spot {
-        display: inline-block;
-        background: linear-gradient(
-                120deg,
-                #d1c4e9 10%, /* pastel lavender */ #b2ebf2 40%, /* pastel teal */ #ffe0b2 70%, /* pastel orange */ #d1c4e9 100%
-        );
-        background-size: 300% 100%;
-        background-position: 0 0;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        animation: highlight-sweep 2s ease-in-out infinite alternate;
-        animation-delay: 0.3s;
-
-        transform: skewX(-5deg);
-    }
+    //.highlight-spot {
+    //    display: inline-block;
+    //    background: linear-gradient(
+    //            120deg,
+    //            #d1c4e9 10%, /* pastel lavender */ #b2ebf2 40%, /* pastel teal */ #ffe0b2 70%, /* pastel orange */ #d1c4e9 100%
+    //    );
+    //    background-size: 300% 100%;
+    //    background-position: 0 0;
+    //    -webkit-background-clip: text;
+    //    -webkit-text-fill-color: transparent;
+    //
+    //    animation: highlight-sweep 2s ease-in-out infinite alternate;
+    //    animation-delay: 0.3s;
+    //
+    //    transform: skewX(-5deg);
+    //}
 
 
     //.main-section {
