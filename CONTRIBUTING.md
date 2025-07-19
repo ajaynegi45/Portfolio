@@ -11,7 +11,6 @@ Thank you for your interest in contributing! This guide will help you get starte
 - [Branching Strategy](#branching-strategy)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Process](#pull-request-process)
-- [Code Style Guidelines](#code-style-guidelines)
 - [Performance Guidelines](#performance-guidelines)
 
 ## 📜 Code of Conduct
