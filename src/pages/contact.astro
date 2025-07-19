@@ -1,9 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 ---
+<!--<Layout-->
+<!--        title="Contact Us | Ajay Negi "-->
+<!--        description="Get in touch with Ajay Negi for inquiries, collaborations, or feedback. We are here to help you with your needs.">-->
+
 <Layout
-        title="Contact Us | Ajay Negi "
-        description="Get in touch with Ajay Negi for inquiries, collaborations, or feedback. We are here to help you with your needs.">
+        title="Contact - Ajay Negi"
+        description="Get in touch with Ajay Negi for collaboration, opportunities, or just to say hello.">
+
+
     <section class="contact-container">
         <div class="contact-information">
             <h1>Let’s Chat 💬</h1>
@@ -20,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
 
                     <!-- Name -->
                     <div class="form-group">
-                        <label for="name">Full Name</label>
+                        <label for="name" class="form-label">Full Name</label>
                         <div class="input-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
@@ -32,17 +38,19 @@ import Layout from "../layouts/Layout.astro";
                                     type="text"
                                     id="name"
                                     name="name"
+                                    class="form-input"
                                     placeholder="Your Full Name"
                                     required
                                     aria-required="true"
                                     aria-label="Enter your full name"
                             />
                         </div>
+                        <div class="form-error" id="firstName-error" role="alert"></div>
                     </div>
 
                     <!-- Email -->
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email" class="form-label">Email Address</label>
                         <div class="input-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
@@ -54,17 +62,19 @@ import Layout from "../layouts/Layout.astro";
                                     type="email"
                                     id="email"
                                     name="email"
+                                    class="form-input"
                                     placeholder="Your Email"
                                     required
                                     aria-required="true"
                                     aria-label="Enter your email address"
                             />
                         </div>
+                        <div class="form-error" id="email-error" role="alert"></div>
                     </div>
 
                     <!-- Reason -->
                     <div class="form-group">
-                        <label for="reason">Reason</label>
+                        <label for="reason" class="form-label" >Reason</label>
                         <div class="input-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
@@ -78,19 +88,21 @@ import Layout from "../layouts/Layout.astro";
                             </svg>
                             <input
                                     type="text"
-                                    id="reason"
-                                    name="reason"
+                                    id="subject"
+                                    name="subject"
+                                    class="form-input"
                                     placeholder="Reason for contact"
                                     required
                                     aria-required="true"
                                     aria-label="State the reason for contacting"
                             />
                         </div>
+                        <div class="form-error" id="subject-error" role="alert"></div>
                     </div>
 
                     <!-- Message -->
                     <div class="form-group">
-                        <label for="message">Your Message</label>
+                        <label for="message" class="form-label">Your Message</label>
                         <!--placeholder="Type your message here..."-->
                         <textarea
                                 id="message"
@@ -100,12 +112,15 @@ import Layout from "../layouts/Layout.astro";
                                 aria-required="true"
                                 aria-label="Write your message here"
                         ></textarea>
+                        <div class="form-error" id="message-error" role="alert"></div>
+
                     </div>
 
                     <!-- Submit Button -->
                     <div class="submit-btn-container">
                         <button type="submit" class="submit-btn" id="result">Send Message</button>
                     </div>
+
                 </fieldset>
             </form>
         </div>
@@ -122,6 +137,208 @@ import Layout from "../layouts/Layout.astro";
             document.addEventListener('astro:after-swap', initContactForm);
         }
     </script>
+
+    <!--<script is:inline type="module" >-->
+    <!--    class ContactForm {-->
+    <!--        constructor() {-->
+    <!--            this.form = document.getElementById('contact-form');-->
+    <!--            this.submitBtn = document.getElementById('submit-btn');-->
+    <!--            this.successMessage = document.getElementById('form-success');-->
+
+    <!--            this.validators = {-->
+    <!--                name: {-->
+    <!--                    required: true,-->
+    <!--                    minLength: 2,-->
+    <!--                    pattern: /^[a-zA-Z\s]+$/,-->
+    <!--                    message: 'Name must contain only letters and be at least 2 characters long'-->
+    <!--                },-->
+    <!--                email: {-->
+    <!--                    required: true,-->
+    <!--                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,-->
+    <!--                    message: 'Please enter a valid email address'-->
+    <!--                },-->
+    <!--                subject: {-->
+    <!--                    required: true,-->
+    <!--                    minLength: 5,-->
+    <!--                    message: 'Subject must be at least 5 characters long'-->
+    <!--                },-->
+    <!--                message: {-->
+    <!--                    required: true,-->
+    <!--                    minLength: 20,-->
+    <!--                    message: 'Message must be at least 20 characters long'-->
+    <!--                }-->
+    <!--            };-->
+
+    <!--            this.init();-->
+    <!--        }-->
+
+    <!--        init() {-->
+    <!--            this.bindEvents();-->
+    <!--        }-->
+
+    <!--        bindEvents() {-->
+    <!--            // Form submission-->
+    <!--            this.form?.addEventListener('submit', (e) => this.handleSubmit(e));-->
+
+    <!--            // Real-time validation-->
+    <!--            Object.keys(this.validators).forEach(fieldName => {-->
+    <!--                const field = document.getElementById(fieldName);-->
+    <!--                if (field) {-->
+    <!--                    field.addEventListener('blur', () => this.validateField(fieldName));-->
+    <!--                    field.addEventListener('input', () => this.clearFieldError(fieldName));-->
+    <!--                }-->
+    <!--            });-->
+    <!--        }-->
+
+    <!--        validateField(fieldName) {-->
+    <!--            const field = document.getElementById(fieldName);-->
+    <!--            const validator = this.validators[fieldName];-->
+    <!--            const value = field?.value?.trim() || '';-->
+
+    <!--            let isValid = true;-->
+    <!--            let errorMessage = '';-->
+
+    <!--            // Required validation-->
+    <!--            if (validator.required && !value) {-->
+    <!--                isValid = false;-->
+    <!--                errorMessage = `${this.getFieldLabel(fieldName)} is required`;-->
+    <!--            }-->
+    <!--            // Pattern validation-->
+    <!--            else if (value && validator.pattern && !validator.pattern.test(value)) {-->
+    <!--                isValid = false;-->
+    <!--                errorMessage = validator.message;-->
+    <!--            }-->
+    <!--            // Length validation-->
+    <!--            else if (value && validator.minLength && value.length < validator.minLength) {-->
+    <!--                isValid = false;-->
+    <!--                errorMessage = validator.message;-->
+    <!--            }-->
+
+    <!--            this.showFieldError(fieldName, isValid ? '' : errorMessage);-->
+    <!--            this.updateFieldState(fieldName, isValid);-->
+
+    <!--            return isValid;-->
+    <!--        }-->
+
+    <!--        validateAllFields() {-->
+    <!--            let isFormValid = true;-->
+
+    <!--            Object.keys(this.validators).forEach(fieldName => {-->
+    <!--                const fieldValid = this.validateField(fieldName);-->
+    <!--                if (!fieldValid) {-->
+    <!--                    isFormValid = false;-->
+    <!--                }-->
+    <!--            });-->
+
+    <!--            return isFormValid;-->
+    <!--        }-->
+
+    <!--        showFieldError(fieldName, message) {-->
+    <!--            const errorElement = document.getElementById(`${fieldName}-error`);-->
+    <!--            if (errorElement) {-->
+    <!--                errorElement.textContent = message;-->
+    <!--                errorElement.classList.toggle('visible', !!message);-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        clearFieldError(fieldName) {-->
+    <!--            const field = document.getElementById(fieldName);-->
+    <!--            if (field && field.classList.contains('error')) {-->
+    <!--                field.classList.remove('error');-->
+    <!--                this.showFieldError(fieldName, '');-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        updateFieldState(fieldName, isValid) {-->
+    <!--            const field = document.getElementById(fieldName);-->
+    <!--            if (field) {-->
+    <!--                field.classList.remove('error', 'success');-->
+    <!--                if (field.value.trim()) {-->
+    <!--                    field.classList.add(isValid ? 'success' : 'error');-->
+    <!--                }-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        getFieldLabel(fieldName) {-->
+    <!--            const labelMap = {-->
+    <!--                firstName: 'First name',-->
+    <!--                lastName: 'Last name',-->
+    <!--                email: 'Email address',-->
+    <!--                phone: 'Phone number',-->
+    <!--                subject: 'Subject',-->
+    <!--                message: 'Message'-->
+    <!--            };-->
+    <!--            return labelMap[fieldName] || fieldName;-->
+    <!--        }-->
+
+    <!--        async handleSubmit(e) {-->
+    <!--            e.preventDefault();-->
+
+    <!--            if (!this.validateAllFields()) {-->
+    <!--                return;-->
+    <!--            }-->
+
+    <!--            this.setLoading(true);-->
+
+    <!--            try {-->
+    <!--                const formData = new FormData(this.form);-->
+    <!--                const data = Object.fromEntries(formData.entries());-->
+
+    <!--                // Simulate API call (replace with actual endpoint)-->
+    <!--                await new Promise(resolve => setTimeout(resolve, 2000));-->
+
+    <!--                // Here you would typically send the data to your Java/AWS Lambda backend-->
+    <!--                // const response = await fetch('/api/contact', {-->
+    <!--                //     method: 'POST',-->
+    <!--                //     headers: { 'Content-Type': 'application/json' },-->
+    <!--                //     body: JSON.stringify(data)-->
+    <!--                // });-->
+
+    <!--                this.showSuccess();-->
+    <!--                this.form?.reset();-->
+    <!--                this.clearAllFieldStates();-->
+
+    <!--            } catch (error) {-->
+    <!--                console.error('Form submission error:', error);-->
+    <!--                this.showFieldError('general', 'Something went wrong. Please try again.');-->
+    <!--            } finally {-->
+    <!--                this.setLoading(false);-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        setLoading(isLoading) {-->
+    <!--            if (this.submitBtn) {-->
+    <!--                this.submitBtn.disabled = isLoading;-->
+    <!--                this.submitBtn.classList.toggle('loading', isLoading);-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        showSuccess() {-->
+    <!--            if (this.successMessage) {-->
+    <!--                this.successMessage.classList.add('visible');-->
+    <!--                setTimeout(() => {-->
+    <!--                    this.successMessage.classList.remove('visible');-->
+    <!--                }, 5000);-->
+    <!--            }-->
+    <!--        }-->
+
+    <!--        clearAllFieldStates() {-->
+    <!--            Object.keys(this.validators).forEach(fieldName => {-->
+    <!--                const field = document.getElementById(fieldName);-->
+    <!--                if (field) {-->
+    <!--                    field.classList.remove('error', 'success');-->
+    <!--                }-->
+    <!--                this.showFieldError(fieldName, '');-->
+    <!--            });-->
+    <!--        }-->
+    <!--    }-->
+
+    <!--    // Initialize when DOM is ready-->
+    <!--    document.addEventListener('DOMContentLoaded', () => {-->
+    <!--        new ContactForm();-->
+    <!--    });-->
+    <!--</script>-->
+
 
 
     <!--<script is:inline>-->

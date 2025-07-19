@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
         description="Each month, we dive deep into a single topic in software engineering, breaking it down in a way that’s easy to grasp and fun to explore. Whether you're just starting out or already a pro, you'll always walk away with something new to think about.">
 
     <!-- Main Content Section -->
-    <section>
+    <section class="blogs-main-content-section">
 
         <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
@@ -44,7 +44,7 @@ const posts = (await getCollection('blog')).sort(
                  fetchpriority="high"/>
         </div>
 
-        <!-- Search Box -->
+        <!--Search Box-->
         <div class="search-box-container">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -55,14 +55,35 @@ const posts = (await getCollection('blog')).sort(
 
             <label for="search-input" class="sr-only"></label>
             <input
-                    type="search"
+                    type="text"
                     id="search-input"
                     class="search-input"
                     placeholder="Search Blog Posts"
-                    autocomplete="off"
                     aria-label="Search Blog Posts"
+                    autocomplete="true"
+                    spellcheck="true"
+                    autocorrect="true"
             />
-            <!-- autofocus add this when search functionality is active.... -->
+        </div>
+
+        <!-- Not Found Search Result -->
+        <div class="no-search-results" id="search-no-results"
+             style=" display: none;
+                     flex-direction: column;
+                     justify-content: center;
+                     align-items: center;
+                     height: 50vh;
+                     padding: 4rem 2rem;
+                     color: rgba(255, 255, 255, 0.6);
+                     transition: opacity 0.2s ease;
+">
+
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 128 128"
+                 fill="white">
+                <path d="M 52.349609 14.400391 C 42.624609 14.400391 32.9 18.1 25.5 25.5 C 10.7 40.3 10.7 64.399219 25.5 79.199219 C 32.9 86.599219 42.600391 90.300781 52.400391 90.300781 C 62.200391 90.300781 71.900781 86.599219 79.300781 79.199219 C 94.000781 64.399219 93.999219 40.3 79.199219 25.5 C 71.799219 18.1 62.074609 14.400391 52.349609 14.400391 z M 52.300781 20.300781 C 60.500781 20.300781 68.700391 23.399219 74.900391 29.699219 C 87.400391 42.199219 87.4 62.5 75 75 C 62.5 87.5 42.199219 87.5 29.699219 75 C 17.199219 62.5 17.199219 42.199219 29.699219 29.699219 C 35.899219 23.499219 44.100781 20.300781 52.300781 20.300781 z M 52.300781 26.300781 C 45.400781 26.300781 38.9 29 34 34 C 29.3 38.7 26.700391 44.800391 26.400391 51.400391 C 26.300391 53.100391 27.600781 54.4 29.300781 54.5 L 29.400391 54.5 C 31.000391 54.5 32.300391 53.199609 32.400391 51.599609 C 32.600391 46.499609 34.699219 41.799219 38.199219 38.199219 C 41.999219 34.399219 47.000781 32.300781 52.300781 32.300781 C 54.000781 32.300781 55.300781 31.000781 55.300781 29.300781 C 55.300781 27.600781 54.000781 26.300781 52.300781 26.300781 z M 35 64 A 3 3 0 0 0 32 67 A 3 3 0 0 0 35 70 A 3 3 0 0 0 38 67 A 3 3 0 0 0 35 64 z M 83.363281 80.5 C 82.600781 80.5 81.850781 80.800391 81.300781 81.400391 C 80.100781 82.600391 80.100781 84.499609 81.300781 85.599609 L 83.800781 88.099609 C 83.200781 89.299609 82.900391 90.6 82.900391 92 C 82.900391 94.4 83.8 96.700391 85.5 98.400391 L 98.300781 111 C 100.10078 112.8 102.39922 113.69922 104.69922 113.69922 C 106.99922 113.69922 109.29961 112.79961 111.09961 111.09961 C 114.59961 107.59961 114.59961 101.90039 111.09961 98.400391 L 98.300781 85.599609 C 96.600781 83.899609 94.300391 83 91.900391 83 C 90.500391 83 89.2 83.300391 88 83.900391 L 85.5 81.400391 C 84.9 80.800391 84.125781 80.5 83.363281 80.5 z M 91.900391 88.900391 C 92.700391 88.900391 93.5 89.200781 94 89.800781 L 106.69922 102.5 C 107.89922 103.7 107.89922 105.59922 106.69922 106.69922 C 105.49922 107.89922 103.6 107.89922 102.5 106.69922 L 89.800781 94.099609 C 89.200781 93.499609 88.900391 92.700391 88.900391 91.900391 C 88.900391 91.100391 89.200781 90.300781 89.800781 89.800781 C 90.400781 89.200781 91.100391 88.900391 91.900391 88.900391 z"></path>
+            </svg>
+            <h3>No results found</h3>
+            <p>Try adjusting your search terms</p>
         </div>
 
 
@@ -70,7 +91,10 @@ const posts = (await getCollection('blog')).sort(
         {
             posts.map((post) => (
 
-                    <article class="blog-post-container">
+                    <article class="blog-post-container"
+                             data-tags={(post.data.tags || []).join(',')}
+                             data-category={post.data.category || ''}>
+
                         <div class="blog-post-left-side-container">
                             <h5 class="post-title">{post.data.title}</h5>
                             <p>{post.data.description}</p>
@@ -130,6 +154,57 @@ const posts = (await getCollection('blog')).sort(
         <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;"
                 title="Codies Coder Newsletter Subscription"></iframe>
     </section>
+
+    <script is:inline type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const blogPosts = document.querySelectorAll('.blog-post-container');
+            const noResultsBlock = document.getElementById('search-no-results');
+
+            // Debounce function to avoid rapid calls
+            function debounce(func, delay) {
+                let timer;
+                return function (...args) {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => func.apply(this, args), delay);
+                };
+            }
+
+            function filterPosts(query) {
+                const searchTerm = query.toLowerCase().trim();
+                let hasResults = false;
+
+                blogPosts.forEach(post => {
+                    const title = post.querySelector('.post-title')?.textContent.toLowerCase() || '';
+                    const description = post.querySelector('p')?.textContent.toLowerCase() || '';
+
+                    // Optional fields — You can also extract as data-* attributes
+                    const tags = post.getAttribute('data-tags')?.toLowerCase() || '';
+                    const category = post.getAttribute('data-category')?.toLowerCase() || '';
+
+                    const matches = [title, description, tags, category].some(field =>
+                        field.includes(searchTerm)
+                    );
+
+                    if (matches || searchTerm === '') {
+                        post.style.display = 'flex';
+                        post.style.opacity = '1';
+                        hasResults = true;
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+
+                noResultsBlock.style.display = hasResults ? 'none' : 'flex';
+            }
+
+            // Attach event with debounce
+            searchInput.addEventListener('input', debounce((e) => {
+                filterPosts(e.target.value);
+            }, 150)); // 150ms delay
+        });
+    </script>
+
 </Layout>
 
 
@@ -213,7 +288,7 @@ const posts = (await getCollection('blog')).sort(
         font-size: 14px;
         color: var(--heading);
         width: 100%;
-        height: 40px;
+        height: 44px;
         padding: 0 10px 0 40px;
         border-radius: 8px;
         border: 1px solid var(--card-border);
@@ -244,6 +319,25 @@ const posts = (await getCollection('blog')).sort(
     }
 
 
+    // Not Found Search Result
+    .no-search-results svg {
+        margin-left: -15px;
+        opacity: 0.5;
+    }
+
+    .no-search-results h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .no-search-results p {
+        font-size: 1rem;
+        opacity: 0.7;
+    }
+
+
     /* Blog Post Section */
     .blog-post-container {
         margin-top: 2rem;
@@ -262,6 +356,7 @@ const posts = (await getCollection('blog')).sort(
         backdrop-filter: blur(20px);
         position: relative;
     }
+
     .blog-post-container::before {
         content: '';
         position: absolute;
@@ -272,9 +367,11 @@ const posts = (await getCollection('blog')).sort(
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         transition: left 0.5s ease;
     }
+
     .blog-post-container:hover::before {
         left: 100%;
     }
+
     .blog-post-container:hover {
         //border: 1px solid var(--text5);
         cursor: pointer;
