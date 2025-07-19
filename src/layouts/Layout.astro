@@ -10,6 +10,43 @@ const {title, description, image} = Astro.props;
     <meta name="google-site-verification" content="FU0FvoxDS5LDXf0L-23USBHDaQqWbsXHanczvs-Wj70"/>
     <link rel="sitemap" href="/sitemap-index.xml"/>
     <BaseHead title={title} description={description} image={image}/>
+    <style>
+        /* Divider */
+        .section-divider {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 2rem 0 0 0;
+            padding: 0;
+        }
+
+        .section-divider > div {
+            position: relative; /* Position the inner div for the pseudo-element to be placed correctly */
+            width: 100%; /* The width should be full of its parent container */
+            max-width: 800px;
+        }
+
+        .section-divider > div::before {
+            content: "";
+            position: absolute;
+            top: 50%; /* Position the line vertically centered */
+            left: 0;
+            right: 0;
+            height: 0.1rem; /* Height of the divider line */
+            background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg)); /* Gradient border */
+            z-index: -1; /* Ensure the pseudo-element stays behind the content */
+            transform: translateY(-50%); /* Correct the vertical centering of the divider line */
+        }
+
+        .section-divider[role="separator"] {
+            border: none;
+            outline: none;
+        }
+
+    </style>
 </head>
 <body transition:animate="initial">
 
@@ -27,6 +64,13 @@ const {title, description, image} = Astro.props;
 <main id="main-body-section">
     <Navbar/>
     <slot/>
+
+    <!-- Third divider with a label -->
+    <div id="divider-label-5" class="hidden">Fifth Section Divider</div>
+    <div class="section-divider" role="separator" aria-labelledby="divider-label-5">
+        <div></div>
+    </div>
+
     <Footer/>
 </main>
 <!--<script type="module" is:inline>-->

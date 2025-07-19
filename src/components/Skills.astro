@@ -1,5 +1,4 @@
 ---
-
 import github from "../assets/skills/github_dark.svg";
 import java from "../assets/skills/java.svg";
 import javascript from "../assets/skills/javascript.svg";
@@ -51,28 +50,25 @@ const skills = [
     { name: "Grafana", icon: grafana },
     { name: "Prometheus", icon: prometheus },
     { name: "k6", icon: k6 },
-    { name: "Postman", icon: postman },
-    { name: "Firebase", icon: firebase },
-
-    // { name: "Ansible", icon: ansible },
-    // { name: "Terraform", icon: terraform },
+    { name: "Ansible", icon: ansible },
+    { name: "Terraform", icon: terraform },
 
 
     { name: "TypeScript", icon: typescript },
     { name: "React.js", icon: react },
     { name: "Next.js", icon: nextjs },
     { name: "Nodejs", icon: nodejs },
-    { name: "Golang", icon: go },
-
 
 
     { name: "HTML5", icon: html },
     { name: "CSS", icon: css },
     // { name: "Github", icon: github },
     { name: "Git", icon: git },
+    { name: "Postman", icon: postman },
+    { name: "Firebase", icon: firebase },
 
-
-    { name: "MySql", icon: mysql },
+    // { name: "Golang", icon: go },
+    // { name: "MySql", icon: mysql },
     { name: "MongoDB", icon: mongodb },
 
 
@@ -131,10 +127,24 @@ const skills = [
         gap: 5px;
         padding: 0.6rem;
         overflow: hidden;
+        backdrop-filter: blur(20px);
+        position: relative;
     }
-
+    .tech-skill::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+    .tech-skill:hover::before {
+        left: 100%;
+    }
     .tech-skill:hover {
-        transform: translateY(-5px);
+        //transform: translateY(-5px);
         background-color: var(--background-hover);
         border: 0.9px solid var(--text5);
         cursor: pointer;
