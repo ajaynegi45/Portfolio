@@ -276,9 +276,13 @@ const posts = (await getCollection('blog')).sort(
         left: 100%;
     }
     .blog-post-container:hover {
-        border: 1px solid var(--text5);
+        //border: 1px solid var(--text5);
         cursor: pointer;
-        background-color: #ffffff0d;
+        //background-color: #ffffff0d;
+
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
     .blog-post-container > .blog-post-left-side-container {
