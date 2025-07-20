@@ -17,13 +17,14 @@ const testimonials = [
 
     <!--<h2 id="testimonial-heading" class="testimonial-title" style="font-size: 1.1rem;">Testimonial</h2>-->
 
-    <h2 id="testimonial-heading" class="testimonial-title" style="font-size: 1.1rem;">They said it, I just highlighted it</h2>
+    <h2 id="testimonial-heading" class="testimonial-title" style="font-size: 1.1rem;">They said it, I just highlighted
+        it</h2>
 
     <div class="testimonial-scroll-wrapper">
         <div class="testimonial-scroll-track">
             {testimonials.map((t, index) => (
                     <article class="testimonial-card">
-                        <p class="testimonial-text" >
+                        <p class="testimonial-text">
                             “{t.text}”
                         </p>
 
@@ -92,6 +93,7 @@ const testimonials = [
         backdrop-filter: blur(20px);
         position: relative;
     }
+
     .testimonial-card::before {
         content: '';
         position: absolute;
@@ -102,9 +104,11 @@ const testimonials = [
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         transition: left 0.5s ease;
     }
+
     .testimonial-card:hover::before {
         left: 100%;
     }
+
     .testimonial-card:hover {
         //transform: translateY(-4px);
         //box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);

@@ -6,21 +6,27 @@ heroImage: '/blog/OCI-Example.avif'
 substack: 'https://codiescoder.substack.com/p/ever-wonder-why-your-containers-just'
 ---
 
-Imagine shipping a product worldwide. Boxes go by boat, train, and truck—each designed for one transport method. Chaos, right? Now picture standardized shipping containers fitting seamlessly on any vehicle. That’s exactly what the **Open Container Initiative (OCI)** did for software.
+Imagine shipping a product worldwide. Boxes go by boat, train, and truck—each designed for one transport method. Chaos,
+right? Now picture standardized shipping containers fitting seamlessly on any vehicle. That’s exactly what the **Open
+Container Initiative (OCI)** did for software.
 
 ![](https://ajaynegi.web.app/blog/OCI-Example.avif)
 
 ### **Why Containers Needed Standardization**
 
-Before 2015, containers were exploding in popularity—thanks largely to Docker. But every platform used its own image format and runtime tools. Want to move a container from Docker to CoreOS? Good luck. This "Babel tower" of incompatible formats stifled innovation and tied users to specific vendors .
+Before 2015, containers were exploding in popularity—thanks largely to Docker. But every platform used its own image
+format and runtime tools. Want to move a container from Docker to CoreOS? Good luck. This "Babel tower" of incompatible
+formats stifled innovation and tied users to specific vendors .
 
 Thanks for reading Codies Coder Newsletter! Subscribe for free to receive new posts and support my work.
 
-Enter the OCI. Founded in June 2015 by Docker, CoreOS, and industry leaders like Google and Microsoft, its mission was simple:
+Enter the OCI. Founded in June 2015 by Docker, CoreOS, and industry leaders like Google and Microsoft, its mission was
+simple:
 
 > "Create open, vendor-neutral standards so containers run anywhere, regardless of who built them."
 
-Docker kickstarted it by donating its core container format and runtime code— proving this wasn’t just theory, but a practical shift.
+Docker kickstarted it by donating its core container format and runtime code— proving this wasn’t just theory, but a
+practical shift.
 
 ### **What is OCI, Really?**
 
@@ -38,7 +44,8 @@ Think of OCI as the "rulebook" for containers. It defines three critical standar
 
     * The blueprint for container images.
 
-    * Images are built in **layers** (like a cake). Each layer adds files or changes (e.g., installing Python, then your app).
+    * Images are built in **layers** (like a cake). Each layer adds files or changes (e.g., installing Python, then your
+      app).
 
     * A manifest file stitches layers together, while a config file sets environment variables or commands.
 
@@ -52,7 +59,8 @@ Think of OCI as the "rulebook" for containers. It defines three critical standar
 
 OCI standards freed containers from Docker’s orbit. Today, they’re the invisible backbone of modern tech:
 
-* **Kubernetes Compatibility:** Tools like CRI-O (a lightweight Docker alternative) use OCI runtimes to launch Kubernetes pods. No Docker needed.
+* **Kubernetes Compatibility:** Tools like CRI-O (a lightweight Docker alternative) use OCI runtimes to launch
+  Kubernetes pods. No Docker needed.
 
 * **Innovation in Runtimes:**
 
@@ -71,7 +79,8 @@ OCI standards freed containers from Docker’s orbit. Today, they’re the invis
    Build an image with Google `kaniko`, store it in AWS ECR, run it on Azure with `runc`—all seamlessly.
 
 2. **Security by Default**  
-   Standards ensure images are scanned, signed, and run in isolated environments. OCI `config.json` even controls permissions.
+   Standards ensure images are scanned, signed, and run in isolated environments. OCI `config.json` even controls
+   permissions.
 
 3. **The Innovation Engine**  
    New runtimes (like WebAssembly-based `wasmEdge`) plug into OCI ecosystems. No reinventing the wheel.

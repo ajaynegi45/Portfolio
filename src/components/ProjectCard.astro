@@ -172,6 +172,7 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         backdrop-filter: blur(20px);
         position: relative;
     }
+
     .project-card::before {
         content: '';
         position: absolute;
@@ -182,9 +183,11 @@ import VayuBanner from '../assets/img/Vayu-project-banner.avif';
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         transition: left 0.5s ease;
     }
+
     .project-card:hover::before {
         left: 100%;
     }
+
     .project-card:hover {
         cursor: pointer;
         //background-color: var(--background-hover);
