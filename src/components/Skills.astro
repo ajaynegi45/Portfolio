@@ -33,43 +33,43 @@ import firebase from "../assets/skills/firebase.svg";
 
 const skills = [
 
-    { name: "Java", icon: java },
-    { name: "AWS", icon: aws },
-    { name: "Docker", icon: docker },
-    { name: "Kubernetes", icon: kubernetes },
-    { name: "Jira", icon: jira },
+    {name: "Java", icon: java},
+    {name: "AWS", icon: aws},
+    {name: "Docker", icon: docker},
+    {name: "Kubernetes", icon: kubernetes},
+    {name: "Jira", icon: jira},
 
 
-    { name: "Springboot", icon: spring },
-    { name: "JavaScript", icon: javascript },
-    { name: "Postgresql", icon: postgresql },
-    { name: "Linux", icon: bash },
-    { name: "Jenkins", icon: jenkins },
+    {name: "Springboot", icon: spring},
+    {name: "JavaScript", icon: javascript},
+    {name: "Postgresql", icon: postgresql},
+    {name: "Linux", icon: bash},
+    {name: "Jenkins", icon: jenkins},
 
 
-    { name: "Grafana", icon: grafana },
-    { name: "Prometheus", icon: prometheus },
-    { name: "k6", icon: k6 },
-    { name: "Ansible", icon: ansible },
-    { name: "Terraform", icon: terraform },
+    {name: "Grafana", icon: grafana},
+    {name: "Prometheus", icon: prometheus},
+    {name: "k6", icon: k6},
+    {name: "Ansible", icon: ansible},
+    {name: "Terraform", icon: terraform},
 
 
-    { name: "TypeScript", icon: typescript },
-    { name: "React.js", icon: react },
-    { name: "Next.js", icon: nextjs },
-    { name: "Nodejs", icon: nodejs },
+    {name: "TypeScript", icon: typescript},
+    {name: "React.js", icon: react},
+    {name: "Next.js", icon: nextjs},
+    {name: "Nodejs", icon: nodejs},
 
 
-    { name: "HTML5", icon: html },
-    { name: "CSS", icon: css },
+    {name: "HTML5", icon: html},
+    {name: "CSS", icon: css},
     // { name: "Github", icon: github },
-    { name: "Git", icon: git },
-    { name: "Postman", icon: postman },
-    { name: "Firebase", icon: firebase },
+    {name: "Git", icon: git},
+    {name: "Postman", icon: postman},
+    {name: "Firebase", icon: firebase},
 
     // { name: "Golang", icon: go },
     // { name: "MySql", icon: mysql },
-    { name: "MongoDB", icon: mongodb },
+    {name: "MongoDB", icon: mongodb},
 
 
     // { name: "Kafka", icon: kafka },
@@ -83,7 +83,7 @@ const skills = [
         {
             skills.map((skill) => (
                     <div class="tech-skill" title={skill.name}>
-                        <img src={skill.icon.src} alt={skill.name + ' icon'} class="tech-icon" />
+                        <img src={skill.icon.src} alt={skill.name + ' icon'} class="tech-icon"/>
                         <p>{skill.name}</p>
                     </div>
             ))
@@ -130,6 +130,7 @@ const skills = [
         backdrop-filter: blur(20px);
         position: relative;
     }
+
     .tech-skill::before {
         content: '';
         position: absolute;
@@ -140,9 +141,11 @@ const skills = [
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         transition: left 0.5s ease;
     }
+
     .tech-skill:hover::before {
         left: 100%;
     }
+
     .tech-skill:hover {
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
         border: 0.9px solid rgba(255, 255, 255, 0.15);
