@@ -7,443 +7,551 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="contact-container">
         <div class="contact-information">
-            <h1>Let’s Chat 💬</h1>
+            <h1>Let's Chat 💬</h1>
             <p>Got something on your mind? Whether it's a question, idea, or just a friendly hello — drop us a message
-                below. We’re all ears (and good vibes)! 😊</p>
-            <!--<p>Have something on your mind? We’d absolutely love to hear from you! Just drop us a message using the form below — whether it's a question, idea, or just a friendly hello, we’re all ears.</p>-->
+                below. We're all ears (and good vibes)! 😊</p>
         </div>
+
         <div class="contact-form">
-
-            <!-- Contact Form -->
-            <form method="POST" aria-labelledby="contact-form" id="form">
+            <form method="POST" id="contact-form">
                 <input type="hidden" name="access_key" value="197f6bde-3b19-4470-8a5b-862493338e8c">
-                <fieldset>
 
-                    <!-- Name -->
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name</label>
-                        <div class="input-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide-icon lucide lucide-user" aria-hidden="true">
-                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                                <circle cx="12" cy="7" r="4"/>
-                            </svg>
-                            <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="form-input"
-                                    placeholder="Your Full Name"
-                                    aria-required="true"
-                                    aria-label="Enter your full name"
-                            />
-                        </div>
-                        <div class="form-error" id="name-error" role="alert"></div>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <div class="input-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide-icon lucide lucide-user" aria-hidden="true">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-input"
+                                autocomplete="off"
+                                placeholder="Your Full Name"
+                                aria-label="Enter your full name"
+                        />
                     </div>
+                    <div class="form-error" id="name-error" role="alert"></div>
+                </div>
 
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <div class="input-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide-icon lucide-mail" aria-hidden="true">
-                                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                            </svg>
-                            <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="form-input"
-                                    placeholder="Your Email"
-                                    aria-required="true"
-                                    aria-label="Enter your email address"
-                            />
-                        </div>
-                        <div class="form-error" id="email-error" role="alert"></div>
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide-icon lucide-mail" aria-hidden="true">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="off"
+                                class="form-input"
+                                placeholder="Your Email"
+                                aria-label="Enter your email address"
+                        />
                     </div>
+                    <div class="form-error" id="email-error" role="alert"></div>
+                </div>
 
-                    <!-- Reason -->
-                    <div class="form-group">
-                        <label for="reason" class="form-label">Reason</label>
-                        <div class="input-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide-icon lucide-unplug" aria-hidden="true">
-                                <path d="m19 5 3-3"/>
-                                <path d="m2 22 3-3"/>
-                                <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
-                                <path d="M7.5 13.5 10 11"/>
-                                <path d="M10.5 16.5 13 14"/>
-                                <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/>
-                            </svg>
-                            <input
-                                    type="text"
-                                    id="reason"
-                                    name="reason"
-                                    class="form-input"
-                                    placeholder="Reason for contact"
-                                    aria-required="true"
-                                    aria-label="State the reason for contacting"
-                            />
-                        </div>
-                        <div class="form-error" id="subject-error" role="alert"></div>
+                <!-- Reason Field -->
+                <div class="form-group">
+                    <label for="reason" class="form-label">Reason</label>
+                    <div class="input-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="lucide-icon lucide-unplug" aria-hidden="true">
+                            <path d="m19 5 3-3"/>
+                            <path d="m2 22 3-3"/>
+                            <path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/>
+                            <path d="M7.5 13.5 10 11"/>
+                            <path d="M10.5 16.5 13 14"/>
+                            <path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/>
+                        </svg>
+                        <input
+                                type="text"
+                                id="reason"
+                                name="reason"
+                                autocomplete="off"
+                                class="form-input"
+                                placeholder="Reason for contact"
+                                aria-label="State the reason for contacting"
+                        />
                     </div>
+                    <div class="form-error" id="reason-error" role="alert"></div>
+                </div>
 
-                    <!-- Message -->
-                    <div class="form-group">
-                        <label for="message" class="form-label">Your Message</label>
-                        <!--placeholder="Type your message here..."-->
-                        <textarea
-                                id="message"
-                                name="message"
-                                placeholder="Write your message here"
-                                aria-required="true"
-                                aria-label="Write your message here"
-                        ></textarea>
-                        <div class="form-error" id="message-error" role="alert"></div>
-
-                    </div>
-
-                    <!--Submit Button -->
-                    <div class="submit-btn-container">
-                        <button type="submit" class="submit-btn" id="result">Send Message</button>
-                    </div>
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea
+                            id="message"
+                            name="message"
+                            autocomplete="off"
+                            class="form-textarea"
+                            placeholder="Write your message here"
+                            aria-label="Write your message here"
+                    ></textarea>
+                    <div class="form-error" id="message-error" role="alert"></div>
+                </div>
 
 
-                    <!--<button type="submit" class="form-submit" id="submit-btn">-->
-                    <!--    <span class="submit-text">Send Message</span>-->
-                    <!--    <span class="submit-loader" id="submit-loader">-->
-                    <!--    <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
-                    <!--        <path d="M21 12a9 9 0 11-6.219-8.56"/>-->
-                    <!--    </svg>-->
-                    <!--    Sending...-->
-                    <!--</span>-->
-                    <!--</button>-->
+                <!-- Submit Button -->
+                <button type="submit" class="form-submit" id="submit-btn">
+                    <span class="submit-text">Send Message</span>
+                    <span class="submit-loader" id="submit-loader">
+                        <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12a9 9 0 11-6.219-8.56"/>
+                        </svg>
+                        Sending...
+                    </span>
+                </button>
 
-                    <!--<div class="form-success" id="form-success" role="alert">-->
-                    <!--    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
-                    <!--        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>-->
-                    <!--        <polyline points="22,4 12,14.01 9,11.01"></polyline>-->
-                    <!--    </svg>-->
-                    <!--    Thank you! Your message has been sent successfully.-->
-                    <!--</div>-->
 
-                </fieldset>
+                <!-- Success Message -->
+                <div class="form-success" id="form-success" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                    </svg>
+                    Thank you! Your message has been sent successfully.
+                </div>
+
+                <!-- Error Message -->
+                <div id="form-error" class="form-failure" role="alert" hidden>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    Oops! Something went wrong. Please try again.
+                </div>
+
             </form>
         </div>
     </section>
 
+    <script>
+        document.addEventListener('astro:page-load', initContactForm);
 
-    <script type="module" is:client="load">
-        import {initContactForm} from '/contact-form.js';
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('form-success');
 
-        initContactForm();
+            // If elements don't exist on this page, skip initialization
+            if (!form || !submitBtn || !successMessage) return;
 
-        // View transition compatibility
-        if (document.startViewTransition) {
-            document.addEventListener('astro:after-swap', initContactForm);
+            // Clear any existing event listeners by cloning and replacing the form
+            const newForm = form.cloneNode(true);
+            form.parentNode.replaceChild(newForm, form);
+            const freshForm = document.getElementById('contact-form');
+            const freshSubmitBtn = document.getElementById('submit-btn');
+            const freshSuccessMessage = document.getElementById('form-success');
+            const errorMessage   = document.getElementById('form-error');
+
+
+            // Validation rules for each field
+            const validationRules = {
+                name: {
+                    required: true,
+                    minLength: 2,
+                    pattern: /^[a-zA-Z\s'-]+$/,
+                    message: 'Name must be at least 2 characters and contain only letters, spaces, apostrophes, and hyphens'
+                },
+                email: {
+                    required: true,
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Please enter a valid email address'
+                },
+                reason: {
+                    required: true,
+                    minLength: 3,
+                    message: 'Reason must be at least 3 characters long'
+                },
+                message: {
+                    required: true,
+                    minLength: 20,
+                    message: 'Message must be at least 20 characters long'
+                }
+            };
+
+            // Real-time validation function for input fields (not textarea)
+            function validateField(fieldName, showError = true) {
+                const field = document.getElementById(fieldName);
+                const errorElement = document.getElementById(`${fieldName}-error`);
+                const rule = validationRules[fieldName];
+
+                if (!field || !rule) return true;
+
+                const value = field.value.trim();
+                let isValid = true;
+                let errorMessage = '';
+
+                // Required check
+                if (rule.required && !value) {
+                    isValid = false;
+                    errorMessage = `${getFieldLabel(fieldName)} is required`;
+                }
+                // Pattern check
+                else if (value && rule.pattern && !rule.pattern.test(value)) {
+                    isValid = false;
+                    errorMessage = rule.message;
+                }
+                // Length check
+                else if (value && rule.minLength && value.length < rule.minLength) {
+                    isValid = false;
+                    errorMessage = rule.message;
+                }
+
+                // Update field appearance
+                field.classList.remove('error', 'success');
+                if (value) {
+                    field.classList.add(isValid ? 'success' : 'error');
+                }
+
+                // Show/hide error message
+                if (errorElement) {
+                    if (showError && !isValid && value) {
+                        errorElement.textContent = errorMessage;
+                        errorElement.classList.add('visible');
+                    } else {
+                        errorElement.textContent = '';
+                        errorElement.classList.remove('visible');
+                    }
+                }
+
+                return isValid;
+            }
+
+            // Validation function for form submission (checks all fields including empty ones)
+            function validateFieldForSubmission(fieldName) {
+                const field = document.getElementById(fieldName);
+                const errorElement = document.getElementById(`${fieldName}-error`);
+                const rule = validationRules[fieldName];
+
+                if (!field || !rule) return true;
+
+                const value = field.value.trim();
+                let isValid = true;
+                let errorMessage = '';
+
+                // Required check - this will show error for empty fields
+                if (rule.required && !value) {
+                    isValid = false;
+                    errorMessage = `${getFieldLabel(fieldName)} is required`;
+                }
+                // Pattern check
+                else if (value && rule.pattern && !rule.pattern.test(value)) {
+                    isValid = false;
+                    errorMessage = rule.message;
+                }
+                // Length check
+                else if (value && rule.minLength && value.length < rule.minLength) {
+                    isValid = false;
+                    errorMessage = rule.message;
+                }
+
+                // Update field appearance
+                field.classList.remove('error', 'success');
+                if (!isValid) {
+                    field.classList.add('error');
+                } else if (value) {
+                    field.classList.add('success');
+                }
+
+                // Show/hide error message
+                if (errorElement) {
+                    if (!isValid) {
+                        errorElement.textContent = errorMessage;
+                        errorElement.classList.add('visible');
+                    } else {
+                        errorElement.textContent = '';
+                        errorElement.classList.remove('visible');
+                    }
+                }
+
+                return isValid;
+            }
+
+            // Get user-friendly field labels
+            function getFieldLabel(fieldName) {
+                const labels = {
+                    name: 'Full Name',
+                    email: 'Email Address',
+                    reason: 'Reason',
+                    message: 'Message'
+                };
+                return labels[fieldName] || fieldName;
+            }
+
+            // Clear all error messages
+            function clearAllErrors() {
+                Object.keys(validationRules).forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    const errorElement = document.getElementById(`${fieldName}-error`);
+
+                    if (field) {
+                        field.classList.remove('error', 'success');
+                    }
+                    if (errorElement) {
+                        errorElement.textContent = '';
+                        errorElement.classList.remove('visible');
+                    }
+                });
+            }
+
+            // Add real-time validation to input fields (excluding textarea)
+            ['name', 'email', 'reason'].forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                if (field) {
+                    // Validate on input for real-time feedback
+                    field.addEventListener('input', () => {
+                        // Only show errors after user starts typing
+                        if (field.value.length > 0) {
+                            validateField(fieldName, true);
+                        } else {
+                            // Clear validation state when field is empty
+                            field.classList.remove('error', 'success');
+                            const errorElement = document.getElementById(`${fieldName}-error`);
+                            if (errorElement) {
+                                errorElement.classList.remove('visible');
+                            }
+                        }
+                    });
+
+                    // Also validate on blur
+                    field.addEventListener('blur', () => {
+                        if (field.value.length > 0) {
+                            validateField(fieldName, true);
+                        }
+                    });
+                }
+            });
+
+            // Handle form submission
+            freshForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Clear any existing error messages first
+                clearAllErrors();
+
+                // Validate all fields using submission validation (shows errors for empty fields)
+                let isFormValid = true;
+                Object.keys(validationRules).forEach(fieldName => {
+                    if (!validateFieldForSubmission(fieldName)) {
+                        isFormValid = false;
+                    }
+                });
+
+                // If form is invalid, don't submit
+                if (!isFormValid) {
+                    return;
+                }
+
+                // Set loading state
+                freshSubmitBtn.disabled = true;
+                freshSubmitBtn.classList.add('loading');
+
+                try {
+                    // Prepare form data
+                    const formData = new FormData(freshForm);
+                    const data = Object.fromEntries(formData.entries());
+
+                    // Submit to your API
+                    const response = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (response.ok) {
+                        // Show success message
+                        freshSuccessMessage.classList.add('visible');
+                        freshForm.reset();
+                        clearAllErrors();
+
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            freshSuccessMessage.classList.remove('visible');
+                        }, 5000);
+                    } else {
+                        // Show error message
+                        errorMessage.classList.add('visible');
+                        freshForm.reset();
+                        clearAllErrors();
+
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            errorMessage.classList.remove('visible');
+                        }, 5000);
+                        throw new Error('Form submission failed');
+                    }
+
+                } catch (error) {
+                    errorMessage.classList.add('visible');
+                    freshForm.reset();
+                    clearAllErrors();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        errorMessage.classList.remove('visible');
+                    }, 5000);
+                } finally {
+                    // Remove loading state
+                    freshSubmitBtn.disabled = false;
+                    freshSubmitBtn.classList.remove('loading');
+                }
+            });
+
+            // Warm up the API endpoint when user starts interacting
+            let apiWarmedUp = false;
+            const inputs = freshForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    if (!apiWarmedUp) {
+                        apiWarmedUp = true;
+                        fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {
+                            method: "GET",
+                            mode: "no-cors",
+                        }).catch(() => {
+                            // Ignore errors for warm-up request
+                        });
+                    }
+                }, { once: true });
+            });
         }
     </script>
 
-    <!--<script is:inline type="module" >-->
-    <!--    class ContactForm {-->
-    <!--        constructor() {-->
-    <!--            this.form = document.getElementById('contact-form');-->
-    <!--            this.submitBtn = document.getElementById('submit-btn');-->
-    <!--            this.successMessage = document.getElementById('form-success');-->
-    <!--            this.inputs = document.querySelectorAll("input, textarea");-->
+<!-- JavaScript -->
+<!--<script>-->
+<!--    document.addEventListener('astro:page-load', initContactForm);-->
 
+<!--    function initContactForm () {-->
+<!--        /* Elements */-->
+<!--        const form         = document.getElementById('contact-form');-->
+<!--        const submitBtn    = document.getElementById('submit-btn');-->
+<!--        const successBox   = document.getElementById('form-success');-->
+<!--        const failureBox   = document.getElementById('form-error');-->
+<!--        const loaderText   = document.getElementById('submit-loader');-->
 
-    <!--            let pinged = false;-->
-    <!--            this.inputs.forEach((el) => {-->
-    <!--                el.addEventListener("focus", () => {-->
-    <!--                    if (!pinged) {-->
-    <!--                        pinged = true;-->
-    <!--                        fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {-->
-    <!--                            method: "GET",-->
-    <!--                            mode: "no-cors",-->
-    <!--                        }).catch(() => {-->
-    <!--                        });-->
-    <!--                    }-->
-    <!--                }, {once: true});-->
-    <!--            });-->
+<!--        if (!form || !submitBtn) return; // Abort if HTML not present-->
 
+<!--        /* -&#45;&#45; Validation rules &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
+<!--        const rules = {-->
+<!--            name:   { min: 2,  pattern: /^[a-zA-Z\s'-]+$/,      msg: 'Name must be at least 2 letters'           },-->
+<!--            email:  { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,    msg: 'Enter a valid email address'               },-->
+<!--            reason: { min: 3,                                   msg: 'Reason must be at least 3 characters long' },-->
+<!--            message:{ min: 20,                                  msg: 'Message must be at least 20 characters'    }-->
+<!--        };-->
 
-    <!--            this.validators = {-->
-    <!--                name: {-->
-    <!--                    required: true,-->
-    <!--                    minLength: 2,-->
-    <!--                    pattern: /^[a-zA-Z\s]+$/,-->
-    <!--                    message: 'Name must contain only letters and be at least 2 characters long'-->
-    <!--                },-->
-    <!--                email: {-->
-    <!--                    required: true,-->
-    <!--                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,-->
-    <!--                    message: 'Please enter a valid email address'-->
-    <!--                },-->
-    <!--                subject: {-->
-    <!--                    required: true,-->
-    <!--                    minLength: 5,-->
-    <!--                    message: 'Subject must be at least 5 characters long'-->
-    <!--                },-->
-    <!--                message: {-->
-    <!--                    required: true,-->
-    <!--                    minLength: 20,-->
-    <!--                    message: 'Message must be at least 20 characters long'-->
-    <!--                }-->
-    <!--            };-->
+<!--        /* -&#45;&#45; Real-time field validation &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
+<!--        ['name','email','reason'].forEach(id => {-->
+<!--            const field = document.getElementById(id);-->
+<!--            field?.addEventListener('input', () => handleValidate(id, false));-->
+<!--            field?.addEventListener('blur',  () => handleValidate(id, true));-->
+<!--        });-->
 
-    <!--            this.init();-->
-    <!--        }-->
+<!--        /* Auto-expand textarea */-->
+<!--        const txt = document.getElementById('message');-->
+<!--        if (txt) {-->
+<!--            txt.addEventListener('input', () => {-->
+<!--                try {-->
+<!--                    txt.style.height = 'auto';-->
+<!--                    txt.style.height = `${txt.scrollHeight}px`;-->
+<!--                } catch { /* silently ignore */ }-->
+<!--            });-->
+<!--        }-->
 
-    <!--        init() {-->
-    <!--            this.bindEvents();-->
-    <!--        }-->
+<!--        /* -&#45;&#45; Submission -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
+<!--        form.addEventListener('submit', async e => {-->
+<!--            e.preventDefault();-->
+<!--            clearAlerts();-->
 
-    <!--        bindEvents() {-->
-    <!--            // Form submission-->
-    <!--            this.form?.addEventListener('submit', (e) => this.handleSubmit(e));-->
+<!--            const valid = Object.keys(rules).every(id => handleValidate(id, true));-->
+<!--            if (!valid) return;-->
 
-    <!--            // Real-time validation-->
-    <!--            Object.keys(this.validators).forEach(fieldName => {-->
-    <!--                const field = document.getElementById(fieldName);-->
-    <!--                if (field) {-->
-    <!--                    field.addEventListener('blur', () => this.validateField(fieldName));-->
-    <!--                    field.addEventListener('input', () => this.clearFieldError(fieldName));-->
-    <!--                }-->
-    <!--            });-->
-    <!--        }-->
+<!--            toggleLoading(true);-->
 
-    <!--        validateField(fieldName) {-->
-    <!--            const field = document.getElementById(fieldName);-->
-    <!--            const validator = this.validators[fieldName];-->
-    <!--            const value = field?.value?.trim() || '';-->
+<!--            try {-->
+<!--                const data = Object.fromEntries(new FormData(form).entries());-->
 
-    <!--            let isValid = true;-->
-    <!--            let errorMessage = '';-->
+<!--                const res = await fetch(-->
+<!--                    'https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact',-->
+<!--                    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }-->
+<!--                );-->
 
-    <!--            // Required validation-->
-    <!--            if (validator.required && !value) {-->
-    <!--                isValid = false;-->
-    <!--                errorMessage = `${this.getFieldLabel(fieldName)} is required`;-->
-    <!--            }-->
-    <!--            // Pattern validation-->
-    <!--            else if (value && validator.pattern && !validator.pattern.test(value)) {-->
-    <!--                isValid = false;-->
-    <!--                errorMessage = validator.message;-->
-    <!--            }-->
-    <!--            // Length validation-->
-    <!--            else if (value && validator.minLength && value.length < validator.minLength) {-->
-    <!--                isValid = false;-->
-    <!--                errorMessage = validator.message;-->
-    <!--            }-->
+<!--                if (!res.ok) throw new Error('network');-->
 
-    <!--            this.showFieldError(fieldName, isValid ? '' : errorMessage);-->
-    <!--            this.updateFieldState(fieldName, isValid);-->
+<!--                showBox(successBox);-->
+<!--                form.reset();-->
+<!--            } catch {-->
+<!--                showBox(failureBox);-->
+<!--            } finally {-->
+<!--                toggleLoading(false);-->
+<!--            }-->
+<!--        });-->
 
-    <!--            return isValid;-->
-    <!--        }-->
+<!--        /* -&#45;&#45; Helpers &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
+<!--        function handleValidate (id, showErr) {-->
+<!--            const el   = document.getElementById(id);-->
+<!--            const err  = document.getElementById(`${id}-error`);-->
+<!--            if (!el) return true;-->
 
-    <!--        validateAllFields() {-->
-    <!--            let isFormValid = true;-->
+<!--            const { min = 0, pattern, msg } = rules[id];-->
+<!--            const val = el.value.trim();-->
+<!--            let ok = true, text = '';-->
 
-    <!--            Object.keys(this.validators).forEach(fieldName => {-->
-    <!--                const fieldValid = this.validateField(fieldName);-->
-    <!--                if (!fieldValid) {-->
-    <!--                    isFormValid = false;-->
-    <!--                }-->
-    <!--            });-->
+<!--            if (!val)               { ok = false; text = `${label(id)} is required`; }-->
+<!--            else if (val.length<min){ ok = false; text = msg; }-->
+<!--            else if (pattern && !pattern.test(val)) { ok = false; text = msg; }-->
 
-    <!--            return isFormValid;-->
-    <!--        }-->
+<!--            el.classList.toggle('error', !ok && showErr);-->
+<!--            el.classList.toggle('success', ok && val);-->
+<!--            if (err) {-->
+<!--                err.textContent = showErr ? text : '';-->
+<!--                err.classList.toggle('visible', showErr && !ok);-->
+<!--            }-->
+<!--            return ok;-->
+<!--        }-->
 
-    <!--        showFieldError(fieldName, message) {-->
-    <!--            const errorElement = document.getElementById(`${fieldName}-error`);-->
-    <!--            if (errorElement) {-->
-    <!--                errorElement.textContent = message;-->
-    <!--                errorElement.classList.toggle('visible', !!message);-->
-    <!--            }-->
-    <!--        }-->
+<!--        function label (id) {-->
+<!--            return ({name:'Full Name', email:'Email Address', reason:'Reason', message:'Message'})[id] || id;-->
+<!--        }-->
 
-    <!--        clearFieldError(fieldName) {-->
-    <!--            const field = document.getElementById(fieldName);-->
-    <!--            if (field && field.classList.contains('error')) {-->
-    <!--                field.classList.remove('error');-->
-    <!--                this.showFieldError(fieldName, '');-->
-    <!--            }-->
-    <!--        }-->
+<!--        function clearAlerts () {-->
+<!--            [successBox, failureBox].forEach(b => b?.setAttribute('hidden',''));-->
+<!--        }-->
 
-    <!--        updateFieldState(fieldName, isValid) {-->
-    <!--            const field = document.getElementById(fieldName);-->
-    <!--            if (field) {-->
-    <!--                field.classList.remove('error', 'success');-->
-    <!--                if (field.value.trim()) {-->
-    <!--                    field.classList.add(isValid ? 'success' : 'error');-->
-    <!--                }-->
-    <!--            }-->
-    <!--        }-->
+<!--        function showBox (box) {-->
+<!--            clearAlerts();-->
+<!--            box?.removeAttribute('hidden');-->
+<!--            setTimeout(() => box?.setAttribute('hidden',''), 5000);-->
+<!--        }-->
 
-    <!--        getFieldLabel(fieldName) {-->
-    <!--            const labelMap = {-->
-    <!--                Name: 'Name',-->
-    <!--                email: 'Email address',-->
-    <!--                subject: 'Subject',-->
-    <!--                message: 'Message'-->
-    <!--            };-->
-    <!--            return labelMap[fieldName] || fieldName;-->
-    <!--        }-->
+<!--        function toggleLoading (on) {-->
+<!--            submitBtn.disabled = on;-->
+<!--            submitBtn.classList.toggle('loading', on);-->
+<!--        }-->
 
-    <!--    async handleSubmit(e) {-->
-    <!--            e.preventDefault();-->
-
-    <!--            if (!this.validateAllFields()) {-->
-    <!--                return;-->
-    <!--            }-->
-
-    <!--            this.setLoading(true);-->
-
-    <!--            try {-->
-    <!--                const formData = new FormData(this.form);-->
-    <!--                const data = Object.fromEntries(formData.entries());-->
-
-    <!--                // Simulate API call (replace with actual endpoint)-->
-    <!--                await new Promise(resolve => setTimeout(resolve, 2000));-->
-
-    <!--                // Here you would typically send the data to your Java/AWS Lambda backend-->
-    <!--                const response  = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {-->
-    <!--                    method: "POST",-->
-    <!--                    headers: {-->
-    <!--                        "Content-Type": "application/json",-->
-    <!--                    },-->
-    <!--                    body: JSON.stringify(data),-->
-    <!--                });-->
-
-    <!--                this.showSuccess();-->
-    <!--                this.form?.reset();-->
-    <!--                this.clearAllFieldStates();-->
-
-    <!--            } catch (error) {-->
-    <!--                console.error('Form submission error:', error);-->
-    <!--                this.showFieldError('general', 'Something went wrong. Please try again.');-->
-    <!--            } finally {-->
-    <!--                this.setLoading(false);-->
-    <!--            }-->
-    <!--        }-->
-
-    <!--        setLoading(isLoading) {-->
-    <!--            if (this.submitBtn) {-->
-    <!--                this.submitBtn.disabled = isLoading;-->
-    <!--                this.submitBtn.classList.toggle('loading', isLoading);-->
-    <!--            }-->
-    <!--        }-->
-
-    <!--        showSuccess() {-->
-    <!--            if (this.successMessage) {-->
-    <!--                this.successMessage.classList.add('visible');-->
-    <!--                setTimeout(() => {-->
-    <!--                    this.successMessage.classList.remove('visible');-->
-    <!--                }, 5000);-->
-    <!--            }-->
-    <!--        }-->
-
-    <!--        clearAllFieldStates() {-->
-    <!--            Object.keys(this.validators).forEach(fieldName => {-->
-    <!--                const field = document.getElementById(fieldName);-->
-    <!--                if (field) {-->
-    <!--                    field.classList.remove('error', 'success');-->
-    <!--                }-->
-    <!--                this.showFieldError(fieldName, '');-->
-    <!--            });-->
-    <!--        }-->
-    <!--    }-->
-
-    <!--    // Initialize when DOM is ready-->
-    <!--    document.addEventListener('DOMContentLoaded', () => {-->
-    <!--        new ContactForm();-->
-    <!--    });-->
-    <!--</script>-->
-
-
-    <!--<script is:inline>-->
-    <!--    window.addEventListener("DOMContentLoaded", () => {-->
-    <!--        const form = document.getElementById("form");-->
-    <!--        const result = document.getElementById("result");-->
-    <!--        const inputs = form?.querySelectorAll("input, textarea");-->
-
-    <!--        if (!form || !result || !inputs) return;-->
-
-    <!--        let pinged = false;-->
-
-    <!--        // Lazy cold-start trigger-->
-    <!--        inputs.forEach((el) => {-->
-    <!--            el.addEventListener("focus", () => {-->
-    <!--                if (!pinged) {-->
-    <!--                    pinged = true;-->
-    <!--                    fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {-->
-    <!--                        method: "GET", // or OPTIONS-->
-    <!--                        mode: "no-cors", // suppress CORS errors if not needed-->
-    <!--                    }).catch(() => {-->
-    <!--                        // ignore errors – it's just a ping-->
-    <!--                    });-->
-    <!--                }-->
-    <!--            }, {once: true});-->
-    <!--        });-->
-
-    <!--        form.addEventListener("submit", async (e) => {-->
-    <!--            e.preventDefault();-->
-    <!--            form.classList.add("was-validated");-->
-
-    <!--            if (!form.checkValidity()) {-->
-    <!--                form.querySelector(":invalid")?.focus();-->
-    <!--                return;-->
-    <!--            }-->
-
-    <!--            const formData = new FormData(form);-->
-    <!--            const payload = {-->
-    <!--                name: formData.get("name"),-->
-    <!--                email: formData.get("email"),-->
-    <!--                reason: formData.get("reason"),-->
-    <!--                message: formData.get("message"),-->
-    <!--            };-->
-
-    <!--            result.innerHTML = "⏳ Sending your message...";-->
-    <!--            result.style.background = "#d4d4d8";-->
-    <!--            result.style.color = "#111";-->
-    <!--            result.style.padding = "8px";-->
-    <!--            result.style.borderRadius = "6px";-->
-    <!--            result.style.marginTop = "10px";-->
-
-    <!--            try {-->
-    <!--                const res = await fetch("https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact", {-->
-    <!--                    method: "POST",-->
-    <!--                    headers: {-->
-    <!--                        "Content-Type": "application/json",-->
-    <!--                    },-->
-    <!--                    body: JSON.stringify(payload),-->
-    <!--                });-->
-
-    <!--                if (!res.ok) throw new Error(`Server error: ${res.status}`);-->
-
-    <!--                const data = await res.json();-->
-    <!--                result.innerHTML = `✅ ${data.message || "Message sent successfully!"}`;-->
-    <!--                result.style.background = "#22C55E";-->
-    <!--                result.style.color = "#222";-->
-    <!--                form.reset();-->
-    <!--            } catch (err) {-->
-    <!--                console.error("Error submitting form:", err);-->
-    <!--                result.innerHTML = "❌ Failed to send message. Please try again.";-->
-    <!--                result.style.background = "#ef4444";-->
-    <!--                result.style.color = "#fff";-->
-    <!--            }-->
-    <!--        });-->
-    <!--    });-->
-    <!--</script>-->
+<!--        /* -&#45;&#45; Optional API warm-up &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
+<!--        let warmed = false;-->
+<!--        form.addEventListener('focusin', () => {-->
+<!--            if (warmed) return;-->
+<!--            warmed = true;-->
+<!--            fetch('https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact', { mode:'no-cors' })-->
+<!--                .catch(()=>{}); // ignore silently-->
+<!--        }, { once:true });-->
+<!--    }-->
+<!--</script>-->
 
 </Layout>
-
 
 <style>
 
@@ -489,6 +597,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .form-submit {
+
         position: relative;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -502,7 +611,6 @@ import Layout from "../layouts/Layout.astro";
         backdrop-filter: blur(20px);
         margin-top: 1rem;
         overflow: hidden;
-
         width: 100%;
     }
 
@@ -510,6 +618,7 @@ import Layout from "../layouts/Layout.astro";
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
         border-color: rgba(255, 255, 255, 0.25);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
     }
 
     .form-submit:disabled {
@@ -566,14 +675,35 @@ import Layout from "../layouts/Layout.astro";
         color: #22c55e;
         font-weight: 500;
         opacity: 0;
-        transform: translateY(10px);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
+        margin: 0rem 0;
     }
 
+    .form-failure{
+        display:flex;
+        align-items:center;
+        gap:.75rem;
+        background:rgba(239,68,68,.1);
+        border:1px solid rgba(239,68,68,.3);
+        border-radius:12px;
+        padding:1rem;
+        color:#ef4444;
+        font-weight:500;
+        transition:opacity .3s ease;
+        opacity: 0;
+        margin: 0rem 0;
+    }
+
+
     .form-success.visible {
+        margin: 1rem 0;
         opacity: 1;
-        transform: translateY(0);
+        pointer-events: auto;
+    }
+    .form-failure.visible {
+        margin: 1rem 0;
+        opacity: 1;
         pointer-events: auto;
     }
 
