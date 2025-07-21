@@ -95,7 +95,7 @@ const posts = (await getCollection('blog')).sort(
                              data-category={post.data.category || ''}>
 
                         <div class="blog-post-left-side-container">
-                            <h5 class="post-title" transition:name={`title_${post.data.title}`}>{post.data.title}</h5>
+                            <h5 class="post-title">{post.data.title}</h5>
                             <p>{post.data.description}</p>
                             <div class="blog-post-links">
 
@@ -137,7 +137,7 @@ const posts = (await getCollection('blog')).sort(
                         </div>
                         <div class="blog-post-right-side-container">
                             <img src={post.data.heroImage} alt="Diagram illustrating Java Architecture"
-                                 decoding="async" loading="lazy" fetchpriority="auto" transition:name={`image_${post.data.heroImage}`}/>
+                                 decoding="async" loading="lazy" fetchpriority="auto" />
                         </div>
                     </article>
             ))
