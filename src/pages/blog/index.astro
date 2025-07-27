@@ -35,13 +35,13 @@ const posts = (await getCollection('blog')).sort(
         </nav>
 
         <!-- Banner Section -->
-        <div class="blogs-Banner">
-            <img src={BlogsBanner.src}
-                 alt="Codies Coder Blog Banner showcasing software engineering topics"
-                 decoding="async"
-                 loading="eager"
-                 fetchpriority="high"/>
-        </div>
+        <!--<div class="blogs-Banner">-->
+            <!--<img src={BlogsBanner.src}-->
+            <!--     alt="Codies Coder Blog Banner showcasing software engineering topics"-->
+            <!--     decoding="async"-->
+            <!--     loading="eager"-->
+            <!--     fetchpriority="high"/>-->
+        <!--</div>-->
 
         <!--Search Box-->
         <div class="search-box-container">
@@ -220,6 +220,7 @@ const posts = (await getCollection('blog')).sort(
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        align-content: center;
         gap: 0.5rem;
         width: 100%;
         font-size: 1rem;
@@ -230,6 +231,7 @@ const posts = (await getCollection('blog')).sort(
     .breadcrumb-link > svg {
         width: 1.1rem;
         height: auto;
+        margin-top: 5px;
     }
 
     .breadcrumb-item {
@@ -278,6 +280,7 @@ const posts = (await getCollection('blog')).sort(
     /* Search Box Section */
     .search-box-container {
         position: relative;
+        margin-top: 1rem;
     }
 
     .search-input {
