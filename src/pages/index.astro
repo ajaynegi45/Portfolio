@@ -377,20 +377,20 @@ import Review from "../components/Review.astro";
     }
 
     .section-divider > div {
-        position: relative; /* Position the inner div for the pseudo-element to be placed correctly */
-        width: 100%; /* The width should be full of its parent container */
+        position: relative;
+        width: 100%;
         max-width: 400px;
     }
     .section-divider > div::before {
         content: "";
         position: absolute;
-        top: 50%; /* Position the line vertically centered */
+        top: 50%;
         left: 0;
         right: 0;
-        height: 0.1rem; /* Height of the divider line */
-        background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg)); /* Gradient border */
-        z-index: -1; /* Ensure the pseudo-element stays behind the content */
-        transform: translateY(-50%); /* Correct the vertical centering of the divider line */
+        height: 0.1rem;
+        background: linear-gradient(to right, var(--bg), var(--card-border), var(--bg));
+        z-index: -1;
+        transform: translateY(-50%);
     }
     .section-divider[role="separator"] {
         border: none;
@@ -453,10 +453,6 @@ import Review from "../components/Review.astro";
 
     .connect-link:hover {
         transform: translateY(-3px);
-        //background-color: var(--link-hover);
-        //background-size: 120% auto;
-        //background-image: linear-gradient(315deg, #000428, #004e92 75%);
-        //background-size: 120% auto;
         background-image: none;
     }
 

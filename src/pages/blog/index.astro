@@ -320,7 +320,7 @@ const posts = (await getCollection('blog')).sort(
     }
 
 
-    // Not Found Search Result
+    /* Not Found Search Result */
     .no-search-results svg {
         margin-left: -15px;
         opacity: 0.5;
@@ -374,10 +374,7 @@ const posts = (await getCollection('blog')).sort(
     }
 
     .blog-post-container:hover {
-        //border: 1px solid var(--text5);
         cursor: pointer;
-        //background-color: #ffffff0d;
-
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -427,7 +424,7 @@ const posts = (await getCollection('blog')).sort(
 
     .post-link > a {
         padding: 0.25rem 0.5rem;
-        color: rgb(212 212 212 / 1); /* #D4D4D4FF */
+        color: rgb(212 212 212 / 1);
     }
 
     .post-link:hover > a > span,
