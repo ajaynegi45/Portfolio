@@ -1,47 +1,61 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import BlogsBanner from "../../assets/img/Banner.avif";
 import Divider from "../../assets/svg/Vector 3.svg";
+import UkBanner from '../../assets/img/Uttarakhand-Culture-Banner.avif';
+import GameBanner from '../../assets/img/oldschoolgame.avif';
+import FormMaillyGoBanner from "../../assets/img/FormMaillyGoImage.webp"
+import VayuBanner from '../../assets/img/Vayu-project-banner.avif';
+import SankalpCA from '../../assets/img/SankalpCA.avif';
 
-import FormattedDate from "../../components/FormattedDate.astro";
-import {getCollection} from 'astro:content';
-const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),);
+const project = [
+    {
+        "name": "Uttarakhand Culture",
+        "description": "Digitally documents and celebrates the region's culture, history, and natural beauty, making it accessible to the younger generation and preserving it for future generations.",
+        "github": "https://github.com/ajaynegi45/FormMaillyGo",
+        "live": "https://github.com/ajaynegi45/FormMaillyGo",
+        "image": UkBanner,
+        "tech": [ "Nextjs", "HTML/CSS", "Typescript", "Vercel", "Ajay Negi", "Uttarakhand Culture", "" ]
+    },
+    {
+        "name": "FormMaillyGo",
+        "description": "Lightweight serverless backend that converts any contact form submission into actual emails. Fast, secure, and completely free within your AWS Lambda generous limits - 1Million Free requests/month.",
+        "github": "https://github.com/ajaynegi45/FormMaillyGo",
+        "live": "https://ajaynegi45.github.io/FormMaillyGo/",
+        "image": FormMaillyGoBanner,
+        "tech": [ "Go", "HTML/CSS", "AWS", "Lambda", "Serverless", "Email", "Mail", "Gmail", "Ajay Negi"]
+    },
+    {
+        "name": "Vayu - Web Server",
+        "description": "Vayu is a high-performance Java web server built on Netty, designed for speed, scalability, and security.",
+        "github": "https://github.com/ajaynegi45/Vayu",
+        "image": VayuBanner,
+        "tech": [ "Java", "Netty", "SpringBoot", "Ajay Negi"]
+    },
+    {
+        "name": "Old School Game",
+        "description": "Curated collection of classic, brain-training games that enhance memory, focus, cognitive ability, and creative thinking. Designed to counteract the effects of short-form content, it promotes deeper mental engagement, better attention span, and long-term brain health through mindful play.",
+        "github": "https://github.com/ajaynegi45/Old-School-Game",
+        "live":"https://oldschoolgame.vercel.app/",
+        "image": GameBanner,
+        "tech": [ "Old School Game", "Nextjs", "TypeScript", "HTML", "CSS", "JavaScript", "Game", "Vercel", "Ajay Negi" ]
+    },
+    {
+        "name": "SankalpCA",
+        "description": "SankalpCA is a fast, elegant web app built using Next.js. It helps CA aspirants practice MCQ-style tests for Foundation, Intermediate, and Final levels.",
+        "github": "https://github.com/ajaynegi45/SankalpCA",
+        "live":"https://sankalpca.vercel.app",
+        "image": SankalpCA,
+        "tech": [ "SankalpCA", "CA", "Nextjs", "Javascript", "HTML", "CSS", "chartjs", "localStorage", "Vercel", "Ajay Negi"]
+    }
+
+]
 ---
 <Layout
         title="Codies Coder - Software Engineering Insights By Ajay Negi"
         description="Each month, we dive deep into a single topic in software engineering, breaking it down in a way that’s easy to grasp and fun to explore. Whether you're just starting out or already a pro, you'll always walk away with something new to think about.">
 
     <!-- Main Content Section -->
-    <section class="blogs-main-content-section">
-
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb-nav" role="navigation" aria-label="Breadcrumb">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item">
-                    <a href="/" class="breadcrumb-link" aria-label="Go to home page">
-                        <svg class="breadcrumb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             fill="currentColor">
-                            <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path>
-                            <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
-                        </svg>
-                    </a>
-                </li>
-                <span class="breadcrumb-divider">/</span>
-                <li class="breadcrumb-item">
-                    <a href="#" class="breadcrumb-link" aria-current="page">Blog</a>
-                </li>
-            </ol>
-        </nav>
-
-        <!-- Banner Section -->
-        <!--<div class="blogs-Banner">-->
-            <!--<img src={BlogsBanner.src}-->
-            <!--     alt="Codies Coder Blog Banner showcasing software engineering topics"-->
-            <!--     decoding="async"-->
-            <!--     loading="eager"-->
-            <!--     fetchpriority="high"/>-->
-        <!--</div>-->
+    <section class="projects-main-content-section">
 
         <!--Search Box-->
         <div class="search-box-container">
@@ -57,8 +71,8 @@ const posts = (await getCollection('blog')).sort(
                     type="text"
                     id="search-input"
                     class="search-input"
-                    placeholder="Search Blog Posts"
-                    aria-label="Search Blog Posts"
+                    placeholder="Search project"
+                    aria-label="Search project"
                     autocomplete="false"
                     spellcheck="true"
                     autocorrect="true"
@@ -71,7 +85,7 @@ const posts = (await getCollection('blog')).sort(
                      flex-direction: column;
                      justify-content: center;
                      align-items: center;
-                     height: 50vh;
+                     height: 65vh;
                      padding: 4rem 2rem;
                      color: rgba(255, 255, 255, 0.6);
                      transition: opacity 0.2s ease;
@@ -88,20 +102,19 @@ const posts = (await getCollection('blog')).sort(
 
         <!-- Blog Post Container -->
         {
-            posts.map((post) => (
+            project.map((project) => (
 
-                    <article class="blog-post-container"
-                             data-tags={(post.data.tags || []).join(',')}
-                             data-category={post.data.category || ''}>
+                    <article class="project-post-container"
+                             data-tags={(project.tech || []).join(',')}>
 
-                        <div class="blog-post-left-side-container">
-                            <h5 class="post-title">{post.data.title}</h5>
-                            <p>{post.data.description}</p>
-                            <div class="blog-post-links">
+                        <div class="project-post-left-side-container">
+                            <h5 class="post-title">{project.name}</h5>
+                            <p>{project.description}</p>
+                            <div class="project-post-links">
 
                                 <div class="post-link">
-                                    <a href={`/blog/${post.id}/`} aria-label="Read more about Java Architecture">
-                                        <span>Read More</span>
+                                    <a href={project.github} aria-label=`${project.name} Github Repository`>
+                                        <span>Github</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                              viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -114,12 +127,12 @@ const posts = (await getCollection('blog')).sort(
                                     </a>
                                 </div>
 
-                                {post.data.substack && (
+                                {project.live && (
                                         <div class="post-link">
-                                            <a href={post.data.substack}
+                                            <a href={project?.live }
                                                target="_blank" rel="noopener noreferrer"
-                                               aria-label="Read more about Java Architecture">
-                                                <span>Read Substack</span>
+                                               aria-label=`Read more about ${project.name}`>
+                                                <span>Live Link</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                                      viewBox="0 0 24 24"
                                                      fill="none" stroke="currentColor" stroke-width="2"
@@ -135,28 +148,23 @@ const posts = (await getCollection('blog')).sort(
                                 )}
                             </div>
                         </div>
-                        <div class="blog-post-right-side-container">
-                            <img src={post.data.heroImage} alt="Diagram illustrating Java Architecture"
-                                 decoding="async" loading="lazy" fetchpriority="auto" />
+                        <div class="project-post-right-side-container">
+                            <img src={project.image.src} alt=`Diagram illustrating ${project.name}`
+                                 decoding="async" loading="eager" fetchpriority="auto" />
                         </div>
                     </article>
             ))
         }
     </section>
 
-    <section class="sperator-divider-container">
-        <img src={Divider.src} alt="Sperator Divider"/>
-    </section>
+    <!--<section class="sperator-divider-container">-->
+    <!--    <img src={Divider.src} alt="Sperator Divider"/>-->
+    <!--</section>-->
 
-    <!-- Newsletter Subscription Section -->
-    <section class="substack-newsletter-section">
-        <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;" frameborder="0" scrolling="no"  title="Codies Coder Newsletter Subscription"></iframe>
-    </section>
-
-    <script is:inline>
+    <script is:inline >
         document.addEventListener('astro:page-load', () => {
             const searchInput = document.getElementById('search-input');
-            const blogPosts = document.querySelectorAll('.blog-post-container');
+            const projectPosts = document.querySelectorAll('.project-post-container');
             const noResultsBlock = document.getElementById('search-no-results');
 
             // Debounce function to avoid rapid calls
@@ -172,7 +180,7 @@ const posts = (await getCollection('blog')).sort(
                 const searchTerm = query.toLowerCase().trim();
                 let hasResults = false;
 
-                blogPosts.forEach(post => {
+                projectPosts.forEach(post => {
                     const title = post.querySelector('.post-title')?.textContent.toLowerCase() || '';
                     const description = post.querySelector('p')?.textContent.toLowerCase() || '';
 
@@ -258,7 +266,7 @@ const posts = (await getCollection('blog')).sort(
 
 
     /* Blogs Hero Section*/
-    .blogs-Banner {
+    .projects-Banner {
         width: 100%;
         height: auto;
         padding: 0;
@@ -267,7 +275,7 @@ const posts = (await getCollection('blog')).sort(
         overflow: hidden;
     }
 
-    .blogs-Banner > img {
+    .projects-Banner > img {
         padding: 0;
         margin: 0;
         width: 100%;
@@ -293,10 +301,26 @@ const posts = (await getCollection('blog')).sort(
         padding: 0 10px 0 40px;
         border-radius: 8px;
         border: 1px solid var(--card-border);
-        background-color: var(--bg);
+        //background-color: var(--bg);
+
         outline: none;
         transition: all 0.2s ease-in-out;
 
+        background-color: transparent;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        position: relative;
+    }
+
+    .search-input::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.3), transparent);
+        transition: left 0.5s ease;
     }
 
     .search-input::placeholder {
@@ -307,9 +331,17 @@ const posts = (await getCollection('blog')).sort(
         color: var(--heading);
     }
 
-    .search-input:focus {
+    .search-input:focus{
         border-color: var(--text5);
         background-color: #ffffff0d;
+    }
+    .search-input:hover {
+        border-color: var(--text5);
+        background-color: #ffffff0d;
+    }
+
+    .search-input::before:focus{
+        background: #ffffff0d;
     }
 
     .lucide-icon {
@@ -340,7 +372,7 @@ const posts = (await getCollection('blog')).sort(
 
 
     /* Blog Post Section */
-    .blog-post-container {
+    .project-post-container {
         margin-top: 2rem;
         display: flex;
         flex-direction: row;
@@ -358,7 +390,7 @@ const posts = (await getCollection('blog')).sort(
         position: relative;
     }
 
-    .blog-post-container::before {
+    .project-post-container::before {
         content: '';
         position: absolute;
         top: 0;
@@ -369,11 +401,11 @@ const posts = (await getCollection('blog')).sort(
         transition: left 0.5s ease;
     }
 
-    .blog-post-container:hover::before {
+    .project-post-container:hover::before {
         left: 100%;
     }
 
-    .blog-post-container:hover {
+    .project-post-container:hover {
         //border: 1px solid var(--text5);
         cursor: pointer;
         //background-color: #ffffff0d;
@@ -383,18 +415,18 @@ const posts = (await getCollection('blog')).sort(
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
 
-    .blog-post-container > .blog-post-left-side-container {
+    .project-post-container > .project-post-left-side-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 0.3rem;
     }
 
-    .blog-post-left-side-container > h5 {
+    .project-post-left-side-container > h5 {
         color: var(--subheading);
     }
 
-    .blog-post-left-side-container > p {
+    .project-post-left-side-container > p {
         font-size: 14px;
         font-weight: normal;
         letter-spacing: 0.3px;
@@ -402,7 +434,7 @@ const posts = (await getCollection('blog')).sort(
         color: var(--text3);
     }
 
-    .blog-post-links {
+    .project-post-links {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -412,7 +444,7 @@ const posts = (await getCollection('blog')).sort(
         margin-top: 0.3rem;
     }
 
-    .blog-post-links > .post-link {
+    .project-post-links > .post-link {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -436,34 +468,34 @@ const posts = (await getCollection('blog')).sort(
         cursor: pointer;
     }
 
-    .blog-post-links > .post-link > a > svg {
+    .project-post-links > .post-link > a > svg {
         font-size: 13px;
     }
 
-    .blog-post-right-side-container {
+    .project-post-right-side-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .blog-post-right-side-container > img {
+    .project-post-right-side-container > img {
         width: 200px;
         height: auto;
         border-radius: 5px;
     }
 
     @media (max-width: 599px) {
-        .blog-post-container {
+        .project-post-container {
             flex-direction: column-reverse;
             gap: 0.5rem;
             padding: 0.8rem;
         }
 
-        .blog-post-left-side-container > h5 {
+        .project-post-left-side-container > h5 {
             margin-bottom: 0.3rem;
         }
 
-        .blog-post-right-side-container > img {
+        .project-post-right-side-container > img {
             width: 100%;
             height: auto;
         }

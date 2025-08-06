@@ -1,5 +1,6 @@
 ---
 import RajeshReddy from '../assets/img/RajeshReddy.avif';
+import YogeshYadav from '../assets/img/YogeshYadav.avif';
 
 const testimonials = [
     {
@@ -10,6 +11,15 @@ const testimonials = [
         image: RajeshReddy.src,
         alt: 'Rajesh Reddy Junnuthula profile photo',
     },
+
+    {
+        name: 'Yogesh Yadav',
+        title: 'Senior Software Engineer at Nagarro',
+        text: `Ajay is a sharp, driven engineer who tackles problems with structure and focus. He learns fast, applies feedback effectively and consistently ships clean, maintainable solutions while bringing clarity to complex technical decisions. He doesn’t just code — he architects clarity. Whether debugging complex issues or designing production systems, he’s dependable, curious, and outcome-oriented. He's the kind of engineer who lifts team velocity — growing fast and delivering with intent.`,
+        image: YogeshYadav.src,
+        alt: 'Yogesh Yadav profile photo',
+    },
+
 ];
 ---
 
@@ -22,6 +32,7 @@ const testimonials = [
 
     <div class="testimonial-scroll-wrapper">
         <div class="testimonial-scroll-track">
+            <a href="https://www.linkedin.com/in/ajaynegi45/details/recommendations/" target="_blank" rel="noopener noreferrer">
             {testimonials.map((t, index) => (
                     <article class="testimonial-card">
                         <p class="testimonial-text">
@@ -48,6 +59,7 @@ const testimonials = [
                         </footer>
                     </article>
             ))}
+            </a>
         </div>
     </div>
 </section>
@@ -59,7 +71,6 @@ const testimonials = [
 
     .testimonial-title {
         text-align: center;
-
     }
 
     .testimonial-scroll-wrapper {
@@ -69,10 +80,16 @@ const testimonials = [
         -webkit-overflow-scrolling: touch;
         scroll-snap-align: start;
         scroll-behavior: smooth;
+
+        //border: 1px solid red;
+
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
     }
 
     .testimonial-scroll-track {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 

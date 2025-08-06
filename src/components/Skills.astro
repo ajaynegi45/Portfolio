@@ -34,46 +34,45 @@ import firebase from "../assets/skills/firebase.svg";
 const skills = [
 
     {name: "Java", icon: java},
+    { name: "Go", icon: go },
     {name: "AWS", icon: aws},
     {name: "Docker", icon: docker},
     {name: "Kubernetes", icon: kubernetes},
-    {name: "Jira", icon: jira},
 
 
     {name: "Springboot", icon: spring},
     {name: "JavaScript", icon: javascript},
     {name: "Postgresql", icon: postgresql},
     {name: "Linux", icon: bash},
+    {name: "Next.js", icon: nextjs},
+
+
+    {name: "Ansible", icon: ansible},
+    {name: "Terraform", icon: terraform},
     {name: "Jenkins", icon: jenkins},
+    {name: "Jira", icon: jira},
+    {name: "Git", icon: git},
 
 
+    { name: "Github", icon: github },
     {name: "Grafana", icon: grafana},
     {name: "Prometheus", icon: prometheus},
     {name: "k6", icon: k6},
-    {name: "Ansible", icon: ansible},
-    {name: "Terraform", icon: terraform},
+    {name: "Postman", icon: postman},
 
 
-    {name: "TypeScript", icon: typescript},
     {name: "React.js", icon: react},
-    {name: "Next.js", icon: nextjs},
     {name: "Nodejs", icon: nodejs},
-
-
+    {name: "TypeScript", icon: typescript},
     {name: "HTML5", icon: html},
     {name: "CSS", icon: css},
-    // { name: "Github", icon: github },
-    {name: "Git", icon: git},
-    {name: "Postman", icon: postman},
+
+
     {name: "Firebase", icon: firebase},
-
-    // { name: "Golang", icon: go },
-    // { name: "MySql", icon: mysql },
+    { name: "MySql", icon: mysql },
     {name: "MongoDB", icon: mongodb},
-
-
-    // { name: "Kafka", icon: kafka },
-    // { name: "Astro", icon: astro },
+    { name: "Kafka", icon: kafka },
+    { name: "Astro", icon: astro },
 ];
 ---
 <section>
@@ -186,8 +185,8 @@ const skills = [
 
 </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
         const container = document.getElementById("skills-container");
         const toggleBtn = document.getElementById("toggle-button");
 

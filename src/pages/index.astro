@@ -95,20 +95,30 @@ import Review from "../components/Review.astro";
         <section class="projects" aria-labelledby="projects-section-heading">
             <header class="projects-header">
                 <h3 style="font-size: 1.1rem;" id="projects-section-heading">Projects</h3>
-                <a href="https://github.com/ajaynegi45?tab=repositories" class="link"
-                   title="View all projects on Ajay Negi's GitHub repository page">
-                    <span>More Projects</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="lucide lucide-external-link">
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14 21 3"></path>
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    </svg>
-                </a>
+                <!--<a href="/project" class="link"-->
+                <!--   title="View all projects of Ajay Negi">-->
+                <!--    <span>More Projects</span>-->
+                <!--    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"-->
+                <!--         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
+                <!--         class="lucide lucide-external-link">-->
+                <!--        <path d="M15 3h6v6"></path>-->
+                <!--        <path d="M10 14 21 3"></path>-->
+                <!--        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>-->
+                <!--    </svg>-->
+                <!--</a>-->
             </header>
             <div class="project-cards-container">
                 <ProjectCard/>
+            </div>
+
+            <div class="project-view-more-button-container">
+                <a href="/project" class="project-view-more-button">View more projects
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+</svg>
+                    </span>
+                </a>
             </div>
         </section>
 
@@ -180,11 +190,6 @@ import Review from "../components/Review.astro";
     </main>
 </Layout>
 
-<!-- Include the animated text script -->
-<!--<script>-->
-<!--    import('../components/AnimatedText.js');-->
-<!--</script>-->
-
 <style>
     @keyframes highlight-sweep {
         0% {
@@ -195,45 +200,6 @@ import Review from "../components/Review.astro";
             background-position: 200% 0;
         }
     }
-
-    /* Optional: Add reduced motion support */
-    //@media (prefers-reduced-motion: reduce) {
-    //    .animated-word {
-    //        transition: none !important;
-    //    }
-    //}
-
-
-    //.highlight-spot {
-    //    display: inline-block;
-    //    background: linear-gradient(
-    //            120deg,
-    //            #d1c4e9 10%, /* pastel lavender */ #b2ebf2 40%, /* pastel teal */ #ffe0b2 70%, /* pastel orange */ #d1c4e9 100%
-    //    );
-    //    background-size: 300% 100%;
-    //    background-position: 0 0;
-    //    -webkit-background-clip: text;
-    //    -webkit-text-fill-color: transparent;
-    //
-    //    animation: highlight-sweep 2s ease-in-out infinite alternate;
-    //    animation-delay: 0.3s;
-    //
-    //    transform: skewX(-5deg);
-    //}
-
-
-    //.main-section {
-    //    position: relative;
-    //    overflow: hidden;
-    //    width: 100%;
-    //    height: 100vh;
-    //    background: #0a0a0a;
-    //    color: white;
-    //    display: flex;
-    //    align-items: center;
-    //    justify-content: center;
-    //    text-align: center;
-    //}
 
     /* Hero Section */
     .hero-section {
@@ -321,18 +287,15 @@ import Review from "../components/Review.astro";
     .projects {
         margin-bottom: 3.2rem;
     }
-
     .projects-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-
     .projects-header > h2 {
         margin-bottom: 0.5rem;
     }
-
     .projects-header > a {
         font-size: 14px;
         display: flex;
@@ -341,12 +304,10 @@ import Review from "../components/Review.astro";
         justify-content: center;
         gap: 0.3rem;
     }
-
     .projects-header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
     }
-
     .project-cards-container {
         display: flex;
         flex-direction: column;
@@ -355,6 +316,53 @@ import Review from "../components/Review.astro";
         gap: 1rem;
         margin-top: 1rem;
     }
+
+
+    .project-view-more-button-container {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+        color: var(--text4);
+        fill: var(--text4);
+    }
+
+    .project-view-more-button {
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--text4);
+        cursor: pointer;
+        text-decoration: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        -webkit-user-select: none;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    .project-view-more-button span svg {
+        transition: 0.3s ease-in-out;
+        color: var(--text4);
+        fill: var(--text4);
+        margin-bottom: -3.5px;
+        margin-left: -2px;
+    }
+    .project-view-more-button:hover {
+        color: var(--subheading);
+    }
+    .project-view-more-button:hover span svg {
+        fill: var(--subheading);
+        color: var(--subheading);
+        transform: translateX(3px);
+    }
+
+
+
 
 
     /* Divider */
@@ -373,7 +381,6 @@ import Review from "../components/Review.astro";
         width: 100%; /* The width should be full of its parent container */
         max-width: 400px;
     }
-
     .section-divider > div::before {
         content: "";
         position: absolute;
@@ -385,11 +392,11 @@ import Review from "../components/Review.astro";
         z-index: -1; /* Ensure the pseudo-element stays behind the content */
         transform: translateY(-50%); /* Correct the vertical centering of the divider line */
     }
-
     .section-divider[role="separator"] {
         border: none;
         outline: none;
     }
+
 
 
     /* Connect Section */
