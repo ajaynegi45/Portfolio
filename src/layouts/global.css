@@ -78,10 +78,10 @@ html {
 }
 
 html, body {
-    overflow: hidden; /* Hide overflow initially */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+    /*overflow: hidden; !* Hide overflow initially *!*/
+    /*overflow-y: scroll; !* Enable vertical scrolling *!*/
+    /*scrollbar-width: none; !* Firefox *!*/
+    /*-ms-overflow-style: none; !* IE 10+ *!*/
 
     background-color: var(--bg);
 }
@@ -135,7 +135,7 @@ body {
 
 #main-body-section {
     /*background-color: var(--bg);*/
-    max-width: 800px;
+    max-width: 900px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1rem 0 1rem;
