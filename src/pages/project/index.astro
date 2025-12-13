@@ -16,7 +16,7 @@ const project = [
         "github": "https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI",
         "live": "https://uttarakhand-culture.vercel.app/",
         "image": UkBanner,
-        "tech": [ "Nextjs", "HTML/CSS", "Typescript", "Vercel", "Ajay Negi", "Uttarakhand Culture", "" ]
+        "tech": ["Nextjs", "HTML/CSS", "Typescript", "Vercel", "Ajay Negi", "Uttarakhand Culture", ""]
     },
     {
         "name": "FormMaillyGo",
@@ -24,37 +24,37 @@ const project = [
         "github": "https://github.com/ajaynegi45/FormMaillyGo",
         "live": "https://ajaynegi45.github.io/FormMaillyGo/",
         "image": FormMaillyGoBanner,
-        "tech": [ "Go", "HTML/CSS", "AWS", "Lambda", "Serverless", "Email", "Mail", "Gmail", "Ajay Negi"]
+        "tech": ["Go", "HTML/CSS", "AWS", "Lambda", "Serverless", "Email", "Mail", "Gmail", "Ajay Negi"]
     },
     {
         "name": "Vayu - Web Server",
         "description": "Vayu is a high-performance Java web server built on Netty, designed for speed, scalability, and security.",
         "github": "https://github.com/ajaynegi45/Vayu",
         "image": VayuBanner,
-        "tech": [ "Java", "Netty", "SpringBoot", "Ajay Negi"]
+        "tech": ["Java", "Netty", "SpringBoot", "Ajay Negi"]
     },
     {
         "name": "Old School Game",
         "description": "Curated collection of classic, brain-training games that enhance memory, focus, cognitive ability, and creative thinking. Designed to counteract the effects of short-form content, it promotes deeper mental engagement, better attention span, and long-term brain health through mindful play.",
         "github": "https://github.com/ajaynegi45/Old-School-Game",
-        "live":"https://oldschoolgame.vercel.app/",
+        "live": "https://oldschoolgame.vercel.app/",
         "image": GameBanner,
-        "tech": [ "Old School Game", "Nextjs", "TypeScript", "HTML", "CSS", "Game", "Vercel", "Ajay Negi", "Javascript" ]
+        "tech": ["Old School Game", "Nextjs", "TypeScript", "HTML", "CSS", "Game", "Vercel", "Ajay Negi", "Javascript"]
     },
     {
         "name": "SankalpCA",
         "description": "SankalpCA is a fast, elegant web app built using Next.js. It helps CA aspirants practice MCQ-style tests for Foundation, Intermediate, and Final levels.",
         "github": "https://github.com/ajaynegi45/SankalpCA",
-        "live":"https://sankalpca.vercel.app",
+        "live": "https://sankalpca.vercel.app",
         "image": SankalpCA,
-        "tech": [ "SankalpCA", "CA", "Nextjs", "HTML", "CSS", "chartjs", "localStorage", "Vercel", "Ajay Negi","Javascript"]
+        "tech": ["SankalpCA", "CA", "Nextjs", "HTML", "CSS", "chartjs", "localStorage", "Vercel", "Ajay Negi", "Javascript"]
     },
     {
         "name": "LibraryMan-API",
         "description": "Built a Spring Boot backend to manage books, inventory, borrowers, checkouts/returns and due-date tracking. It sends automated, configurable email reminders to borrowers and admins to cut overdue returns. The REST API exposes lending and inventory endpoints, enforces input validation and is ideal for schools and small libraries. With proper role based authentication",
         "github": "https://github.com/ajaynegi45/LibraryMan-API",
         "image": LibraryManAPI,
-        "tech": [ "LibraryMan-API", "Java", "Spring Boot", "Spring MVC", "Spring Data JPA", "Hibernate", "MySQL", "REST API", "Maven",  "JavaMail", "SMTP", "Postman", "JUnit", "Docker", "Ajay Negi"]
+        "tech": ["LibraryMan-API", "Java", "Spring Boot", "Spring MVC", "Spring Data JPA", "Hibernate", "MySQL", "REST API", "Maven", "JavaMail", "SMTP", "Postman", "JUnit", "Docker", "Ajay Negi"]
     }
 
 ]
@@ -138,7 +138,7 @@ const project = [
 
                                 {project.live && (
                                         <div class="post-link">
-                                            <a href={project?.live }
+                                            <a href={project?.live}
                                                target="_blank" rel="noopener noreferrer"
                                                aria-label=`Read more about ${project.name}`>
                                                 <span>Live Link</span>
@@ -159,7 +159,7 @@ const project = [
                         </div>
                         <div class="project-post-right-side-container">
                             <img src={project.image.src} alt=`Diagram illustrating ${project.name}`
-                                 decoding="async" loading="eager" fetchpriority="auto" />
+                                 decoding="async" loading="eager" fetchpriority="auto"/>
                         </div>
                     </article>
             ))
@@ -170,7 +170,7 @@ const project = [
     <!--    <img src={Divider.src} alt="Sperator Divider"/>-->
     <!--</section>-->
 
-    <script is:inline >
+    <script is:inline>
         document.addEventListener('astro:page-load', () => {
             const searchInput = document.getElementById('search-input');
             const projectPosts = document.querySelectorAll('.project-post-container');
@@ -338,16 +338,17 @@ const project = [
         color: var(--heading);
     }
 
-    .search-input:focus{
+    .search-input:focus {
         border-color: var(--text5);
         background-color: #ffffff0d;
     }
+
     .search-input:hover {
         border-color: var(--text5);
         background-color: #ffffff0d;
     }
 
-    .search-input::before:focus{
+    .search-input::before:focus {
         background: #ffffff0d;
     }
 

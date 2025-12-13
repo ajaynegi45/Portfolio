@@ -16,7 +16,7 @@ import Review from "../components/Review.astro";
         <section class="hero-section" aria-labelledby="hero-heading">
             <header class="hero-content">
                 <h1 id="hero-heading">Hi, I'm Ajay Negi</h1>
-                <p class="hero-subtitle">Software Engineer | From Problem to Production-Ready, at Scale</p>
+                <p class="hero-subtitle">Fullstack Software Engineer | From Problem to Production-Ready, at Scale</p>
                 <div class="contact-links">
                     <p class="email">
                         <a href="https://uttarakhand-culture.vercel.app/" referrerpolicy="no-referrer" target="_blank"
@@ -114,8 +114,10 @@ import Review from "../components/Review.astro";
             <div class="project-view-more-button-container">
                 <a href="/project" class="project-view-more-button">View more projects
                     <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
 </svg>
                     </span>
                 </a>
@@ -287,15 +289,18 @@ import Review from "../components/Review.astro";
     .projects {
         margin-bottom: 3.2rem;
     }
+
     .projects-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+
     .projects-header > h2 {
         margin-bottom: 0.5rem;
     }
+
     .projects-header > a {
         font-size: 14px;
         display: flex;
@@ -304,10 +309,12 @@ import Review from "../components/Review.astro";
         justify-content: center;
         gap: 0.3rem;
     }
+
     .projects-header > a > svg {
         font-size: 14px;
         margin-bottom: 3px;
     }
+
     .project-cards-container {
         display: flex;
         flex-direction: column;
@@ -345,6 +352,7 @@ import Review from "../components/Review.astro";
         align-items: center;
         gap: 0.25rem;
     }
+
     .project-view-more-button span svg {
         transition: 0.3s ease-in-out;
         color: var(--text4);
@@ -352,17 +360,16 @@ import Review from "../components/Review.astro";
         margin-bottom: -3.5px;
         margin-left: -2px;
     }
+
     .project-view-more-button:hover {
         color: var(--subheading);
     }
+
     .project-view-more-button:hover span svg {
         fill: var(--subheading);
         color: var(--subheading);
         transform: translateX(3px);
     }
-
-
-
 
 
     /* Divider */
@@ -381,6 +388,7 @@ import Review from "../components/Review.astro";
         width: 100%;
         max-width: 400px;
     }
+
     .section-divider > div::before {
         content: "";
         position: absolute;
@@ -392,11 +400,11 @@ import Review from "../components/Review.astro";
         z-index: -1;
         transform: translateY(-50%);
     }
+
     .section-divider[role="separator"] {
         border: none;
         outline: none;
     }
-
 
 
     /* Connect Section */

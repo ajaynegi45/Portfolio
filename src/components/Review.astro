@@ -32,33 +32,34 @@ const testimonials = [
 
     <div class="testimonial-scroll-wrapper">
         <div class="testimonial-scroll-track">
-            <a href="https://www.linkedin.com/in/ajaynegi45/details/recommendations/" target="_blank" rel="noopener noreferrer">
-            {testimonials.map((t, index) => (
-                    <article class="testimonial-card">
-                        <p class="testimonial-text">
-                            “{t.text}”
-                        </p>
+            <a href="https://www.linkedin.com/in/ajaynegi45/details/recommendations/" target="_blank"
+               rel="noopener noreferrer">
+                {testimonials.map((t, index) => (
+                        <article class="testimonial-card">
+                            <p class="testimonial-text">
+                                “{t.text}”
+                            </p>
 
-                        <footer class="testimonial-footer-container">
-                            <div class="testimonial-footer-img">
-                                <img
-                                        src={t.image}
-                                        alt={t.alt}
-                                        width="50"
-                                        height="50"
-                                        decoding="async"
-                                        loading={index === 0 ? "eager" : "lazy"}
-                                        fetchpriority={index === 0 ? "high" : "auto"}
-                                />
-                            </div>
+                            <footer class="testimonial-footer-container">
+                                <div class="testimonial-footer-img">
+                                    <img
+                                            src={t.image}
+                                            alt={t.alt}
+                                            width="50"
+                                            height="50"
+                                            decoding="async"
+                                            loading={index === 0 ? "eager" : "lazy"}
+                                            fetchpriority={index === 0 ? "high" : "auto"}
+                                    />
+                                </div>
 
-                            <div class="testimonial-footer-info">
-                                <strong>{t.name}</strong>
-                                <span class="mentor-info">{t.title}</span>
-                            </div>
-                        </footer>
-                    </article>
-            ))}
+                                <div class="testimonial-footer-info">
+                                    <strong>{t.name}</strong>
+                                    <span class="mentor-info">{t.title}</span>
+                                </div>
+                            </footer>
+                        </article>
+                ))}
             </a>
         </div>
     </div>
