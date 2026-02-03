@@ -44,13 +44,10 @@ import Navicon from "../assets/img/profilephoto.avif";
 <div class="navbar-empty"></div>
 
 <style>
-    //#site-header{
-    //    position: absolute;
-    //}
 
     /* center without a transform (fixes mobile fixed positioning issues) */
     .navbar {
-        position: fixed !important;
+        position: fixed;
         top: 0;               /* attached at top when square */
         left: 0;
         right: 0;
@@ -78,9 +75,9 @@ import Navicon from "../assets/img/profilephoto.avif";
         transform 200ms ease-in-out;
 
         /* neumorphism / depth */
-        //box-shadow: inset 2px 2px 6px rgba(0,0,0,0.6),
-        //inset -3px -3px 6px rgba(255,255,255,0.03),
-        //0 4px 10px rgba(0,0,0,0.45);
+        /*box-shadow: inset 2px 2px 6px rgba(0,0,0,0.6),
+        inset -3px -3px 6px rgba(255,255,255,0.03),
+        0 4px 10px rgba(0,0,0,0.45); */
     }
 
     /* rounded / detached when scrolled */
@@ -116,7 +113,7 @@ import Navicon from "../assets/img/profilephoto.avif";
     }
 
     .navbar-photo {
-        //width: 40px;
+        /* width: 40px; */
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
@@ -184,41 +181,52 @@ import Navicon from "../assets/img/profilephoto.avif";
 </style>
 
 
-<script type="module">
-    function setupNavbarScroll() {
-        const navbar = document.querySelector('.navbar');
-        if (!navbar) return;
+<!--<script type="module">-->
+<!--    function setupNavbarScroll() {-->
+<!--        const navbar = document.querySelector('.navbar');-->
+<!--        if (!navbar) {-->
+<!--            console.warn('Navbar not found');-->
+<!--            return;-->
+<!--        }-->
 
-        const THRESHOLD = 8;
-        let ticking = false;
+<!--        const THRESHOLD = 8;-->
+<!--        let ticking = false;-->
 
-        function update() {
-            if (window.scrollY > THRESHOLD) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
+<!--        function update() {-->
+<!--            if (window.scrollY > THRESHOLD) {-->
+<!--                navbar.classList.add('scrolled');-->
+<!--            } else {-->
+<!--                navbar.classList.remove('scrolled');-->
+<!--            }-->
+<!--        }-->
 
-        function onScroll() {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    update();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }
+<!--        function onScroll() {-->
+<!--            if (!ticking) {-->
+<!--                requestAnimationFrame(() => {-->
+<!--                    update();-->
+<!--                    ticking = false;-->
+<!--                });-->
+<!--                ticking = true;-->
+<!--            }-->
+<!--        }-->
 
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        update();
-    }
+<!--        // Remove any existing listeners-->
+<!--        window.removeEventListener('scroll', onScroll);-->
+<!--        // Add new listener-->
+<!--        window.addEventListener('scroll', onScroll, { passive: true });-->
+<!--        // Initial update-->
+<!--        update();-->
+<!--    }-->
 
-    // Initial load
-    setupNavbarScroll();
+<!--    // Run on initial load-->
+<!--    if (document.readyState === 'loading') {-->
+<!--        document.addEventListener('DOMContentLoaded', setupNavbarScroll);-->
+<!--    } else {-->
+<!--        setupNavbarScroll();-->
+<!--    }-->
 
-    // IMPORTANT: re-run on Astro page navigation
-    document.addEventListener('astro:page-load', setupNavbarScroll);
-</script>
+<!--    // Re-run on Astro page navigation-->
+<!--    document.addEventListener('astro:page-load', setupNavbarScroll);-->
+<!--    document.addEventListener('astro:after-swap', setupNavbarScroll);-->
+<!--</script>-->
 

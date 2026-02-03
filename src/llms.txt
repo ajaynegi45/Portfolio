@@ -1,0 +1,51 @@
+# Ajay Negi | Software Engineer
+
+Hi, I'm Ajay Negi — a Software Engineer who thrives on turning complex challenges into elegant, scalable solutions. Dive into my journey where performance meets precision, and engineering translates into real-world impact.
+
+## Professional Links
+
+### Portfolio and Projects
+- [Home](https://ajaynegi.web.app/): A placeholder link that may contain additional information about Ajay's work or projects.
+- [Blog](https://ajaynegi.web.app/blog): A blog where Ajay shares insights, experiences, and knowledge related to software engineering and technology.
+- [Project](https://ajaynegi.web.app/project): Details about specific projects Ajay has worked on, showcasing his skills and contributions.
+- [Certificate](https://ajaynegi.web.app/certificate): A link to Ajay's certifications, highlighting his qualifications and expertise in the field.
+- [Resume](https://ajaynegi.web.app/_astro/Resume.Ci6r_yMC.pdf): Ajay's professional resume, outlining his work experience, skills, and educational background.
+- [More Exp..](https://www.linkedin.com/in/ajaynegi45/details/experience/): Additional information regarding Ajay's experience, possibly including more projects or roles.
+
+
+### Contact Information
+- [Contact](https://ajaynegi.web.app/contact): A link to reach out to Ajay for inquiries, collaborations, or networking opportunities.
+
+
+### Social Media and Professional Profiles
+- [Github](https://github.com/ajaynegi45/Uttarakhand-Culture-NewUI): Ajay's GitHub profile, showcasing his code repositories and contributions to open-source projects.
+- [Github](https://github.com/ajaynegi45/FormMaillyGo): Another link to Ajay's GitHub profile, possibly highlighting different aspects or projects.
+- [LinkedIn](https://www.linkedin.com/in/ajaynegi45/): Ajay's LinkedIn profile, providing a professional overview and connections in the industry.
+- [X (formerly Twitter)](https://x.com/ajaynegi45): Ajay's X profile, where he shares thoughts and engages with the tech community.
+
+
+### Testimonials
+- [“Ajay is an absolute game changer, when it comes to adapting a new technology or meeting tight deadlines. I felt quite comfortable working with Ajay and strongly recommend everyone to look for team players like Ajay.” Rajesh Reddy Junnuthula SDE - Mentor at Infosys Springboard](https://www.linkedin.com/in/ajaynegi45/details/recommendations/): A testimonial highlighting Ajay's adaptability and teamwork.
+- [“Ajay is a sharp, driven engineer who tackles problems with structure and focus. He learns fast, applies feedback effectively and consistently ships clean, maintainable solutions while bringing clarity to complex technical decisions. He doesn’t just code — he architects clarity. Whether debugging complex issues or designing production systems, he’s dependable, curious, and outcome-oriented. He's the kind of engineer who lifts team velocity — growing fast and delivering with intent.” Yogesh Yadav Senior Software Engineer at Nagarro](https://www.linkedin.com/in/ajaynegi45/details/recommendations/): Another testimonial emphasizing Ajay's engineering skills and impact on team performance.
+
+
+### Blogs
+- [Codies Coder Blog](https://ajaynegi.web.app/blog/): Explore containerization, multithreading, and Java architecture insights.
+- [Welcome Blog](https://ajaynegi.web.app/blog/welcome-to-codies-coder/): Tech blog offering fun, insightful software engineering insights.
+- [Docker Architecture Overview](https://ajaynegi.web.app/blog/docker-architecture/): Explore Docker architecture and containerization fundamentals effectively.
+- [Understanding JVM Architecture](https://ajaynegi.web.app/blog/jvm-architecture/): Explore Java's architecture and the role of the JVM.
+- [Open Container Initiative Overview](https://ajaynegi.web.app/blog/open-container-initiative/): Learn how OCI standardizes software container operations globally.
+- [Java Multithreading Guide](https://ajaynegi.web.app/blog/understanding-multithreading-in-java/): Explore multithreading concepts, implementation, and efficiency in Java.
+
+
+### Live Projects
+- [FormMaillyGo](https://ajaynegi45.github.io/FormMaillyGo/)
+- [UttarakhandCulture](https://uttarakhandculture.vercel.app/)
+
+### Extra Links
+- [Software Developer Portfolio](https://ajaynegi.web.app/): Talented software developer specializing in scalable cloud solutions.
+- [Website Sitemap Overview](https://ajaynegi.web.app/sitemap-index.xml): Comprehensive sitemap for efficient website navigation and indexing.
+- [Site Map Overview](https://ajaynegi.web.app/sitemap-0.xml): Explore various topics including blogs, projects, and more.
+- [About Ajay Negi](https://ajaynegi.web.app/about): Personal insights and professional journey of Ajay Negi.
+
+
