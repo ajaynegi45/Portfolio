@@ -108,7 +108,9 @@ import Layout from "../layouts/Layout.astro";
                 <button type="submit" class="form-submit" id="submit-btn">
                     <span class="submit-text">Send Message</span>
                     <span class="submit-loader" id="submit-loader">
-                        <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 12a9 9 0 11-6.219-8.56"/>
                         </svg>
                         Sending...
@@ -118,7 +120,8 @@ import Layout from "../layouts/Layout.astro";
 
                 <!-- Success Message -->
                 <div class="form-success" id="form-success" role="alert">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22,4 12,14.01 9,11.01"></polyline>
                     </svg>
@@ -127,7 +130,11 @@ import Layout from "../layouts/Layout.astro";
 
                 <!-- Error Message -->
                 <div id="form-error" class="form-failure" role="alert" hidden>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="15" y1="9" x2="9" y2="15"/>
+                        <line x1="9" y1="9" x2="15" y2="15"/>
+                    </svg>
                     Oops! Something went wrong. Please try again.
                 </div>
 
@@ -152,7 +159,7 @@ import Layout from "../layouts/Layout.astro";
             const freshForm = document.getElementById('contact-form');
             const freshSubmitBtn = document.getElementById('submit-btn');
             const freshSuccessMessage = document.getElementById('form-success');
-            const errorMessage   = document.getElementById('form-error');
+            const errorMessage = document.getElementById('form-error');
 
 
             // Validation rules for each field
@@ -424,133 +431,10 @@ import Layout from "../layouts/Layout.astro";
                             // Ignore errors for warm-up request
                         });
                     }
-                }, { once: true });
+                }, {once: true});
             });
         }
     </script>
-
-<!-- JavaScript -->
-<!--<script>-->
-<!--    document.addEventListener('astro:page-load', initContactForm);-->
-
-<!--    function initContactForm () {-->
-<!--        /* Elements */-->
-<!--        const form         = document.getElementById('contact-form');-->
-<!--        const submitBtn    = document.getElementById('submit-btn');-->
-<!--        const successBox   = document.getElementById('form-success');-->
-<!--        const failureBox   = document.getElementById('form-error');-->
-<!--        const loaderText   = document.getElementById('submit-loader');-->
-
-<!--        if (!form || !submitBtn) return; // Abort if HTML not present-->
-
-<!--        /* -&#45;&#45; Validation rules &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
-<!--        const rules = {-->
-<!--            name:   { min: 2,  pattern: /^[a-zA-Z\s'-]+$/,      msg: 'Name must be at least 2 letters'           },-->
-<!--            email:  { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,    msg: 'Enter a valid email address'               },-->
-<!--            reason: { min: 3,                                   msg: 'Reason must be at least 3 characters long' },-->
-<!--            message:{ min: 20,                                  msg: 'Message must be at least 20 characters'    }-->
-<!--        };-->
-
-<!--        /* -&#45;&#45; Real-time field validation &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
-<!--        ['name','email','reason'].forEach(id => {-->
-<!--            const field = document.getElementById(id);-->
-<!--            field?.addEventListener('input', () => handleValidate(id, false));-->
-<!--            field?.addEventListener('blur',  () => handleValidate(id, true));-->
-<!--        });-->
-
-<!--        /* Auto-expand textarea */-->
-<!--        const txt = document.getElementById('message');-->
-<!--        if (txt) {-->
-<!--            txt.addEventListener('input', () => {-->
-<!--                try {-->
-<!--                    txt.style.height = 'auto';-->
-<!--                    txt.style.height = `${txt.scrollHeight}px`;-->
-<!--                } catch { /* silently ignore */ }-->
-<!--            });-->
-<!--        }-->
-
-<!--        /* -&#45;&#45; Submission -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
-<!--        form.addEventListener('submit', async e => {-->
-<!--            e.preventDefault();-->
-<!--            clearAlerts();-->
-
-<!--            const valid = Object.keys(rules).every(id => handleValidate(id, true));-->
-<!--            if (!valid) return;-->
-
-<!--            toggleLoading(true);-->
-
-<!--            try {-->
-<!--                const data = Object.fromEntries(new FormData(form).entries());-->
-
-<!--                const res = await fetch(-->
-<!--                    'https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact',-->
-<!--                    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }-->
-<!--                );-->
-
-<!--                if (!res.ok) throw new Error('network');-->
-
-<!--                showBox(successBox);-->
-<!--                form.reset();-->
-<!--            } catch {-->
-<!--                showBox(failureBox);-->
-<!--            } finally {-->
-<!--                toggleLoading(false);-->
-<!--            }-->
-<!--        });-->
-
-<!--        /* -&#45;&#45; Helpers &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
-<!--        function handleValidate (id, showErr) {-->
-<!--            const el   = document.getElementById(id);-->
-<!--            const err  = document.getElementById(`${id}-error`);-->
-<!--            if (!el) return true;-->
-
-<!--            const { min = 0, pattern, msg } = rules[id];-->
-<!--            const val = el.value.trim();-->
-<!--            let ok = true, text = '';-->
-
-<!--            if (!val)               { ok = false; text = `${label(id)} is required`; }-->
-<!--            else if (val.length<min){ ok = false; text = msg; }-->
-<!--            else if (pattern && !pattern.test(val)) { ok = false; text = msg; }-->
-
-<!--            el.classList.toggle('error', !ok && showErr);-->
-<!--            el.classList.toggle('success', ok && val);-->
-<!--            if (err) {-->
-<!--                err.textContent = showErr ? text : '';-->
-<!--                err.classList.toggle('visible', showErr && !ok);-->
-<!--            }-->
-<!--            return ok;-->
-<!--        }-->
-
-<!--        function label (id) {-->
-<!--            return ({name:'Full Name', email:'Email Address', reason:'Reason', message:'Message'})[id] || id;-->
-<!--        }-->
-
-<!--        function clearAlerts () {-->
-<!--            [successBox, failureBox].forEach(b => b?.setAttribute('hidden',''));-->
-<!--        }-->
-
-<!--        function showBox (box) {-->
-<!--            clearAlerts();-->
-<!--            box?.removeAttribute('hidden');-->
-<!--            setTimeout(() => box?.setAttribute('hidden',''), 5000);-->
-<!--        }-->
-
-<!--        function toggleLoading (on) {-->
-<!--            submitBtn.disabled = on;-->
-<!--            submitBtn.classList.toggle('loading', on);-->
-<!--        }-->
-
-<!--        /* -&#45;&#45; Optional API warm-up &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; */-->
-<!--        let warmed = false;-->
-<!--        form.addEventListener('focusin', () => {-->
-<!--            if (warmed) return;-->
-<!--            warmed = true;-->
-<!--            fetch('https://0u6n608iw4.execute-api.ap-south-1.amazonaws.com/formmailly/api/contact', { mode:'no-cors' })-->
-<!--                .catch(()=>{}); // ignore silently-->
-<!--        }, { once:true });-->
-<!--    }-->
-<!--</script>-->
-
 </Layout>
 
 <style>
@@ -680,17 +564,17 @@ import Layout from "../layouts/Layout.astro";
         margin: 0rem 0;
     }
 
-    .form-failure{
-        display:flex;
-        align-items:center;
-        gap:.75rem;
-        background:rgba(239,68,68,.1);
-        border:1px solid rgba(239,68,68,.3);
-        border-radius:12px;
-        padding:1rem;
-        color:#ef4444;
-        font-weight:500;
-        transition:opacity .3s ease;
+    .form-failure {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        background: rgba(239, 68, 68, .1);
+        border: 1px solid rgba(239, 68, 68, .3);
+        border-radius: 12px;
+        padding: 1rem;
+        color: #ef4444;
+        font-weight: 500;
+        transition: opacity .3s ease;
         opacity: 0;
         margin: 0rem 0;
     }
@@ -701,6 +585,7 @@ import Layout from "../layouts/Layout.astro";
         opacity: 1;
         pointer-events: auto;
     }
+
     .form-failure.visible {
         margin: 1rem 0;
         opacity: 1;

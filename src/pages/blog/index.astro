@@ -36,11 +36,11 @@ const posts = (await getCollection('blog')).sort(
 
         <!-- Banner Section -->
         <!--<div class="blogs-Banner">-->
-            <!--<img src={BlogsBanner.src}-->
-            <!--     alt="Codies Coder Blog Banner showcasing software engineering topics"-->
-            <!--     decoding="async"-->
-            <!--     loading="eager"-->
-            <!--     fetchpriority="high"/>-->
+        <!--<img src={BlogsBanner.src}-->
+        <!--     alt="Codies Coder Blog Banner showcasing software engineering topics"-->
+        <!--     decoding="async"-->
+        <!--     loading="eager"-->
+        <!--     fetchpriority="high"/>-->
         <!--</div>-->
 
         <!--Search Box-->
@@ -137,7 +137,7 @@ const posts = (await getCollection('blog')).sort(
                         </div>
                         <div class="blog-post-right-side-container">
                             <img src={post.data.heroImage} alt="Diagram illustrating Java Architecture"
-                                 decoding="async" loading="lazy" fetchpriority="auto" />
+                                 decoding="async" loading="lazy" fetchpriority="auto"/>
                         </div>
                     </article>
             ))
@@ -150,7 +150,8 @@ const posts = (await getCollection('blog')).sort(
 
     <!-- Newsletter Subscription Section -->
     <section class="substack-newsletter-section">
-        <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;" frameborder="0" scrolling="no"  title="Codies Coder Newsletter Subscription"></iframe>
+        <iframe src="https://codiescoder.substack.com/embed" width="480" height="320" style="background:white;"
+                frameborder="0" scrolling="no" title="Codies Coder Newsletter Subscription"></iframe>
     </section>
 
     <script is:inline>
@@ -320,7 +321,7 @@ const posts = (await getCollection('blog')).sort(
     }
 
 
-    // Not Found Search Result
+    /* Not Found Search Result */
     .no-search-results svg {
         margin-left: -15px;
         opacity: 0.5;
@@ -374,10 +375,7 @@ const posts = (await getCollection('blog')).sort(
     }
 
     .blog-post-container:hover {
-        //border: 1px solid var(--text5);
         cursor: pointer;
-        //background-color: #ffffff0d;
-
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -427,7 +425,7 @@ const posts = (await getCollection('blog')).sort(
 
     .post-link > a {
         padding: 0.25rem 0.5rem;
-        color: rgb(212 212 212 / 1); /* #D4D4D4FF */
+        color: rgb(212 212 212 / 1);
     }
 
     .post-link:hover > a > span,

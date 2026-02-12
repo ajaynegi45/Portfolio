@@ -30,11 +30,13 @@ import terraform from "../assets/skills/terraform.svg";
 import grafana from "../assets/skills/grafana.svg";
 import prometheus from "../assets/skills/Prometheus.svg";
 import firebase from "../assets/skills/firebase.svg";
+import redis from "../assets/skills/redis.svg";
+import memcached from "../assets/skills/memcached.svg";
 
 const skills = [
 
     {name: "Java", icon: java},
-    { name: "Go", icon: go },
+    {name: "Go", icon: go},
     {name: "AWS", icon: aws},
     {name: "Docker", icon: docker},
     {name: "Kubernetes", icon: kubernetes},
@@ -43,18 +45,22 @@ const skills = [
     {name: "Springboot", icon: spring},
     {name: "JavaScript", icon: javascript},
     {name: "Postgresql", icon: postgresql},
+    {name: "MongoDB", icon: mongodb},
     {name: "Linux", icon: bash},
     {name: "Next.js", icon: nextjs},
+    {name: "Kafka", icon: kafka},
+    {name: "Redis", icon: redis},
 
 
+    {name: "Jira", icon: jira},
     {name: "Ansible", icon: ansible},
     {name: "Terraform", icon: terraform},
     {name: "Jenkins", icon: jenkins},
-    {name: "Jira", icon: jira},
     {name: "Git", icon: git},
+    {name: "Memcached", icon: memcached},
 
 
-    { name: "Github", icon: github },
+    {name: "Github", icon: github},
     {name: "Grafana", icon: grafana},
     {name: "Prometheus", icon: prometheus},
     {name: "k6", icon: k6},
@@ -69,10 +75,10 @@ const skills = [
 
 
     {name: "Firebase", icon: firebase},
-    { name: "MySql", icon: mysql },
-    {name: "MongoDB", icon: mongodb},
-    { name: "Kafka", icon: kafka },
-    { name: "Astro", icon: astro },
+    {name: "MySql", icon: mysql},
+
+
+    {name: "Astro", icon: astro},
 ];
 ---
 <section>
@@ -104,13 +110,12 @@ const skills = [
         grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
         gap: 1rem;
         padding: 0.5rem 0;
-        //max-height: 400px;
         overflow: hidden;
         transition: max-height 0.5s ease;
     }
 
     .tech-skills-list-container.collapsed {
-        max-height: 110px; /* approx height of 8 items */
+        max-height: 110px;
     }
 
     .tech-skill {
@@ -121,7 +126,7 @@ const skills = [
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         gap: 5px;
         padding: 0.6rem;
@@ -139,6 +144,8 @@ const skills = [
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
         transition: left 0.5s ease;
+
+        color: #d5d5d5;
     }
 
     .tech-skill:hover::before {

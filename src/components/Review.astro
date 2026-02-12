@@ -32,33 +32,34 @@ const testimonials = [
 
     <div class="testimonial-scroll-wrapper">
         <div class="testimonial-scroll-track">
-            <a href="https://www.linkedin.com/in/ajaynegi45/details/recommendations/" target="_blank" rel="noopener noreferrer">
-            {testimonials.map((t, index) => (
-                    <article class="testimonial-card">
-                        <p class="testimonial-text">
-                            “{t.text}”
-                        </p>
+            <a href="https://www.linkedin.com/in/ajaynegi45/details/recommendations/" target="_blank"
+               rel="noopener noreferrer">
+                {testimonials.map((t, index) => (
+                        <article class="testimonial-card">
+                            <p class="testimonial-text">
+                                “{t.text}”
+                            </p>
 
-                        <footer class="testimonial-footer-container">
-                            <div class="testimonial-footer-img">
-                                <img
-                                        src={t.image}
-                                        alt={t.alt}
-                                        width="50"
-                                        height="50"
-                                        decoding="async"
-                                        loading={index === 0 ? "eager" : "lazy"}
-                                        fetchpriority={index === 0 ? "high" : "auto"}
-                                />
-                            </div>
+                            <footer class="testimonial-footer-container">
+                                <div class="testimonial-footer-img">
+                                    <img
+                                            src={t.image}
+                                            alt={t.alt}
+                                            width="50"
+                                            height="50"
+                                            decoding="async"
+                                            loading={index === 0 ? "eager" : "lazy"}
+                                            fetchpriority={index === 0 ? "high" : "auto"}
+                                    />
+                                </div>
 
-                            <div class="testimonial-footer-info">
-                                <strong>{t.name}</strong>
-                                <span class="mentor-info">{t.title}</span>
-                            </div>
-                        </footer>
-                    </article>
-            ))}
+                                <div class="testimonial-footer-info">
+                                    <strong>{t.name}</strong>
+                                    <span class="mentor-info">{t.title}</span>
+                                </div>
+                            </footer>
+                        </article>
+                ))}
             </a>
         </div>
     </div>
@@ -80,9 +81,6 @@ const testimonials = [
         -webkit-overflow-scrolling: touch;
         scroll-snap-align: start;
         scroll-behavior: smooth;
-
-        //border: 1px solid red;
-
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE 10+ */
     }
@@ -92,9 +90,7 @@ const testimonials = [
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
         gap: 1rem;
-        //animation: scroll-left 30s linear infinite;
     }
 
     .testimonial-card {
@@ -127,12 +123,7 @@ const testimonials = [
     }
 
     .testimonial-card:hover {
-        //transform: translateY(-4px);
-        //box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        //background-color: var(--background-hover);
-        //border: 1px solid var(--text5);
         cursor: pointer;
-
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
