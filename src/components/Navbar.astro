@@ -5,7 +5,7 @@ import Navicon from "../assets/img/profilephoto.avif";
     <nav class="navbar" aria-label="Main navigation">
         <div class="navbar-left">
             <!-- Navbar Icon -->
-            <a href="/" title="Home" aria-label="Go to homepage" class="play-clicked-sound">
+            <a href="/" title="Home" aria-label="Go to homepage">
                 <img src={Navicon.src} alt="Ajay's profile picture" class="navbar-photo" decoding="async"
                      loading="eager" fetchpriority="high"/>
             </a>
@@ -37,47 +37,96 @@ import Navicon from "../assets/img/profilephoto.avif";
                     <a href="/contact" class="navbar-link play-clicked-sound"
                        aria-label="Go to contact section">Contact</a>
                 </li>
-
             </ul>
         </div>
     </nav>
-    <div class="navbar-empty">
-    </div>
 </header>
+<div class="navbar-empty"></div>
 
 <style>
+
+    /* center without a transform (fixes mobile fixed positioning issues) */
     .navbar {
         position: fixed;
-        top: 0;
+        top: 0;               /* attached at top when square */
         left: 0;
         right: 0;
+        margin-left: auto;
+        margin-right: auto;
         z-index: 9999;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 1rem 0.5rem 1rem;
         min-width: 320px;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        backdrop-filter: blur(8px);
+        width: calc(100% - 2rem);
+        max-width: 900px;
+
+        padding: 1rem 1rem 0.5rem 1rem;
+
+        background: transparent;
+        backdrop-filter: blur(2px) saturate(120%);
+        -webkit-backdrop-filter: blur(2px) saturate(120%);
+
+        border-radius: 0;
+        transition: border-radius 200ms ease-in-out,
+        padding 160ms ease-in-out,
+        top 200ms ease-in-out,
+        box-shadow 200ms ease-in-out,
+        transform 200ms ease-in-out;
+
+        /* neumorphism / depth */
+        /*box-shadow: inset 2px 2px 6px rgba(0,0,0,0.6),
+        inset -3px -3px 6px rgba(255,255,255,0.03),
+        0 4px 10px rgba(0,0,0,0.45); */
+    }
+
+    /* rounded / detached when scrolled */
+    .navbar.scrolled {
+        top: 0.5rem;               /* push down so it feels detached */
+        padding: 0.5rem 0.5rem;    /* smaller padding when scrolled */
+        border-radius: 40px;
+
+        backdrop-filter: blur(8px) saturate(120%);
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+
+        /* remove horizontal translate: only translate vertically for lift */
+        transform: translateY(2px);
+
+        box-shadow: inset 2px 2px 8px rgba(0,0,0,0.65),
+        inset -4px -4px 8px rgba(255,255,255,0.04),
+        0 18px 40px rgba(0,0,0,0.6);
     }
 
     .navbar-left {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+
+        margin: 0;
+        padding: 0;
+        height: 40px;
+    }
+
+    .navbar-left > a {
+        line-height: 0;
     }
 
     .navbar-photo {
-        width: 50px;
-        height: 50px;
+        /* width: 40px; */
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
         cursor: pointer;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
     }
+
 
     .navbar-right {
         align-items: center;
+        padding-right: 1rem;
     }
 
     .navbar-links {
@@ -101,13 +150,21 @@ import Navicon from "../assets/img/profilephoto.avif";
     }
 
     .navbar-empty {
-        width: 100%;
+        position: relative;
+        width: 320px;
         height: 5rem;
     }
 
     @media (max-width: 500px) {
         .navbar-links {
             gap: 1rem;
+        }
+        .navbar-right {
+            padding-right: 0;
+        }
+
+        .navbar {
+            padding: 0.9rem 0;
         }
     }
 
@@ -116,6 +173,60 @@ import Navicon from "../assets/img/profilephoto.avif";
             gap: 0.5rem;
             margin-left: 0.5rem;
         }
+        .navbar.scrolled {
+            padding: 0.5rem 0.3rem;
+        }
     }
 
 </style>
+
+
+<!--<script type="module">-->
+<!--    function setupNavbarScroll() {-->
+<!--        const navbar = document.querySelector('.navbar');-->
+<!--        if (!navbar) {-->
+<!--            console.warn('Navbar not found');-->
+<!--            return;-->
+<!--        }-->
+
+<!--        const THRESHOLD = 8;-->
+<!--        let ticking = false;-->
+
+<!--        function update() {-->
+<!--            if (window.scrollY > THRESHOLD) {-->
+<!--                navbar.classList.add('scrolled');-->
+<!--            } else {-->
+<!--                navbar.classList.remove('scrolled');-->
+<!--            }-->
+<!--        }-->
+
+<!--        function onScroll() {-->
+<!--            if (!ticking) {-->
+<!--                requestAnimationFrame(() => {-->
+<!--                    update();-->
+<!--                    ticking = false;-->
+<!--                });-->
+<!--                ticking = true;-->
+<!--            }-->
+<!--        }-->
+
+<!--        // Remove any existing listeners-->
+<!--        window.removeEventListener('scroll', onScroll);-->
+<!--        // Add new listener-->
+<!--        window.addEventListener('scroll', onScroll, { passive: true });-->
+<!--        // Initial update-->
+<!--        update();-->
+<!--    }-->
+
+<!--    // Run on initial load-->
+<!--    if (document.readyState === 'loading') {-->
+<!--        document.addEventListener('DOMContentLoaded', setupNavbarScroll);-->
+<!--    } else {-->
+<!--        setupNavbarScroll();-->
+<!--    }-->
+
+<!--    // Re-run on Astro page navigation-->
+<!--    document.addEventListener('astro:page-load', setupNavbarScroll);-->
+<!--    document.addEventListener('astro:after-swap', setupNavbarScroll);-->
+<!--</script>-->
+
