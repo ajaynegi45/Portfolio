@@ -5,6 +5,8 @@ import Experience from "../components/Experience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Skills from "../components/Skills.astro";
 import Review from "../components/Review.astro";
+import FlipWords from "../components/ui/flip-words.tsx"
+const words = ["Fullstack Software Engineer | From Problem to Production-Ready, at Scale"];
 ---
 <Layout title="Ajay Negi | Software Engineer"
         description="Hi, I'm Ajay Negi — a Software Engineer who thrives on turning complex challenges into elegant, scalable solutions. Dive into my journey where performance meets precision, and engineering translates into real-world impact.">
@@ -16,6 +18,9 @@ import Review from "../components/Review.astro";
         <section class="hero-section" aria-labelledby="hero-heading">
             <header class="hero-content">
                 <h1 id="hero-heading">Hi, I'm Ajay Negi</h1>
+                <!--<FlipWords words={words} /> <br />-->
+                <!--<FlipWords client:load words={words} duration={3000} className="" />-->
+
                 <p class="hero-subtitle">Fullstack Software Engineer | From Problem to Production-Ready, at Scale</p>
                 <div class="contact-links">
                     <p class="email">
